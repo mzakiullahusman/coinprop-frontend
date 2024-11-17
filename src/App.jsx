@@ -1,15 +1,3 @@
-// import "./App.css";
-
-// function App() {
-//   return (
-//     <>
-//
-//     </>
-//   );
-// }
-
-// export default App;
-
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import HowItWorks from "./pages/HomeItWorks";
