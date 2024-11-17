@@ -6,6 +6,7 @@ import Icon2 from "../assets/Icons/Icon2.svg";
 import Icon3 from "../assets/Icons/Icon3.svg";
 import Icon4 from "../assets/Icons/Icon4.svg";
 import Icon5 from "../assets/Icons/Icon5.svg";
+import ArrowRightIcon from "../assets/Icons/ArrowRightIcon.svg";
 
 const Dive = () => {
   const tickList = [
@@ -53,12 +54,13 @@ const Dive = () => {
               </div>
             ))}
           </div>
-          <div class="flex flex-col md:flex-row gap-4 mt-6">
-            <button class="bg-gradient-to-b from-[#2A80B3] via-[#236191] to-[#142738] font-redhat text-lg text-white px-6 py-3 rounded-full shadow-lg font-normal hover:opacity-90 transition">
-              Start Challenge →
+          <div className="flex flex-col md:flex-row gap-4 mt-6">
+            <button className="bg-gradient-to-b flex flex-row gap-x-3 items-center from-[#2A80B3] via-[#236191] to-[#142738] font-redhat text-lg text-white px-6 py-3 rounded-full shadow-lg font-normal hover:opacity-90 transition">
+              Start Challenge
+              <img src={ArrowRightIcon} alt="Arrow" />
             </button>
 
-            <button class="bg-transparent font-redhat border border-white text-lg text-white px-6 py-3 rounded-full font-normal hover:bg-white hover:text-black transition">
+            <button className="bg-transparent font-redhat border border-white text-lg text-white px-6 py-3 rounded-full font-normal hover:bg-white hover:text-black transition">
               Learn More
             </button>
           </div>
