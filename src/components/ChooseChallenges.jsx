@@ -71,7 +71,10 @@ const ChooseChallenges = () => {
             </h3>
             <ul className="space-y-4">
               {challenge.details.map((detail, idx) => (
-                <li key={idx} className="flex justify-between text-white ">
+                <li
+                  key={idx}
+                  className="flex justify-between text-white font-outfit"
+                >
                   <span className="font-light text-[18px]">{detail.label}</span>
                   <span className="font-medium text-base xl:text-[20px]">
                     {detail.value}

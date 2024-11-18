@@ -4,7 +4,9 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        redhat: ["Red Hat Display", "sans-serif"], // Custom font alias
+        redhat: ["Red Hat Display", "sans-serif"],
+        outfit: ["Outfit", "sans-serif"],
+        poppins: ["Poppins", "sans-serif"],
       },
     },
   },

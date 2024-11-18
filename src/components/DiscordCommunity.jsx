@@ -6,7 +6,7 @@ import ArrowRightIcon from "../assets/Icons/ArrowRightIcon.svg";
 const DiscordCommunity = () => {
   return (
     <div
-      className=" bg-[#020621] bg-center bg-no-repeat min-h-screen w-full flex flex-col items-center justify-center"
+      className=" bg-[#020621] py-5 xl:py-[0px] bg-center bg-no-repeat xl:min-h-screen w-full flex flex-col items-center justify-center"
       style={{
         backgroundImage: `url(${BgImage3})`,
       }}
@@ -15,7 +15,7 @@ const DiscordCommunity = () => {
       <div className="text-[32px] tracking-[-1px] xl:tracking-[-4px] text-center xl:leading-[111px] text-white lg:text-[60px] xl:text-[84px] font-redhat font-medium">
         Discord Our Community
       </div>
-      <div className="text-2xl text-center text-white lg:text-[32px] font-light mt-4">
+      <div className="text-base text-center font-poppins text-white lg:text-[21px] font-light mt-4">
         Talk with thousands of other like-minded individuals all looking to
         succeed.
       </div>

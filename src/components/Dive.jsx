@@ -26,7 +26,7 @@ const Dive = () => {
 
   return (
     <div
-      className="bg-black bg-cover bg-center bg-no-repeat"
+      className="bg-[#020621] bg-cover bg-center bg-no-repeat"
       style={{
         backgroundImage: `url(${BgImage})`,
       }}
@@ -67,7 +67,7 @@ const Dive = () => {
         </div>
         <div className="w-full flex flex-col gap-y-2 lg:w-1/2"></div>
       </div>
-      <div className="flex flex-col md:flex-row items-center justify-center gap-12 xl:gap-20 ">
+      <div className="flex flex-col md:flex-row items-center xl:py-12 justify-center gap-12 xl:gap-20 ">
         {diveIcons.map((icon, index) => (
           <div key={index} className="flex items-center justify-center">
             <img src={icon.src} alt={icon.alt} />
