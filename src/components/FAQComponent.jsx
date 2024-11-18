@@ -2,7 +2,7 @@ import React from "react";
 import BgImage1 from "../assets/Images/BgImage1.png";
 import ArrowRightIcon from "../assets/Icons/ArrowRightIcon.svg";
 import PlusIcon from "../assets/Icons/PlusIcon.svg";
-const FAQ = () => {
+const FAQComponent = () => {
   return (
     <div
       className="bg-black bg-cover bg-center bg-no-repeat"
@@ -45,4 +45,4 @@ const FAQ = () => {
   );
 };
 
-export default FAQ;
+export default FAQComponent;

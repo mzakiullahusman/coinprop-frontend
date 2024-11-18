@@ -7,7 +7,7 @@ import BulbIcon from "../assets/Icons/BulbIcon.svg";
 import AceFundedTrader from "../components/AceFundedTrader";
 import Partners from "../components/Partners";
 import DiscordCommunity from "../components/DiscordCommunity";
-import FAQ from "../components/FAQ";
+import FAQComponent from "../components/FAQComponent";
 
 const HomeItWorks = () => {
   const features = [
@@ -46,7 +46,7 @@ const HomeItWorks = () => {
       />
       <AceFundedTrader />
       <Partners />
-      <FAQ />
+      <FAQComponent />
 
       <DiscordCommunity />
     </>

@@ -2,7 +2,7 @@ import React from "react";
 
 import AboutAceFunded from "../components/AboutAceFunded";
 import AceFunding from "../components/AceFunding";
-import FAQ from "../components/FAQ";
+import FAQComponent from "../components/FAQComponent";
 import SupportIcon from "../assets/Icons/SupportIcon.svg";
 import ThumbIcon from "../assets/Icons/ThumbIcon.svg";
 import RocketIcon from "../assets/Icons/RocketIcon.svg";
@@ -52,7 +52,7 @@ const AboutUs = () => {
         description="Trade with our Capital and keep up to 95% of the Profit."
         index={true}
       />
-      <FAQ />
+      <FAQComponent />
       <Partners />
       <DiscordCommunity />
     </>
