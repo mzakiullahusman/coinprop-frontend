@@ -1,45 +1,9 @@
 import React from "react";
 import ArrowRightIcon from "../assets/Icons/ArrowRightIcon.svg";
-import SupportIcon from "../assets/Icons/SupportIcon.svg";
-import ThumbIcon from "../assets/Icons/ThumbIcon.svg";
 import TickIcon from "../assets/Icons/TickIcon.svg";
 import BgImage1 from "../assets/Images/BgImage1.png";
-import RocketIcon from "../assets/Icons/RocketIcon.svg";
-import BulbIcon from "../assets/Icons/BulbIcon.svg";
 
-const AceFunding = () => {
-  const features = [
-    {
-      icon: ThumbIcon,
-      title: "Your Skill, Our Risk",
-      description:
-        "Trade with our Capital without being liable for any losses.",
-    },
-    {
-      icon: RocketIcon,
-      title: "Fast & Reliable Payouts",
-      description:
-        "Receive Payouts with a High Profit Split, protected by our Payout Guarantee.",
-    },
-    {
-      icon: SupportIcon,
-      title: "24/7 Support",
-      description: "Our dedicated Support team is always here to help.",
-    },
-    {
-      icon: BulbIcon,
-      title: "Always 90% Profit Split",
-      description:
-        "At Ace Funded, we offer an industry-leading profit split of 90%.",
-    },
-  ];
-
-  const highlights = [
-    "Lowest Spreads in the Industry",
-    "Spreads Starting From 0.0",
-    "True Market Pricing & Execution",
-  ];
-
+const AceFunding = ({ mainData, highlights, title, description, index }) => {
   return (
     <div
       className="bg-black bg-cover bg-center bg-no-repeat"
@@ -53,16 +17,16 @@ const AceFunding = () => {
             Features
           </div>
           <div className="text-[28px] tracking-[-1px] xl:tracking-[-4px] xl:leading-[84px] text-white  lg:text-[50px] xl:text-[64px] font-redhat font-medium">
-            Features of Ace funded
+            {title}
           </div>
           <div className="text-base text-white lg:text-[20px] font-redhat font-medium">
-            Trade with our Capital and keep up to 95% of the Profit.
+            {description}
           </div>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
-          {features.map((feature, index) => (
+          {mainData.map((feature, i) => (
             <div
-              key={index}
+              key={i}
               className="bg-[#08122a] border  border-white border-opacity-20 rounded-[12px] p-5 xl:p-8 hover:shadow-lg transition"
             >
               <img src={feature.icon} alt={`${feature.title} Icon`} />
@@ -74,11 +38,13 @@ const AceFunding = () => {
                 <div className="text-lg xl:text-[24px] font-normal font-redhat text-[#8e8e8e]">
                   {feature.description}
                 </div>
-                <img
-                  src={ArrowRightIcon}
-                  alt="Arrow Right Icon"
-                  className="w-6 h-6 ml-auto"
-                />
+                {index ? (
+                  <img
+                    src={ArrowRightIcon}
+                    alt="Arrow Right Icon"
+                    className="w-6 h-6 ml-auto"
+                  />
+                ) : null}
               </div>
             </div>
           ))}
