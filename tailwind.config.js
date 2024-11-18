@@ -7,6 +7,7 @@ export default {
         redhat: ["Red Hat Display", "sans-serif"],
         outfit: ["Outfit", "sans-serif"],
         poppins: ["Poppins", "sans-serif"],
+        inter: ["Inter", "sans-serif"],
       },
     },
   },
