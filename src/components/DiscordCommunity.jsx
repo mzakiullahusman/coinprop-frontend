@@ -6,7 +6,7 @@ import ArrowRightIcon from "../assets/Icons/ArrowRightIcon.svg";
 const DiscordCommunity = () => {
   return (
     <div
-      className="bg-cover bg-center bg-no-repeat min-h-screen w-full flex flex-col items-center justify-center"
+      className=" bg-[#020621] bg-center bg-no-repeat min-h-screen w-full flex flex-col items-center justify-center"
       style={{
         backgroundImage: `url(${BgImage3})`,
       }}
