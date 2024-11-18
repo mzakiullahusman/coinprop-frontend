@@ -1,5 +1,5 @@
 import React from "react";
-import BgImage2 from "../assets/Images/BgImage2.png";
+// import BgImage2 from "../assets/Images/BgImage2.png";
 import ArrowRightIcon from "../assets/Icons/ArrowRightIcon.svg";
 const AceFundedTrader = () => {
   return (
