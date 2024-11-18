@@ -81,8 +81,8 @@ const Home = () => {
         mainData={features}
         highlights={highlights}
         text="Features"
-        title="Features of ace funded"
-        description="Trade with our Capital and keep up to 95% of the Profit."
+        title="Features of Ace Dunded"
+        description="Trade With Our Capital and Keep Up To 95% Of The Profit."
         index={true}
       />
       <AceFundedTrader />
@@ -92,7 +92,7 @@ const Home = () => {
         highlights={highlights}
         text="Features"
         title="How Ace Funded Works?"
-        description="Trade with our Capital and keep up to 95% of the Profit."
+        description="Trade With Our Capital and Keep Up To 95% Of The Profit."
         index={false}
       />
       <DiscordCommunity />
