@@ -3,11 +3,11 @@ import Home from "./pages/Home";
 import HowItWorks from "./pages/HomeItWorks";
 import AboutUs from "./pages/AboutUs";
 import FAQ from "./pages/FAQ";
-// import Contact from '../pages/Contact';
-// import MainLayout from '../layouts/MainLayout';
 import "./App.css";
 import Header from "./layouts/Header";
 import Footer from "./layouts/Footer";
+import TermsOfService from "./pages/TermsOfService";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
 
 const App = () => {
   return (
@@ -19,6 +19,8 @@ const App = () => {
         <Route path="/how-it-works" element={<HowItWorks />} />
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/faq" element={<FAQ />} />
+        <Route path="/terms-of-service" element={<TermsOfService />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
       </Routes>
       <Footer />
       {/* </MainLayout> */}

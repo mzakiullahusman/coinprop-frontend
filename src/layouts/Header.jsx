@@ -59,11 +59,7 @@ const Header = () => {
         </Link>
         <button className="text-white flex items-center gap-x-2 text-sm md:text-lg">
           Login
-          <img
-            src={ArrowRightIcon}
-            alt="Arrow"
-            className="w-4 h-4 md:w-6 md:h-6"
-          />
+          <img src={ArrowRightIcon} alt="Arrow" />
         </button>
       </div>
       {isMenuOpen && (
@@ -91,11 +87,7 @@ const Header = () => {
           </Link>
           <button className="text-white flex items-center gap-x-2 text-sm md:text-lg">
             Login
-            <img
-              src={ArrowRightIcon}
-              alt="Arrow"
-              className="w-4 h-4 md:w-6 md:h-6"
-            />
+            <img src={ArrowRightIcon} alt="Arrow" />
           </button>
         </div>
       )}

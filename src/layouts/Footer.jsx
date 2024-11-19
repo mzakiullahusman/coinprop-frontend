@@ -40,31 +40,31 @@ const Footer = () => {
           <div className="flex gap-x-20 justify-between mt-8 md:mt-[0px]">
             <div className="flex flex-col gap-y-8">
               <Link
-                href="/"
+                to="/"
                 className="font-medium text-white font-redhat text-base"
               >
                 Quick Links
               </Link>
               <Link
-                href="/products"
+                to="/products"
                 className="font-medium text-[#8d8d8d] font-redhat text-base"
               >
                 Products
               </Link>
               <Link
-                href="/products"
+                to="/products"
                 className="font-medium text-[#8d8d8d] font-redhat text-base"
               >
                 Use Cases
               </Link>
               <Link
-                href="/blog"
+                to="/blog"
                 className="font-medium text-[#8d8d8d] font-redhat text-base"
               >
                 Blog
               </Link>
               <Link
-                href="/about-us"
+                to="/about-us"
                 className="font-medium text-[#8d8d8d] font-redhat text-base"
               >
                 About Us
@@ -72,25 +72,25 @@ const Footer = () => {
             </div>
             <div className="flex flex-col gap-y-8">
               <Link
-                href="/contact"
+                to="/contact"
                 className="font-medium text-white font-redhat text-base"
               >
                 Contact Us
               </Link>
               <Link
-                href="/support-portal"
+                to="/support-portal"
                 className="font-medium text-[#8d8d8d] font-redhat text-base"
               >
                 Support Portal
               </Link>
               <Link
-                href="/live-chat"
+                to="/live-chat"
                 className="font-medium text-[#8d8d8d] font-redhat text-base"
               >
                 Live Chat
               </Link>
               <Link
-                href="/partner"
+                to="/partner"
                 className="font-medium text-[#8d8d8d] font-redhat text-base"
               >
                 Partner
@@ -111,10 +111,10 @@ const Footer = () => {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-5 text-white">
-            <Link href="/terms-of-service" className="font-normal text-base ">
+            <Link to="/terms-of-service" className="font-normal text-base ">
               Terms of Service
             </Link>
-            <Link href="/privacy-policy" className="font-normal text-base ">
+            <Link to="/privacy-policy" className="font-normal text-base ">
               Privacy Policy
             </Link>
           </div>
