@@ -64,8 +64,8 @@ const ChooseChallenges = () => {
           Trade Forex, Indices, Metals & Crypto
         </p>
 
-        <div className="mt-4 flex flex-wrap gap-y-2 justify-between items-start">
-          <div className="flex mx-auto lg:mx-[0px] gap-x-3">
+        <div className="mt-4 flex flex-wrap gap-y-2 justify-center xl:justify-between items-start">
+          <div className="flex gap-x-3">
             <button className="bg-[#2a80b3] font-redhat text-sm sm:text-[20px] text-white px-4 py-[10px] sm:px-6 sm:py-[14px] rounded-full shadow-lg font-normal hover:opacity-90 transition">
               1 Step
             </button>
@@ -109,7 +109,7 @@ const ChooseChallenges = () => {
       </div>
 
       {/* Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
         {challenges.map((challenge, index) => (
           <div
             key={index}
