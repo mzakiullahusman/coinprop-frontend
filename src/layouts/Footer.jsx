@@ -103,7 +103,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <hr class="border-t border-white border-opacity-10 my-4" />
+        <hr className="border-t border-white border-opacity-10 my-4" />
 
         <div className="flex flex-col md:flex-row items-center gap-y-4 justify-between">
           <div className="text-white font-normal font-redhat text-[20px]">
