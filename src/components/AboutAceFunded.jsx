@@ -65,7 +65,7 @@ const AboutAceFunded = () => {
             About Us
           </div>
 
-          <div className="text-[32px] tracking-[-1px] xl:tracking-[-4px] xl:leading-[100px] text-white  lg:text-[60px] xl:text-[84px] font-redhat font-medium">
+          <div className="text-[32px] tracking-[-1px] xl:tracking-[-4px] text-center xl:leading-[100px] text-white  lg:text-[60px] xl:text-[84px] font-redhat font-medium">
             About Ace Funded
           </div>
         </div>

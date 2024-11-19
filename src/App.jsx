@@ -6,14 +6,14 @@ import FAQ from "./pages/FAQ";
 // import Contact from '../pages/Contact';
 // import MainLayout from '../layouts/MainLayout';
 import "./App.css";
-// import Header from "./layouts/Header";
+import Header from "./layouts/Header";
 import Footer from "./layouts/Footer";
 
 const App = () => {
   return (
     <Router>
       {/* <MainLayout> */}
-      {/* <Header /> */}
+      <Header />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/how-it-works" element={<HowItWorks />} />
