@@ -65,21 +65,21 @@ const ChooseChallenges = () => {
         </p>
 
         <div className="mt-4 flex flex-wrap gap-y-2 justify-between items-start">
-          <div className="flex gap-x-3">
-            <button className="bg-[#2a80b3] font-redhat text-[20px] text-white px-6 py-[14px] rounded-full shadow-lg font-normal hover:opacity-90 transition">
+          <div className="flex mx-auto lg:mx-[0px] gap-x-3">
+            <button className="bg-[#2a80b3] font-redhat text-sm sm:text-[20px] text-white px-4 py-[10px] sm:px-6 sm:py-[14px] rounded-full shadow-lg font-normal hover:opacity-90 transition">
               1 Step
             </button>
-            <button className="bg-transparent border-white border-opacity-20 border font-redhat text-[20px] text-white px-6 py-[14px] rounded-full shadow-lg font-normal hover:opacity-90 transition">
+            <button className="bg-transparent border-white border-opacity-20 border font-redhat text-sm sm:text-[20px] text-white px-4 py-[10px] sm:px-6 sm:py-[14px] rounded-full shadow-lg font-normal hover:opacity-90 transition">
               2 Step
             </button>
-            <button className="bg-transparent border-white border-opacity-20 border font-redhat text-[20px] text-white px-6 py-[14px] rounded-full shadow-lg font-normal hover:opacity-90 transition">
+            <button className="bg-transparent border-white border-opacity-20 border font-redhat text-sm sm:text-[20px] text-white px-4 py-[10px] sm:px-6 sm:py-[14px] rounded-full shadow-lg font-normal hover:opacity-90 transition">
               3 Step
             </button>
-            <button className="bg-transparent border-white border-opacity-20 border font-redhat text-[20px] text-white px-6 py-[14px] rounded-full shadow-lg font-normal hover:opacity-90 transition">
+            <button className="bg-transparent border-white border-opacity-20 border font-redhat text-sm sm:text-[20px] text-white px-4 py-[10px] sm:px-6 sm:py-[14px] rounded-full shadow-lg font-normal hover:opacity-90 transition">
               Funded
             </button>
           </div>
-          <div className="flex gap-6 p-4 bg-[#020621] text-white justify-center items-center">
+          <div className="flex flex-wrap sm:flex-nowrap gap-6 p-4  text-white justify-center items-center">
             {options.map((option, index) => (
               <label
                 key={index}

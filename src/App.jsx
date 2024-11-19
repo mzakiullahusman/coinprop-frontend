@@ -6,7 +6,8 @@ import FAQ from "./pages/FAQ";
 // import Contact from '../pages/Contact';
 // import MainLayout from '../layouts/MainLayout';
 import "./App.css";
-import Header from "./layouts/Header";
+// import Header from "./layouts/Header";
+import Footer from "./layouts/Footer";
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/faq" element={<FAQ />} />
       </Routes>
+      <Footer />
       {/* </MainLayout> */}
     </Router>
   );
