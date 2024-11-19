@@ -131,17 +131,18 @@ const Dive = () => {
                 </div>
               </div>
 
-              <div className="flex justify-between mt-2 items-center bg-[#020621] p-4 rounded-lg">
-                <div className="flex flex-col">
-                  <div className=" text-white font-inter text-lg  font-semibold">
-                    Bitcoin
-                  </div>
-                  <div className="flex items-center text-base">
-                    <span className="text-lg text-[#2A80B3] font-semibold">
-                      $38,795
-                    </span>
-                    <span className=" text-white mx-2">|</span>
-                    <span className="text-lg text-[#2A80B3]">-2.3%</span>
+              <div className="flex justify-between mt-2 items-center rounded-lg">
+                <div className="flex gap-4 items-center ">
+                  <div className="border-l rounded-r-lg border-2 border-[#f2f2f7] h-11 "></div>
+                  <div className="flex flex-col">
+                    <div className=" text-white font-inter text-lg  font-semibold">
+                      Bitcoin
+                    </div>
+                    <div className="flex items-center gap-x-2 text-xs text-[#2A80B3] font-inter">
+                      <span className="font-semibold">$38,795</span>
+                      <div className="border border-[#f2f2f7] h-3"></div>
+                      <span className="font-light">-2.3%</span>
+                    </div>
                   </div>
                 </div>
 
