@@ -5,6 +5,7 @@ import Footer1 from "../assets/Icons/Footer1.svg";
 import Footer2 from "../assets/Icons/Footer2.svg";
 import Footer3 from "../assets/Icons/Footer3.svg";
 import Footer4 from "../assets/Icons/Footer4.svg";
+import LineArrowIcon from "../assets/Icons/LineArrowIcon.svg";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
@@ -25,9 +26,9 @@ const Footer = () => {
         <div className="flex flex-col gap-y-8 xl:flex-row justify-between items-start">
           <div className="flex flex-col items-start gap-y-6 ">
             <img src={Logo} alt="Logo" />
-            <div className="font-redhat text-base font-normal text-[#8d8d8d]">
-              It is a long established fact that a reader will be distracted by
-              the readable content
+            <div className="font-redhat 2xl:w-full text-base font-normal text-[#8d8d8d]">
+              It is a long established fact that a reader will be
+              <br /> distracted by the readable content
             </div>
             <div className="flex items-center gap-4">
               {footerIcons.map((icon, index) => (
@@ -100,6 +101,18 @@ const Footer = () => {
           <div className="flex flex-col gap-y-3">
             <div className="text-[32px] font-redhat lg:text-[44px] font-medium text-white">
               Join the Community
+            </div>
+            <div className="flex items-center border-2 border-opacity-20 border-white bg-transparent p-1 rounded-full shadow-lg">
+              <input
+                type="text"
+                placeholder="Enter Your Email"
+                className="flex-1 bg-transparent text-white font-redhat font-normal text-sm placeholder-gray-400 outline-none px-4 py-2 rounded-full"
+              />
+
+              <button className="flex gap-x-2 items-center font-redhat text-base  text-white px-4 py-2 rounded-full shadow-gray-600 shadow-[inset_0px_0px_20px_rgba(255,255,255,0.04)] hover:opacity-90 transition">
+                Submit
+                <img src={LineArrowIcon} alt="Line Arrow" />
+              </button>
             </div>
           </div>
         </div>
