@@ -20,11 +20,6 @@ const Header = () => {
         backgroundImage: `url(${HeaderBg})`,
       }}
     >
-      {/* Logo */}
-      {/* <div className="hidden md:block mb-4 md:mb-0">
-        <img src={Logo} alt="Logo" className="h-12 w-12" />
-      </div> */}
-
       <div className="flex justify-between items-center w-full md:w-auto">
         <img src={Logo} alt="Logo" className="h-12 w-12" />
 
@@ -36,9 +31,7 @@ const Header = () => {
         </button>
       </div>
 
-      {/* Center Navigation Links */}
-
-      <div className="hidden md:flex gap-y-4 md:gap-y-0 gap-x-6 text-center md:text-left">
+      <div className="hidden md:flex gap-y-4 md:gap-y-0 gap-x-6 lg:gap-x-10 xl:gap-x-12 text-center md:text-left">
         {navLinks.map((link, index) => (
           <Link
             key={index}

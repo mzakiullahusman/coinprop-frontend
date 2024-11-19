@@ -1,5 +1,6 @@
 import React from "react";
 import BgImage from "../assets/Images/BgImage.png";
+import DiscordCommunity from "../components/DiscordCommunity";
 
 const TermsOfService = () => {
   const contentData = [
@@ -42,6 +43,7 @@ const TermsOfService = () => {
           ))}
         </div>
       </div>
+      <DiscordCommunity />
     </>
   );
 };
