@@ -13,6 +13,7 @@ import ArrowIcon4 from "../assets/Icons/ArrowIcon4.svg";
 import ArrowPlusIcon from "../assets/Icons/ArrowPlusIcon.svg";
 import ArrowRightIcon from "../assets/Icons/ArrowRightIcon.svg";
 import TickIconLg from "../assets/Icons/TickIconLg.svg";
+import Graph from "../assets/Icons/Graph.svg";
 const Dive = () => {
   const tickList = [
     { text: "Up To $400,000 Starting Capital" },
@@ -71,7 +72,7 @@ const Dive = () => {
           </div>
         </div>
         <div className="w-full flex gap-x-3 items-start lg:w-1/2">
-          <div className="border-2 w-[30%] md:w-[15%] px-5 flex flex-col gap-y-9 p-8 border-white border-opacity-20 rounded-[16px]">
+          <div className="border-2 w-[30%] md:w-[15%] px-5 flex flex-col gap-y-8 p-8 border-white border-opacity-20 rounded-[16px]">
             <div className="font-redhat font-light text-base text-white lg:text-[26px] text-center">
               Tools
             </div>
@@ -127,6 +128,26 @@ const Dive = () => {
                   <button className="font-medium text-xs font-inter bg-white bg-opacity-20 py-1 px-[9px] rounded-[20px] text-white">
                     All
                   </button>
+                </div>
+              </div>
+
+              <div className="flex justify-between mt-2 items-center bg-[#020621] p-4 rounded-lg">
+                <div className="flex flex-col">
+                  <div className=" text-white font-inter text-lg  font-semibold">
+                    Bitcoin
+                  </div>
+                  <div className="flex items-center text-base">
+                    <span className="text-lg text-[#2A80B3] font-semibold">
+                      $38,795
+                    </span>
+                    <span className=" text-white mx-2">|</span>
+                    <span className="text-lg text-[#2A80B3]">-2.3%</span>
+                  </div>
+                </div>
+
+                {/* Right Section (Graph) */}
+                <div>
+                  <img src={Graph} alt="Graph" />
                 </div>
               </div>
             </div>
