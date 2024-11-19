@@ -1,6 +1,6 @@
 import React from "react";
 import BgImage from "../assets/Images/BgImage.png";
-
+import PlusIcon from "../assets/Icons/PlusIcon.svg";
 import Icon1 from "../assets/Icons/Icon1.svg";
 import Icon2 from "../assets/Icons/Icon2.svg";
 import Icon3 from "../assets/Icons/Icon3.svg";
@@ -37,6 +37,17 @@ const FAQFunded = () => {
         {diveIcons.map((icon, index) => (
           <div key={index} className="flex items-center justify-center">
             <img src={icon.src} alt={icon.alt} />
+          </div>
+        ))}
+      </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 px-8 lg:px-20 gap-6 p-6 bg-[#020621]">
+        {Array.from({ length: 12 }).map((_, index) => (
+          <div
+            key={index}
+            className="border flex justify-between items-center text-white border-[#2a80b3] rounded-[8px] font-redhat text-base lg:text-[18px] font-normal p-6 bg-[#081b3a] hover:shadow-lg transition-shadow"
+          >
+            <span>What happens if you lose money in a prop firm?</span>
+            <img src={PlusIcon} alt="Plus Icon" className="h-6 w-6" />
           </div>
         ))}
       </div>
