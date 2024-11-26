@@ -4,7 +4,7 @@ import Target from "../assets/Icons/Target.svg";
 import Sparkle from "../assets/Icons/Sparkle.svg";
 import ListChecks from "../assets/Icons/ListChecks.svg";
 import CursorClick from "../assets/Icons/CursorClick.svg";
-import SupportIcon from "../assets/Icons/SupportIcon.svg";
+// import SupportIcon from "../assets/Icons/SupportIcon.svg";
 import ChartLine from "../assets/Icons/Chartline.svg";
 import Icon1 from "../assets/Icons/Icon1.svg";
 import Icon2 from "../assets/Icons/Icon2.svg";
@@ -23,11 +23,11 @@ const AboutAceFunded = () => {
       title: "Smart Keyword Generator",
       description: "Automatic suggestions and the best keywords to target.",
     },
-    {
-      icon: SupportIcon,
-      title: "Automated alerts",
-      description: "Automatic notifications about your SEO health.",
-    },
+    // {
+    //   icon: SupportIcon,
+    //   title: "Automated alerts",
+    //   description: "Automatic notifications about your SEO health.",
+    // },
     {
       icon: ListChecks,
       title: "Content evaluation",

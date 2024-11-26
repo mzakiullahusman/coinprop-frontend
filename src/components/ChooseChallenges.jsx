@@ -53,61 +53,6 @@ const ChooseChallenges = () => {
 
   return (
     <div className="bg-[#0a0d2c] py-12 px-4 md:px-12">
-      <div className="text-center text-white mb-10">
-        <div className="border-white border inline-block border-opacity-20 text-white rounded-full px-3 py-1 font-normal font-redhat text-base">
-          Challenges
-        </div>
-        <h2 className="text-3xl md:text-5xl font-semibold mt-4">
-          Choose Your Challenge
-        </h2>
-        <p className="text-lg md:text-xl mt-4">
-          Trade Forex, Indices, Metals & Crypto
-        </p>
-
-        <div className="mt-4 flex flex-wrap gap-y-2 justify-center xl:justify-between items-start">
-          <div className="flex gap-x-3">
-            <button className="bg-[#2a80b3] font-redhat text-sm sm:text-[20px] text-white px-4 py-[10px] sm:px-6 sm:py-[14px] rounded-full shadow-lg font-normal hover:opacity-90 transition">
-              1 Step
-            </button>
-            <button className="bg-transparent border-white border-opacity-20 border font-redhat text-sm sm:text-[20px] text-white px-4 py-[10px] sm:px-6 sm:py-[14px] rounded-full shadow-lg font-normal hover:opacity-90 transition">
-              2 Step
-            </button>
-            <button className="bg-transparent border-white border-opacity-20 border font-redhat text-sm sm:text-[20px] text-white px-4 py-[10px] sm:px-6 sm:py-[14px] rounded-full shadow-lg font-normal hover:opacity-90 transition">
-              3 Step
-            </button>
-            <button className="bg-transparent border-white border-opacity-20 border font-redhat text-sm sm:text-[20px] text-white px-4 py-[10px] sm:px-6 sm:py-[14px] rounded-full shadow-lg font-normal hover:opacity-90 transition">
-              Funded
-            </button>
-          </div>
-          <div className="flex flex-wrap sm:flex-nowrap gap-6 p-4  text-white justify-center items-center">
-            {options.map((option, index) => (
-              <label
-                key={index}
-                className={`flex items-center font-redhat text-[20px] cursor-pointer font-normal gap-2 ${
-                  selectedValue === option ? "text-[#2a80b3]" : "text-gray-400"
-                }`}
-              >
-                <input
-                  type="radio"
-                  value={option}
-                  checked={selectedValue === option}
-                  onChange={() => setSelectedValue(option)}
-                  className="hidden"
-                />
-                <span
-                  className={`w-4 h-4 rounded-full border-2 ${
-                    selectedValue === option
-                      ? "bg-[#2a80b3] border-[#2a80b3]"
-                      : "border-gray-400"
-                  }`}
-                ></span>
-                {option}
-              </label>
-            ))}
-          </div>
-        </div>
-      </div>
-
       {/* Cards */}
       <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
         {challenges.map((challenge, index) => (

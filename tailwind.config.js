@@ -3,6 +3,9 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      backdropBlur: {
+        custom: "50px",
+      },
       fontFamily: {
         redhat: ["Red Hat Display", "sans-serif"],
         outfit: ["Outfit", "sans-serif"],
