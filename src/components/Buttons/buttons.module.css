@@ -1,0 +1,76 @@
+.borderGradient {
+  position: relative;
+  padding: 24px;
+  border-radius: 8px;
+}
+
+.borderGradient::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: inherit;
+  border: 1px solid transparent;
+  background: linear-gradient(
+    69.96deg,
+    #d974f3 13.36%,
+    #3154d1 53.35%,
+    #0500f7 71.76%
+  );
+  mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+  z-index: -1;
+}
+
+/* Green variant  */
+.borderGradientAlt {
+  position: relative;
+  padding: 12px;
+  border-radius: 8px;
+}
+
+.borderGradientAlt::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: inherit;
+  border: 1px solid transparent;
+  background: linear-gradient(
+    90deg,
+    #5ddb71 0%,
+    #00c07b 20.49%,
+    #00c07b 80.41%,
+    #5ddb71 98.33%
+  );
+  mask-composite: exclude;
+  mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  z-index: -1;
+}
+
+.borderBrandColor {
+  border: 1px solid #d974f3;
+}
+
+.borderPlain {
+  border: 1px solid #fff;
+}
+
+.gradientBg {
+  background: linear-gradient(
+      133deg,
+      #6746e1 11.53%,
+      #1e84a6 61.6%,
+      #078e9b 79.3%,
+      #10afbe 95.94%
+    ),
+    linear-gradient(70deg, #7131d1 25.11%, #d974f3 84.67%, #7131d1 96.92%);
+}

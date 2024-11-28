@@ -1,0 +1,228 @@
+.borderGradient {
+  position: relative;
+  padding: 24px;
+  border-radius: 8px;
+}
+
+.borderGradient::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: inherit;
+  border: 1px solid transparent;
+  background: linear-gradient(
+    69.96deg,
+    #d974f3 13.36%,
+    #3154d1 53.35%,
+    #0500f7 71.76%
+  );
+  mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+  z-index: -1;
+}
+
+.borderGradientAlt {
+  position: relative;
+  padding: 12px;
+  border-radius: 8px;
+}
+
+.borderGradientAlt::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: inherit;
+  border: 1px solid transparent;
+  background: linear-gradient(
+    90deg,
+    #5ddb71 0%,
+    #00c07b 20.49%,
+    #00c07b 80.41%,
+    #5ddb71 98.33%
+  );
+  mask-composite: exclude;
+  mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  z-index: -1;
+}
+
+.borderBrandColor {
+  border: 1px solid #b35bf5;
+}
+
+.borderPlain {
+  border: 1px solid #3d4054;
+}
+
+.gradientBg {
+  background: linear-gradient(133deg, #6746e1 11.53%, #d974f3 95.94%),
+    linear-gradient(70deg, #7131d1 25.11%, #d974f3 84.67%, #7131d1 96.92%);
+}
+
+.tradingHistoryCard {
+  display: flex;
+  background: #0c1029;
+  padding: 24px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 38px;
+  border-radius: 12px;
+}
+
+.htmlContentContainer {
+  width: 100%;
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.orderSummaryCard {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  border-radius: 12px;
+  background: linear-gradient(
+      0deg,
+      rgba(23, 21, 27, 0.7) 0%,
+      rgba(23, 21, 27, 0.7) 100%
+    ),
+    rgba(21, 27, 25, 0.7);
+  backdrop-filter: blur(20px);
+  padding: 24px;
+  gap: 35px;
+}
+
+.pricingCard {
+  position: relative;
+  display: flex;
+  border-radius: 12px;
+  background: linear-gradient(
+      0deg,
+      rgba(23, 21, 27, 0.7) 0%,
+      rgba(23, 21, 27, 0.7) 100%
+    ),
+    rgba(21, 27, 25, 0.7);
+
+  backdrop-filter: blur(20px);
+  padding: 24px;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.highestWithdrawalCard {
+  display: flex;
+  border-radius: 12px;
+  background: linear-gradient(
+      0deg,
+      rgba(23, 21, 27, 0.7) 0%,
+      rgba(23, 21, 27, 0.7) 100%
+    ),
+    rgba(21, 27, 25, 0.7);
+
+  backdrop-filter: blur(20px);
+  padding: 24px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+}
+
+.bestTradeCard {
+  display: flex;
+  border-radius: 12px;
+  background: rgba(21, 25, 27, 0.7);
+  backdrop-filter: blur(20px);
+  padding: 24px;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  gap: 24px;
+}
+
+.competitionCard {
+  display: flex;
+  border-radius: 12px;
+  background: rgba(21, 25, 27, 0.7);
+  backdrop-filter: blur(20px);
+  padding: 24px;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  gap: 32px;
+}
+
+.newsCard {
+  position: relative;
+  min-height: 286px;
+  border-radius: 8px;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 14px;
+  overflow: hidden;
+  background-color: lightgray;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    0deg,
+    rgba(2, 23, 16, 0.7) 0%,
+    rgba(2, 23, 16, 0.7) 100%
+  );
+  z-index: 1;
+  pointer-events: none;
+}
+
+.newsCardImage {
+  position: relative;
+  z-index: 2;
+}
+
+.title {
+  position: relative;
+  z-index: 2;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* Screen sizes <= 768 */
+
+@media (max-width: 767px) {
+  .tradingHistoryCard {
+    padding: 12px;
+  }
+  .orderSummaryCard {
+    padding: 12px;
+  }
+  .pricingCard {
+    padding: 12px;
+  }
+  .highestWithdrawalCard {
+    padding: 12px;
+  }
+  .bestTradeCard {
+    padding: 12px;
+  }
+  .competitionCard {
+    padding: 12px;
+  }
+}
