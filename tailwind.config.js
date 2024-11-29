@@ -4,9 +4,13 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        "poppins": ["Poppins"],
-        lexend: ["Lexend", "sans-serif"],
-        turret: ["Turret Road", "sans-serif"],
+        // "poppins": ["Poppins"],
+        // lexend: ["Lexend", "sans-serif"],
+        // turret: ["Turret Road", "sans-serif"],
+
+        outfit: ["Outfit", "sans-serif"],
+        poppins: ["Poppins", "sans-serif"],
+        inter: ["Inter", "sans-serif"],
       },
       screens: {
         "3xl": "1600px",
@@ -17,7 +21,7 @@ export default {
         "custom-color": "#01FF9D",
       },
       colors: {
-        "sidebar": "#182230",
+        sidebar: "#182230",
         "custom-gradient": "linear-gradient(to right, #00FC9E, #1C7EF0)",
       },
       backgroundImage: {
@@ -29,15 +33,15 @@ export default {
   plugins: [
     function ({ addUtilities }) {
       const newUtilities = {
-        '.text-gradient-color': {
-          'background-image': 'linear-gradient(to right, #00FC9E, #1C7EF0)',
-          '-webkit-background-clip': 'text',
-          '-webkit-text-fill-color': 'transparent',
-          'background-clip': 'text',
-          'color': 'transparent'
-        }
-      }
-      addUtilities(newUtilities)
-    }
+        ".text-gradient-color": {
+          "background-image": "linear-gradient(to right, #00FC9E, #1C7EF0)",
+          "-webkit-background-clip": "text",
+          "-webkit-text-fill-color": "transparent",
+          "background-clip": "text",
+          color: "transparent",
+        },
+      };
+      addUtilities(newUtilities);
+    },
   ],
 };
