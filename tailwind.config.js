@@ -21,8 +21,9 @@ export default {
         "custom-color": "#01FF9D",
       },
       colors: {
-        sidebar: "#182230",
+        "sidebar": "#182230",
         "custom-gradient": "linear-gradient(to right, #00FC9E, #1C7EF0)",
+        "custom-cyan": "#01FF9D",
       },
       backgroundImage: {
         "gradient-text": "linear-gradient(to right, #00FC9E, #1C7EF0)",

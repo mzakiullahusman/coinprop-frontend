@@ -2,8 +2,8 @@ import Header from "./Header";
 import Sidebar from "./Sidebar";
 
 import DashboardIcon from "../assets/DashboardIcon";
+import AccountIcon from "../assets/AccountIcon";
 import TradingAccountIcon from "../assets/TradingAccountIcon";
-import LeaderboardIcon from "../assets/LeaderboardIcon";
 import FaqIcon from "../assets/FaqIcon";
 import CompetitionIcon from "../assets/CompetitionIcon";
 import AffiliateIcon from "../assets/AffiliateIcon";
@@ -28,46 +28,46 @@ const Layout = ({ children }) => {
       name: "Performance Stats",
       icon: <DashboardIcon />,
     },
-    {
-      id: 2,
-      path: "/trading-account",
-      name: "Trading Terminal",
-      icon: <TradingAccountIcon />,
-    },
+    // {
+    //   id: 2,
+    //   path: "/trading-account",
+    //   name: "Trading Terminal",
+    //   icon: <TradingAccountIcon />,
+    // },
     {
       id: 3,
-      path: "/leaderboard",
-      name: "Leaderboard",
-      icon: <LeaderboardIcon />,
+      path: "/accounts",
+      name: "Account",
+      icon: <AccountIcon />,
     },
-    // {
-    //   id: 4,
-    //   path: "/competitions",
-    //   name: "Competitions",
-    //   icon: <CompetitionIcon />,
-    // },
+    {
+      id: 4,
+      path: "/competitions",
+      name: "Competitions",
+      icon: <CompetitionIcon />,
+    },
     {
       id: 5,
       path: "/affiliate-portal",
       name: "Affiliate Portal",
       icon: <AffiliateIcon />,
     },
-    {
-      id: 6,
-      path: "/certificates",
-      name: "Certificates",
-      icon: <CertificateIcon />,
-    },
-    {
-      id: 7,
-      path: "/profit-and-share",
-      name: "Profit and Share",
-      icon: <ProfitAndShareIcon />,
-    },
+    // {
+    //   id: 6,
+    //   path: "/certificates",
+    //   name: "Certificates",
+    //   icon: <CertificateIcon />,
+    // },
+    // {
+    //   id: 7,
+    //   path: "/profit-and-share",
+    //   name: "Profit and Share",
+    //   icon: <ProfitAndShareIcon />,
+    // },
     {
       id: 8,
       path: "/billing-and-accounts",
-      name: "Billing and Accounts",
+      name: "Billing",
       icon: <BillingAndAccountsIcon />,
     },
     {
@@ -91,7 +91,7 @@ const Layout = ({ children }) => {
     {
       id: 10,
       path: "/faqs",
-      name: "FAQs",
+      name: "Help",
       icon: <FaqIcon />,
     },
   ];

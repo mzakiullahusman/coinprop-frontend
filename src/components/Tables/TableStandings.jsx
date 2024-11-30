@@ -29,7 +29,7 @@ const TableStandings = ({
         <table className="w-full text-left min-w-max">
           <thead className="bg-[#2A80B3] text-[12px] sm:text-[5px] md:text-[12px] lg:text-[14px]">
             <tr>
-              <th className="p-2 lg:p-4 md:p-3 sm:p-1">Rank</th>
+              <th className="p-2 lg:p-4 md:p-3 sm:p-1">Pe</th>
               <th className="p-2 lg:p-4 md:p-3 sm:p-1">Name</th>
               <th className="p-2 lg:p-4 md:p-3 sm:p-1">Profit</th>
               <th className="p-2 lg:p-4 md:p-3 sm:p-1">Account Size</th>

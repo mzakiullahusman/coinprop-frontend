@@ -211,11 +211,11 @@ const AffiliatesPortal = () => {
             body={affiliateData.allTime.referrals}
             isPlainBorder={true}
           />
-          <BasicInfoCard 
-            title="Visits" 
+          <BasicInfoCard
+            title="Visits"
             body={affiliateData.allTime.visits}
             isPlainBorder={true}
-            />
+          />
           <BasicInfoCard
             title="Conversion Rate"
             body={`${affiliateData.allTime.conversionRate}%`}
@@ -250,7 +250,7 @@ const AffiliatesPortal = () => {
         </div>
       </div>
       {/* Clients Referred Table */}
-      <PageHeader title="Clients Referred" />
+      {/* <PageHeader title="Clients Referred" />
       {errorClients || clientsReferred.length === 0 ? (
         <TableNoData emptyMessage={"No clients referred"} />
       ) : (
@@ -261,7 +261,7 @@ const AffiliatesPortal = () => {
         />
       )}
       {/* Display Payout Requests Table */}
-      <PageHeader title="Payout Requests" />
+      {/* <PageHeader title="Payout Requests" />
       {errorPayouts || payoutRequests.length === 0 ? (
         <TableNoData emptyMessage={"No payout requests"} />
       ) : (
@@ -269,8 +269,8 @@ const AffiliatesPortal = () => {
           rows={payoutRequests}
           columns={columnsPayout}
           height="auto"
-        />
-      )}
+        /> 
+      )} */}
     </div>
   );
 };

@@ -38,7 +38,7 @@ import CustomerSupport from "./pages/CustomerSupport";
 import Faqs from "./pages/Faqs";
 import Profile from "./pages/Profile";
 import AccountSecurity from "./pages/Profile/AccountSecurity";
-
+import Account from "./pages/Account";
 // components
 import Layout from "./components/Layout";
 import "./App.css";
@@ -83,7 +83,7 @@ function App() {
                   element={<NewChallengeCheckout />}
                 />
                 <Route path="/news-calendar" element={<NewsCalendar />} />
-                <Route path="/leaderboard" element={<Leaderboard />} />
+                <Route path="/accounts" element={<Account />} />
                 <Route path="/competitions" element={<Competitions />} />
                 <Route
                   path="/competition-standings"

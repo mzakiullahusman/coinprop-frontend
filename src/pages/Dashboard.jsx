@@ -198,7 +198,7 @@ const Dashboard = () => {
           />
           <div
             id="charts"
-            className="flex flex-wrap lg:flex-nowrap gap-4 w-full justify-center"
+            className="flex flex-wrap lg:flex-nowrap gap-4 w-full justify-center bg-sidebar"
           >
             <DoubleLineAreaChart
               balanceEquityData={balanceEquityData}
