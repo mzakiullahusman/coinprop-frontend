@@ -16,6 +16,8 @@ import Benefits from "../components/Benefits";
 import ChallengeButtons from "../components/ChallengeButtons";
 import Money from "../components/Money";
 import RMT from "../components/RMT";
+import TalkingAbout from "@components/TalkingAbout";
+import FAQComponent from "@components/FAQComponent";
 
 const Home = () => {
   const features = [
@@ -107,6 +109,9 @@ const Home = () => {
       <WithDrawalSection />
 
       <RMT />
+
+      <TalkingAbout />
+      <FAQComponent />
 
       <AceFundedTrader />
     </div>
