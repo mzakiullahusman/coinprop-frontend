@@ -6,8 +6,8 @@
 <path id="Vector_4" d="M65.1892 36.7215C65.1892 36.9838 65.1892 37.2448 65.1892 37.5071C65.1905 43.6412 65.1931 49.7752 65.1931 55.908C65.1931 56.9119 65.1294 56.9745 64.1799 56.9785C62.0389 56.9865 59.8967 56.9972 57.7557 56.9998C56.8973 56.9998 56.7373 56.8347 56.7373 55.9506C56.7412 52.5847 56.7555 49.2187 56.749 45.8541C56.7477 45.1644 56.9766 44.6451 57.467 44.1591C59.7042 41.9409 61.9089 39.6893 64.1291 37.4538C64.414 37.1675 64.7196 36.9012 65.0149 36.627C65.0734 36.6589 65.132 36.6909 65.1905 36.7228L65.1892 36.7215Z" fill="white"/>
 </g>
 <defs>
-<filter id="filter0_di_2001_3872" x="0.00292969" y="0" width="113.994" height="70" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<filter id="filter0_di_2001_3872" x="0.00292969" y="0" width="113.994" height="70" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+<feFlood floodOpacity="0" result="BackgroundImageFix"/>
 <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
 <feOffset/>
 <feGaussianBlur stdDeviation="6.5"/>

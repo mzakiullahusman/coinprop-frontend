@@ -24,7 +24,7 @@ const TextMain = ({ text, title, description, index, textStyling }) => {
           Frequently Asked <span className="text-[#01ff9d]">Questions?</span>
         </div>
       ) : (
-        <div className="text-[28px] text-white lg:text-[50px] xl:text-[44px] font-poppins font-semibold">
+        <div className="text-[28px] text-white lg:text-[44px] font-poppins font-semibold">
           {title}
         </div>
       )}

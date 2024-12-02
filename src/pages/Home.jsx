@@ -18,6 +18,7 @@ import Money from "../components/Money";
 import RMT from "../components/RMT";
 import TalkingAbout from "@components/TalkingAbout";
 import FAQComponent from "@components/FAQComponent";
+import Testimonial from "@components/Testimonial";
 
 const Home = () => {
   const features = [
@@ -109,9 +110,11 @@ const Home = () => {
       <WithDrawalSection />
 
       <RMT />
-
-      <TalkingAbout />
-      <FAQComponent />
+      <Testimonial />
+      <div className="bg-white bg-opacity-[2%] border-white border rounded-[44px] border-opacity-20 m-4 md:m-8 xl:m-20 px-4 xl:px-10 py-5 xl:py-12">
+        <TalkingAbout />
+        <FAQComponent />
+      </div>
 
       <AceFundedTrader />
     </div>

@@ -1,15 +1,13 @@
 import React from "react";
 import Streric from "@assets/icons/Steric.svg";
 import Quote from "@assets/icons/quote.svg";
-
-import ArrowLeft from "@assets/icons/ArrowLeft.svg";
-
-import ArrowRight from "@assets/icons/ArrowRight.svg";
+import ArrowLeft from "../components/ArrowLeft";
+import ArrowRight from "../components/ArrowRight";
 import TalkingAboutBgImg from "@assets/images/TalkingAboutBgImg.png";
 
 const TalkingAbout = () => {
   return (
-    <div className="flex flex-col xl:flex-row bg-white bg-opacity-[2%] border-white gap-12 xl:gap-32 border rounded-[44px] border-opacity-20 justify-between items-center m-4 md:m-8 xl:m-20 px-4 xl:px-10 py-5 xl:py-20">
+    <div className="flex flex-col xl:flex-row gap-12 xl:gap-32 justify-between items-center">
       <div className="w-full lg:w-[45%] xl:w-[40%]">
         <div className="text-[28px] capitalize text-white lg:text-[50px] xl:text-[44px] font-poppins font-semibold">
           Who are talking <br /> about
@@ -55,10 +53,7 @@ const TalkingAbout = () => {
             src={TalkingAboutBgImg}
             alt="TalkingAboutBgImage"
           />
-          <div
-            style={{ zIndex: 999 }}
-            className="md:absolute md:top-14 md:left-[70px] z-1 border-2 border-white border-opacity-20 bg-white bg-opacity-5 p-10 rounded-[50px] backdrop-blur-[20px]"
-          >
+          <div className="md:absolute md:top-14 md:left-[70px] z-1 border-2 border-white border-opacity-20 bg-white bg-opacity-5 p-10 rounded-[50px] backdrop-blur-[20px]">
             <img className="mt-10" src={Quote} alt="Quote" />
             <div className="leading-[40px] text-justify font-poppins text-semibold text-xl lg:text-[26px] mt-9 text-white">
               I've been using the <br />
@@ -80,10 +75,10 @@ const TalkingAbout = () => {
               </div>
               <div className="flex items-center gap-4">
                 <button>
-                  <img src={ArrowLeft} alt="ArrowLeft" />
+                  <ArrowLeft />
                 </button>
                 <button>
-                  <img src={ArrowRight} alt="ArrowRight" />
+                  <ArrowRight />
                 </button>
               </div>
             </div>
