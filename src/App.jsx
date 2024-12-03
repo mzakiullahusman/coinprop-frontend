@@ -17,7 +17,7 @@ import Register from "./pages/authentication/Register";
 import Dashboard from "./pages/Dashboard";
 import TradingAccount from "./pages/TradingAccount";
 import Home from "./pages/Home";
-import HowItWorks from "./pages/HomeItWorks";
+import HowItWorks from "./pages/HowItWorks";
 import AboutUs from "./pages/AboutUs";
 import TermsOfService from "./pages/TermsOfService";
 import PrivacyPolicy from "./pages/PrivacyPolicy";

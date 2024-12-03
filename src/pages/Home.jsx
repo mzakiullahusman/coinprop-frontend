@@ -20,6 +20,13 @@ import TalkingAbout from "@components/TalkingAbout";
 import FAQComponent from "@components/FAQComponent";
 import Testimonial from "@components/Testimonial";
 
+import Target from "@assets/icons/Target.svg";
+import Sparkle from "@assets/icons/Sparkle.svg";
+import ListChecks from "@assets/icons/ListChecks.svg";
+import CursorClick from "@assets/icons/CursorClick.svg";
+import ChartLine from "@assets/icons/Chartline.svg";
+import Bell from "@assets/icons/Bell.svg";
+
 const Home = () => {
   const features = [
     {
@@ -54,6 +61,39 @@ const Home = () => {
     },
   ];
 
+  const aceFunded = [
+    {
+      icon: ChartLine,
+      title: "Visual reports",
+      description: "Visual insights into your site's performance.",
+    },
+    {
+      icon: Sparkle,
+      title: "Smart Keyword Generator",
+      description: "Automatic suggestions and the best keywords to target.",
+    },
+    {
+      icon: Bell,
+      title: "Automated alerts",
+      description: "Automatic notifications about your SEO health.",
+    },
+    {
+      icon: ListChecks,
+      title: "Content evaluation",
+      description: "Simple corrections for immediate improvements.",
+    },
+    {
+      icon: Target,
+      title: "Link Optimization Wizard",
+      description: "Guides you through the process of creating Links.",
+    },
+    {
+      icon: CursorClick,
+      title: "One-click optimization",
+      description: "Perform complex SEO audits and optimizations.",
+    },
+  ];
+
   return (
     <div className="bg-[#020621] ">
       <HomeFirst />
@@ -73,7 +113,7 @@ const Home = () => {
           title="How It Works"
           description="Our platform makes crypto investments simple and accessible for all users."
         />
-        <HowItWorks mainData={features} index={false} />
+        <HowItWorks mainData={features} />
       </div>
       <Money />
 
@@ -95,15 +135,16 @@ const Home = () => {
 
         <ChooseChallenges />
       </div>
+      <div className="mt-6">
+        <TextMain
+          text="Features"
+          title="Risk Master Trader Features"
+          description="Our platform makes crypto investments simple and accessible for all users."
+          index={true}
+        />
+      </div>
 
-      <TextMain
-        text="Features"
-        title="Risk Master Trader Features"
-        description="Our platform makes crypto investments simple and accessible for all users."
-        index={true}
-      />
-
-      <AboutAceFunded />
+      <AboutAceFunded data={aceFunded} />
 
       {/* </div> */}
 

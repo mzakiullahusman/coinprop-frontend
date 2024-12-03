@@ -30,7 +30,7 @@ const HomeFirst = () => {
         backgroundImage: `url(${BgImage})`,
       }}
     >
-      <div className="relative flex items-center justify-center px-4 py-2 rounded-full text-white font-poppins text-xs bg-[#1FD9AD] backdrop-blur-md shadow-[100px_4px_100px_rgba(31,217,173,0.5)] border border-white/10">
+      <div className="flex items-center justify-center px-4 py-2 rounded-full text-white font-poppins text-xs bg-[#1FD9AD] backdrop-blur-md shadow-[100px_4px_100px_rgba(31,217,173,0.5)] border border-white/10">
         <img src={ButtonIcon} alt="ButtonIcon" />
         Intelligent Solutions, Infinite Possibilities
       </div>

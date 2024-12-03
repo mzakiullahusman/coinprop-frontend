@@ -20,22 +20,28 @@ const TextMain = ({ text, title, description, index, textStyling }) => {
           </span>
         </div>
       ) : textStyling === "gradient" && text === "FAQs" ? (
-        <div className="text-[28px] capitalize text-white lg:text-[50px] xl:text-[44px] font-poppins font-semibold">
+        <div className="text-[28px] capitalize text-white text-center lg:text-[50px] xl:text-[44px] font-poppins font-semibold">
           Frequently Asked <span className="text-[#01ff9d]">Questions?</span>
         </div>
       ) : (
-        <div className="text-[28px] text-white lg:text-[44px] font-poppins font-semibold">
+        <div className="text-[28px] text-white lg:text-[44px] text-center font-poppins font-semibold">
           {title}
         </div>
       )}
 
-      <div
-        className={`text-base ${
-          textStyling === "gradient" ? "text-[#bababa]" : " text-white"
-        } lg:text-lg font-poppins font-light`}
-      >
-        {description}
-      </div>
+      {text === "Values" ? (
+        <div className="text-base px-3 md:px-20 xl:px-32 lg:text-lg font-poppins font-light text-center">
+          {description}
+        </div>
+      ) : (
+        <div
+          className={`text-base ${
+            textStyling === "gradient" ? "text-[#bababa]" : " text-white"
+          } lg:text-lg font-poppins font-light text-center px-3 md:px-20`}
+        >
+          {description}
+        </div>
+      )}
     </div>
   );
 };

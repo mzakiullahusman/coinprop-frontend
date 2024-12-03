@@ -5,7 +5,7 @@ import BlackArrowRight from "@assets/icons/BlackArrowRight.svg";
 const AceFundedTrader = () => {
   return (
     <div
-      className="bg-center bg-no-repeat"
+      className="bg-center bg-no-repeat "
       style={{
         backgroundImage: `url(${LastBgImage})`,
       }}
@@ -16,7 +16,7 @@ const AceFundedTrader = () => {
           <br /> Trader?
         </div>
 
-        <button className="uppercase bg-gradient-to-r from-[#00fc9e]  to-[#1c7ef0] text-black flex gap-x-3 items-center font-outfit mx-auto text-lg px-8 py-3 rounded-full font-normal hover:opacity-90 transition border-0">
+        <button className="uppercase bg-gradient-to-r from-[#00fc9e]  to-[#1c7ef0] text-black flex gap-x-3 items-center font-outfit mx-auto text-lg px-8 py-3 mt-6 lg:mt-[0px] rounded-full font-normal hover:opacity-90 transition border-0">
           Get Started Today
           <img src={BlackArrowRight} alt="Arrow" />
         </button>

@@ -19,13 +19,13 @@ const testimonials = [
   },
   {
     id: 3,
-    text: "This platform is amazing! It has revolutionized the way I trade and analyze markets.",
+    text: "Joined today, reviewed their website and it's been very refreshing to have some new features that no one has thought of after so long of being in the ..",
     author: "John Smith",
     icon: TestimonialIcon,
   },
   {
     id: 4,
-    text: "Great experience overall. The support team is very responsive and the features are intuitive.",
+    text: "Joined today, reviewed their website and it's been very refreshing to have some new features that no one has thought of after so long of being in the ..",
     author: "Alex Kim",
     icon: TestimonialIcon,
   },

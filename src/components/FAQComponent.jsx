@@ -63,7 +63,7 @@ const FAQComponent = () => {
                   {String(item.id).padStart(2, "0")}
                 </div>
                 <div className="flex flex-col gap-1 items-start">
-                  <div className="text-white text-start font-semibold text-lg lg:text-2xl">
+                  <div className="text-white text-center xl:text-start  font-semibold text-lg lg:text-2xl">
                     {item.title}
                   </div>
 
