@@ -16,7 +16,9 @@ import {
 import { Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import TableNoData from "../components/Tables/TableNoData";
-
+import AccountBalance from "@components/PerformanceStatsComponent/AccountBalance";
+import DailyAccountBalance from "@components/PerformanceStatsComponent/DailyAccountBalance";
+import GaugeCard from "@components/PerformanceStatsComponent/GaugeCard";
 // TODO: known issue: refresh required on login
 
 const Dashboard = () => {
@@ -194,8 +196,40 @@ const Dashboard = () => {
           <PageHeader
             title="Account Details"
             selectPlaceholder="Select Account"
-            isNovaTheme={true}
+            isNovaTheme={false}
           />
+          <AccountBalance />
+          <div className="rounded-lg flex justify-between space-x-6">
+            <div className="flex-1 rounded-lg shadow-lg bg-sidebar">
+              <GaugeCard
+                title="Avg. Winning Trade"
+                value={98}
+                minValue={29}
+                maxValue={123}
+                color="#FF4D4D" // Red for the gauge fill
+              />
+            </div>
+            <div className="flex-1 rounded-lg shadow-lg bg-sidebar">
+              <GaugeCard
+                title="Winning Trade %"
+                value={50}
+                minValue={29}
+                maxValue={123}
+                color="#01FF9D"
+              />
+            </div>
+            <div className="flex-1 rounded-lg shadow-lg bg-sidebar">
+              <GaugeCard
+                title="Avg. Losing Trade"
+                value={120}
+                minValue={29}
+                maxValue={123}
+                color="#01FF9D"
+              />
+            </div>
+          </div>
+
+          <DailyAccountBalance />
           <div
             id="charts"
             className="flex flex-wrap lg:flex-nowrap gap-4 w-full justify-center bg-sidebar"

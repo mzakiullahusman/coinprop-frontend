@@ -24,6 +24,7 @@ export default {
         "sidebar": "#182230",
         "custom-gradient": "linear-gradient(to right, #00FC9E, #1C7EF0)",
         "custom-cyan": "#01FF9D",
+        "custom-border":"#3d4054"
       },
       backgroundImage: {
         "gradient-text": "linear-gradient(to right, #00FC9E, #1C7EF0)",

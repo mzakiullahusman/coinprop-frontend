@@ -98,7 +98,7 @@ const Layout = ({ children }) => {
 
   return (
     <div className="lg:flex min-h-[100vh] bg-[#0F1827]">
-      <div className="w-[80%] border-r border-[#3d4054] bg-sidebar lg:w-[25%] xl:w-[17%]">
+      <div className="w-[80%] border-r border-custom-border bg-sidebar lg:w-[25%] xl:w-[17%]">
         <Sidebar menuItem={menuItem} />
       </div>
       <div className="w-full lg:w-[75%] xl:w-[83%]">
