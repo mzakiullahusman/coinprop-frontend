@@ -2,12 +2,13 @@ import React from "react";
 // import AceFundedTrader from "../components/AceFundedTrader";
 // import Partners from "../components/Partners";
 import FAQComponent from "../components/FAQComponent";
-
+import HowItWorksBg from "@assets/images/HowItWorksBg.png";
 import HowItWorksCommon from "@components/HowItWorksCommon";
 import AboutAceFunded from "@components/AboutAceFunded";
 import TextMain from "@components/TextMain";
 import AceFundedTrader from "@components/AceFundedTrader";
 import MoneyPrices from "@components/MoneyPrices";
+import MainWork from "@components/MainWork";
 
 const HomeItWorks = () => {
   const workData = [
@@ -51,7 +52,15 @@ const HomeItWorks = () => {
   return (
     <>
       <div className="bg-[#020621]">
-        <HowItWorksCommon />
+        <div
+          className="bg-cover bg-center bg-no-repeat px-4 lg:px-20 py-5  md:py-10"
+          style={{
+            backgroundImage: `url(${HowItWorksBg})`,
+          }}
+        >
+          <HowItWorksCommon />
+          <MainWork />
+        </div>
         <div className="bg-[#08122a] border border-white border-opacity-20 rounded-[14px] p-5 mt-2 xl:p-8 hover:shadow-lg transition mx-4 lg:mx-20 px-4 lg:px-20 py-5 md:py-10">
           <TextMain
             text="Values"

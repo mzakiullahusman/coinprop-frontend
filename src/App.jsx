@@ -18,6 +18,7 @@ import Dashboard from "./pages/Dashboard";
 import TradingAccount from "./pages/TradingAccount";
 import Home from "./pages/Home";
 import HowItWorks from "./pages/HowItWorks";
+import TradingCombine from "./pages/TradingCombine";
 import AboutUs from "./pages/AboutUs";
 import TermsOfService from "./pages/TermsOfService";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
@@ -59,6 +60,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/how-it-works" element={<HowItWorks />} />
+        <Route path="/trading-combine" element={<TradingCombine />} />
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/faq" element={<FAQ />} />
         <Route path="/terms-of-service" element={<TermsOfService />} />
