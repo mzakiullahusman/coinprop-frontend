@@ -30,10 +30,10 @@ const HomeFirst = () => {
         backgroundImage: `url(${BgImage})`,
       }}
     >
-      <div className="flex items-center justify-center px-4 py-2 rounded-full text-white font-poppins text-xs bg-[#1FD9AD] backdrop-blur-md shadow-[100px_4px_100px_rgba(31,217,173,0.5)] border border-white/10">
-        <img src={ButtonIcon} alt="ButtonIcon" />
+      <button className="flex items-center gap-1 gradient-div">
+        <img src={ButtonIcon} alt="Icon" />
         Intelligent Solutions, Infinite Possibilities
-      </div>
+      </button>
 
       <div className="text-[36px] text-white lg:text-[64px] leading-[48px] lg:leading-[96px]  font-poppins font-extralight">
         Simplifying <span className="font-bold">Cryptocurrency</span> for

@@ -1,5 +1,5 @@
 import React from "react";
-
+import ButtonIcon from "@assets/icons/ButtonIcon.svg";
 const TextMain = ({ text, title, description, index, textStyling }) => {
   return (
     <div
@@ -9,9 +9,10 @@ const TextMain = ({ text, title, description, index, textStyling }) => {
           : " justify-center items-center"
       }  `}
     >
-      <div className="border-white border border-opacity-20 text-white rounded-full px-3 py-1 font-normal font-poppins text-base">
+      <button className="flex items-center gap-1 gradient-div">
+        <img src={ButtonIcon} alt="Icon" />
         {text}
-      </div>
+      </button>
       {textStyling === "gradient" && text !== "FAQs" ? (
         <div className="text-[28px] capitalize text-white lg:text-[50px] xl:text-[44px] font-poppins font-semibold">
           what we bring for{" "}

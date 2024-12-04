@@ -97,7 +97,6 @@ const Home = () => {
   return (
     <div className="bg-[#020621] ">
       <HomeFirst />
-
       <div className="bg-[#0f1827] bg-cover bg-center bg-no-repeat px-4 md:px-12 py-5 md:py-10">
         <TextMain
           text="Benefits"
