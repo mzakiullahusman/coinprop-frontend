@@ -144,15 +144,15 @@ const UserRichTextInput = ({ onChange }) => {
 
   return (
     <div
-      className="flex flex-col justify-center items-start gap-1.5 w-full p-[10px] rounded-lg"
+      className="flex flex-col justify-center items-start gap-1.5 w-full p-[10px] rounded-lg bg-sidebar border-custom-border"
       style={{
         border: `1px solid ${isFocused ? "#2A80B3" : "#2B312F"}`,
-        background: "#040a25",
+        // background: "#040a25",
       }}
     >
       <div
-        className="flex items-center justify-center md:justify-between w-full rounded-lg p-4 h-[56px] lg:h-[46px] flex-wrap lg:flex-nowrap"
-        style={{ border: "1px solid #2A80B3", background: "#111411" }}
+        className="flex items-center justify-center md:justify-between w-full rounded-lg p-4 h-[56px] lg:h-[46px] flex-wrap lg:flex-nowrap bg-sidebar"
+        style={{ border: "1px solid #2A80B3", }}
       >
         <div className="flex gap-8">
           <div id="basics" className="flex gap-4">

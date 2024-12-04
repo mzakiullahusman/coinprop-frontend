@@ -17,8 +17,10 @@ import { Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import TableNoData from "../components/Tables/TableNoData";
 import AccountBalance from "@components/PerformanceStatsComponent/AccountBalance";
-import DailyAccountBalance from "@components/PerformanceStatsComponent/DailyAccountBalance";
+import DailyAccountBalance from "@components/PerformanceStatsComponent/DailyAccountBalanceChart";
 import GaugeCard from "@components/PerformanceStatsComponent/GaugeCard";
+import RiskManagementCard from "@components/Cards/RiskManagementCard";
+import ProbabilityCard from "@components/PerformanceStatsComponent/ProbabilityCard";
 // TODO: known issue: refresh required on login
 
 const Dashboard = () => {
@@ -184,7 +186,28 @@ const Dashboard = () => {
   //     </>
   //   );
   // }
-
+const rowsTradingDaysData = [
+  {
+    id: 1,
+    col1: "2024-12-01",
+    col2: 5,
+    col3: 10,
+    col4: "$500.50",
+    col5: "$10,000.00",
+    col6: "$10,500.50",
+    col7: "$10,300.25",
+  },
+  {
+    id: 2,
+    col1: "2024-12-02",
+    col2: 7,
+    col3: 15,
+    col4: "$-300.25",
+    col5: "$10,500.50",
+    col6: "$10,200.25",
+    col7: "$10,150.10",
+  },
+];
   return (
     <>
       {loading ? (
@@ -199,7 +222,15 @@ const Dashboard = () => {
             isNovaTheme={false}
           />
           <AccountBalance />
-          <div className="rounded-lg flex justify-between space-x-6">
+
+          <div className="flex justify-center items-center ">
+            <ProbabilityCard
+              title="AVG. Probability Day per trader"
+              value={-168.21} // Negative value
+            />
+          </div>
+
+          <div className="rounded-lg flex justify-between space-x-3">
             <div className="flex-1 rounded-lg shadow-lg bg-sidebar">
               <GaugeCard
                 title="Avg. Winning Trade"
@@ -229,8 +260,9 @@ const Dashboard = () => {
             </div>
           </div>
 
+          <RiskManagementCard />
           <DailyAccountBalance />
-          <div
+          {/* <div
             id="charts"
             className="flex flex-wrap lg:flex-nowrap gap-4 w-full justify-center bg-sidebar"
           >
@@ -240,7 +272,7 @@ const Dashboard = () => {
               selectedTimeframe={timeframe}
             />
             <HalfDonutChart />
-          </div>
+          </div> */}
           <div id="info-cards" className="flex flex-col gap-4">
             <div className="flex justify-between gap-4 flex-wrap lg:flex-nowrap">
               <BasicInfoCard
@@ -256,25 +288,6 @@ const Dashboard = () => {
                 isPlainBorder={true}
               />
             </div>
-            {/* <div className="flex justify-between gap-4 flex-wrap lg:flex-nowrap">
-            <BasicInfoCard
-              title="Starting balance for the day"
-              body="Data not available"
-              isPlainBorder={true}
-            />
-            <BasicInfoCard
-              title="Starting equity for the day"
-              body="Data not available"
-            />
-            <BasicInfoCard
-              title="Min balance Stop out for the day"
-              body="Data not available"
-            />
-            <BasicInfoCard
-              title="Max equity Stop out for the day"
-              body="Data not available"
-            />
-          </div> */}
             <div className="flex justify-between gap-4 flex-wrap lg:flex-nowrap">
               <BasicInfoCard
                 title="Profit target"

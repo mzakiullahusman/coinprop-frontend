@@ -24,11 +24,11 @@ const UserTimePicker = ({
           "& .MuiOutlinedInput-root": {
             // minWidth: "200px",
             width: { xs: "100%", md: "175px", lg: "225px", xl: "250px" },
-            border: "1px solid #2B312F",
-            background: "#11152e",
+            border: "1px solid #3d4054",
+            background: "#182230",
             borderRadius: "12px",
             height: "42px",
-            fontFamily: "Arial",
+            fontFamily: "Poppins",
             fontSize: "14px",
             color: "white",
           },
@@ -40,7 +40,7 @@ const UserTimePicker = ({
             fontFamily: "Arial",
             fontSize: "14px",
             transform: "translateY(10px)",
-            pl: "6px",
+            pl: "0.7rem",
             "&.Mui-focused": {
               display: "none",
             },

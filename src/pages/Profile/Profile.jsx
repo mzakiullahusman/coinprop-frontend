@@ -1,22 +1,28 @@
 import { useState, useEffect } from "react";
-import { useNavigate, useLocation } from "react-router-dom";
-import { Avatar, Button, TextField, Autocomplete } from "@mui/material";
+import { useNavigate } from "react-router-dom";
+import {
+  Avatar,
+  Button,
+  TextField,
+  Autocomplete,
+  Box,
+  Typography,
+  MenuItem,
+  Select,
+} from "@mui/material";
+import { Info, Lock, Group } from "@mui/icons-material";
 import toast from "react-hot-toast";
 
 import { updateProfile, getProfile } from "../../services/userService";
 import { getInitials } from "../../utils/getInitials";
 import { useAuth } from "../../context/AuthContext";
-import UploadButton from "../../components/Buttons/UploadButton";
-import UserInputField from "../../components/UserInputs/UserInputField";
-import PageCardMain from "../../components/PageCards/PageCardMain";
-import Loader from "../../components/Loader";
 import { countriesList } from "../../constants/countriesList";
 
 const textFieldStyles = {
   "& .MuiInputBase-root": {
     fontSize: "12px",
     height: "54px",
-    backgroundColor: "transparent",
+    backgroundColor: "#182230",
     borderRadius: "10px",
     border: "1px solid",
     borderColor: "#ffffff1a",
@@ -50,7 +56,6 @@ const textFieldStyles = {
   "& .MuiPaper-root": {
     backgroundColor: "#000000 !important",
   },
-  // Transparent dropdown styles
   "& .MuiAutocomplete-paper": {
     backgroundColor: "transparent !important",
     boxShadow: "none",
@@ -61,44 +66,53 @@ const textFieldStyles = {
   },
 };
 
+const InfoCard = ({ icon, title, description }) => (
+  <Box
+    sx={{
+      display: "flex",
+      gap: 2,
+      p: 2,
+      bgcolor: "rgba(22, 24, 35, 0.7)",
+      borderRadius: 2,
+      border: "1px solid #2a2e3b",
+      mb: 2,
+    }}
+  >
+    {icon}
+    <Box>
+      <Typography variant="subtitle2" sx={{ color: "#fff", mb: 0.5 }}>
+        {title}
+      </Typography>
+      <Typography variant="body2" sx={{ color: "#6f7287" }}>
+        {description}
+      </Typography>
+    </Box>
+  </Box>
+);
+
 const Profile = () => {
   const { user } = useAuth();
-  const [previewImage, setPreviewImage] = useState("/Icons/profileMain.svg");
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
-    companyName: "",
-    phoneNumber: "",
+    language: "English",
+    timeFormat: "12h (am/pm)",
     country: "",
-    state: "",
-    city: "",
-    zipCode: "",
+    timezone: "Central Time - US & Canada",
   });
   const [loading, setLoading] = useState(true);
-  const [selectedImage, setSelectedImage] = useState(null);
   const navigate = useNavigate();
-  const location = useLocation();
-
-  const countries = countriesList;
 
   useEffect(() => {
     const fetchProfileDetails = async () => {
       try {
         const profile = await getProfile();
-        setFormData({
+        setFormData((prev) => ({
+          ...prev,
           firstName: profile.firstName || "",
           lastName: profile.lastName || "",
-          companyName: profile.companyName || "",
-          phoneNumber: profile.phoneNum || "",
           country: profile.country || "",
-          state: profile.state || "",
-          city: profile.city || "",
-          zipCode: profile.zipCode || "",
-        });
-
-        if (profile.profileImage) {
-          setPreviewImage(profile.profileImage);
-        }
+        }));
       } catch (error) {
         toast.error("Failed to fetch profile details.");
       } finally {
@@ -109,21 +123,6 @@ const Profile = () => {
     fetchProfileDetails();
   }, []);
 
-  const handleImageChange = (e) => {
-    const file = e.target.files?.[0];
-
-    if (file) {
-      const reader = new FileReader();
-
-      reader.onload = (event) => {
-        setPreviewImage(event.target?.result);
-        setSelectedImage(file);
-      };
-
-      reader.readAsDataURL(file);
-    }
-  };
-
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
@@ -133,227 +132,287 @@ const Profile = () => {
   };
 
   const handleSubmit = async () => {
-    const updatedFields = { ...formData };
-
-    delete updatedFields.state;
-    delete updatedFields.city;
-    delete updatedFields.zipCode;
-
-    Object.keys(updatedFields).forEach((key) => {
-      if (
-        updatedFields[key] === "" ||
-        updatedFields[key] === null ||
-        updatedFields[key] === undefined
-      ) {
-        delete updatedFields[key];
-      }
-    });
-
-    if (selectedImage) {
-      updatedFields.profileImage = selectedImage;
-    }
-
-    const payload = { updateObject: updatedFields };
-
     try {
-      await updateProfile(payload);
+      await updateProfile({ updateObject: formData });
       toast.success("Profile updated successfully!");
-      navigate("/profile");
     } catch (error) {
       toast.error("Error updating profile. Please try again.");
     }
   };
 
-  if (loading) {
-    return (
-      <div className="flex justify-center items-center h-full">
-        <Loader />
-      </div>
-    );
-  }
-
   return (
-    <>
-      <PageCardMain isBlur={true} isAboveMargin={true}>
-        <div id="buttons" className="flex justify-center w-full">
-          <div className="flex gap-4 w-full lg:w-[50%] flex-wrap sm:flex-nowrap">
-            <Button
-              variant="containedGradient"
-              onClick={() => navigate("/profile")}
-              sx={{
-                background:
-                  location.pathname !== "/account-security"
-                    ? ""
-                    : "transparent",
-              }}
-            >
-              Personal Information
-            </Button>
-            <Button
-              variant="containedGradient"
-              onClick={() => navigate("/account-security")}
-              sx={{
-                background:
-                  location.pathname === "/account-security"
-                    ? ""
-                    : "transparent",
-              }}
-            >
-              Account Security
-            </Button>
-          </div>
-        </div>
-        <div className="flex flex-col gap-2 w-full items-center lg:mt-2">
+    <Box
+      sx={{ display: "flex", gap: 4, p: 3, maxWidth: 1200, margin: "0 auto" }}
+    >
+      <Box sx={{ flex: 1 }}>
+        <Typography variant="h5" sx={{ color: "#fff", mb: 3 }}>
+          Personal info
+        </Typography>
+
+        <Box sx={{ mb: 4 }}>
           <Avatar
             sx={{
-              width: 96,
-              height: 96,
-              backgroundColor: "tranparent",
-              color: "#D974F3",
+              width: 64,
+              height: 64,
+              bgcolor: "#182230",
+              color: "#fff",
             }}
           >
-            {getInitials(user?.firstName, user?.lastName)}
+            {getInitials(formData.firstName)}
           </Avatar>
-        </div>
-        <div id="profile-info" className="flex flex-col w-full lg:px-40">
-          <div className="flex flex-col gap-[27px] w-full">
-            <div className="flex gap-[20px] w-full flex-wrap lg:flex-nowrap">
-              <UserInputField
-                label="First Name"
-                name="firstName"
-                type="text"
-                placeholder="Enter First Name"
-                value={formData.firstName || user?.firstName}
-                onChange={handleChange}
-              />
-              <UserInputField
-                label="Last Name"
-                name="lastName"
-                type="text"
-                placeholder="Enter Last Name"
-                value={formData.lastName || user?.lastName}
-                onChange={handleChange}
-              />
-            </div>
-            <div className="flex gap-[20px] w-full flex-wrap lg:flex-nowrap">
-              <UserInputField
-                label="Company Name"
-                name="companyName"
-                type="text"
-                placeholder="Company Name"
-                value={formData.companyName}
-                onChange={handleChange}
-              />
-              <UserInputField
-                label="Email"
-                type="text"
-                value={user?.email || ""}
-                placeholder="Email"
-                readOnly={true}
-              />
-            </div>
-            <div className="flex gap-[20px] w-full flex-wrap lg:flex-nowrap">
-              <UserInputField
-                label="Phone number"
-                name="phoneNumber"
-                type="text"
-                placeholder="Enter Phone Number"
-                value={formData.phoneNumber}
-                onChange={handleChange}
-              />
-            </div>
-            <div className="flex gap-[20px] w-full flex-wrap lg:flex-nowrap">
-              <Autocomplete
-                id="country-select"
-                fullWidth
-                options={countriesList}
-                autoHighlight
-                PaperComponent={({ children }) => (
-                  <div className="blurry-effect text-sm">{children}</div>
-                )}
-                getOptionLabel={(option) => option.label}
-                value={
-                  countriesList.find((c) => c.code === formData.country) || null
-                }
-                onChange={(event, newValue) => {
-                  if (newValue) {
-                    setFormData((prev) => ({
-                      ...prev,
-                      country: newValue.code,
-                    }));
-                  } else {
-                    setFormData((prev) => ({
-                      ...prev,
-                      country: "",
-                      state: "",
-                      city: "",
-                    }));
-                  }
-                }}
-                renderOption={(props, option) => (
-                  <li {...props}>
-                    <img
-                      loading="lazy"
-                      width="20"
-                      src={`https://flagcdn.com/w20/${option.code.toLowerCase()}.png`}
-                      srcSet={`https://flagcdn.com/w40/${option.code.toLowerCase()}.png 2x`}
-                      alt=""
-                      style={{ marginRight: "10px" }}
-                    />
-                    {option.label}
-                  </li>
-                )}
-                renderInput={(params) => (
-                  <TextField
-                    {...params}
-                    label="Country"
-                    placeholder="Please Select"
-                    inputProps={{
-                      ...params.inputProps,
-                      autoComplete: "new-password",
-                    }}
-                    sx={textFieldStyles}
-                  />
-                )}
-              />
+        </Box>
 
-              <UserInputField
-                label="State / Province"
-                name="state"
-                type="text"
-                placeholder="State / Province"
-                value={formData.state}
-                onChange={handleChange}
-              />
-            </div>
-            <div className="flex gap-[20px] w-full flex-wrap lg:flex-nowrap">
-              <UserInputField
-                label="City"
-                name="city"
-                type="text"
-                placeholder="City"
-                value={formData.city}
-                onChange={handleChange}
-              />
-              <UserInputField
-                label="Zip Code"
-                name="zipCode"
-                type="text"
-                placeholder="Zip Code"
-                value={formData.zipCode}
-                onChange={handleChange}
-              />
-            </div>
-          </div>
-        </div>
+        <Box sx={{ display: "flex", flexDirection: "column", gap: 3 }}>
+          <TextField
+            fullWidth
+            // label="Name"
+            name="firstName"
+            placeholder="Name"
+            value={formData.firstName}
+            onChange={handleChange}
+            sx={textFieldStyles}
+          />
 
-        <div className="w-full md:w-[25%] lg:mt-2 lg:w-[50%] lg:px-40">
-          <Button variant="containedGradient" onClick={handleSubmit}>
-            Save Changes
-          </Button>
-        </div>
-      </PageCardMain>
-    </>
+          <TextField
+            fullWidth
+            placeholder="Language"
+            name="language"
+            // value={formData.language}
+            onChange={handleChange}
+            sx={textFieldStyles}
+          />
+
+          <Box sx={{ display: "flex", gap: 2 }}>
+            {/* Time Format Select */}
+            <Select
+              name="dateFormat"
+              value={formData.dateFormat || ""}
+              onChange={handleChange}
+              displayEmpty
+              sx={{
+                height: "3rem",
+                width: "25rem",
+                padding: "0.5rem",
+                fontSize: "1rem",
+                fontWeight: 400,
+                color: "#ffffff",
+                backgroundColor: "#182230",
+                borderRadius: "0.8rem",
+                "& .MuiSelect-icon": {
+                  color: "#01FF9D",
+                },
+                "& .MuiOutlinedInput-notchedOutline": {
+                  borderColor: "#ffffff1a",
+                },
+                "&:hover .MuiOutlinedInput-notchedOutline": {
+                  borderColor: "#ffffff66",
+                },
+              }}
+            >
+              <MenuItem value="" disabled>
+                Time Format
+              </MenuItem>
+              <MenuItem value="12 hr (am/pm)">12 hr (am/pm)</MenuItem>
+              <MenuItem value="24 hr">24 hr</MenuItem>
+            </Select>
+
+            {/* Date Format Select */}
+            <Select
+              name="dateFormat"
+              value={formData.dateFormat || ""}
+              onChange={handleChange}
+              displayEmpty
+              sx={{
+                height: "3rem",
+                width: "25rem",
+                padding: "0.5rem",
+                fontSize: "1rem",
+                fontWeight: 400,
+                color: "#ffffff",
+                backgroundColor: "#182230",
+                borderRadius: "0.8rem",
+                "& .MuiSelect-icon": {
+                  color: "#01FF9D",
+                },
+                "& .MuiOutlinedInput-notchedOutline": {
+                  borderColor: "#ffffff1a",
+                },
+                "&:hover .MuiOutlinedInput-notchedOutline": {
+                  borderColor: "#ffffff66",
+                },
+              }}
+            >
+              <MenuItem value="" disabled>
+                Date Format
+              </MenuItem>
+              <MenuItem value="MM/DD/YYYY">MM/DD/YYYY</MenuItem>
+              <MenuItem value="DD/MM/YYYY">DD/MM/YYYY</MenuItem>
+              <MenuItem value="YYYY-MM-DD">YYYY-MM-DD</MenuItem>
+            </Select>
+          </Box>
+
+          <Autocomplete
+            fullWidth
+            options={countriesList}
+            getOptionLabel={(option) => option.label}
+            value={
+              countriesList.find((c) => c.code === formData.country) || null
+            }
+            sx={{
+              "& .MuiInputBase-root": {
+                fontSize: "2rem",
+                height: "54px",
+                backgroundColor: "#182230",
+                borderRadius: "10px",
+                border: "1px solid",
+                borderColor: "#ffffff1a",
+                padding: "0 14px",
+                "&:hover": {
+                  borderColor: "#06b6d4",
+                },
+                "&.Mui-focused": {
+                  borderColor: "#06b6d4",
+                },
+              },
+
+              "& .MuiInputLabel-shrink": {
+                transform: "translate(14px, -6px) scale(0.85)",
+              },
+              "& .MuiInputBase-input": {
+                color: "white",
+                fontSize: "14px",
+                fontWeight: 500,
+                padding: "10px 0",
+                "&::placeholder": {
+                  fontSize: "20px",
+                  color: "white",
+                },
+              },
+              "& .MuiPaper-root": {
+                backgroundColor: "#000000 !important",
+              },
+              "& .MuiAutocomplete-paper": {
+                backgroundColor: "transparent !important",
+                boxShadow: "none",
+              },
+              "& .MuiSelect-icon": {
+                color: "!important #01FF9D",
+              },
+              "& .MuiMenuItem-root": {
+                color: "#ffffff !important",
+                fontSize: "14px !important",
+              },
+            }}
+            onChange={(_, newValue) => {
+              setFormData((prev) => ({
+                ...prev,
+                country: newValue?.code || "", // Ensure empty string if no value selected
+              }));
+            }}
+            renderInput={(params) => (
+              <TextField
+                {...params}
+                label="Country" // Use 'label' instead of placeholder for a better UI experience
+                placeholder="Select Country" // Update placeholder for clarity
+                sx={textFieldStyles} // Apply the custom styles
+              />
+            )}
+            isOptionEqualToValue={(option, value) =>
+              option.code === value?.code
+            } // Ensure correct comparison between option and value
+          />
+
+          <Select
+            fullWidth
+            name="timezone"
+            value={formData.timezone || ""} // Ensure the value is managed properly
+            onChange={handleChange}
+            displayEmpty
+            sx={{
+              width: "100%", // Use full width for proper spacing
+              padding: "0.75rem", // Adjusted padding for consistency
+              fontSize: "1rem",
+              height: "03rem",
+              fontWeight: 400,
+              color: "#ffffff",
+              backgroundColor: "#182230",
+              borderRadius: ".8rem",
+              "& .MuiSelect-icon": {
+                color: "#01FF9D",
+              },
+              "& .MuiOutlinedInput-notchedOutline": {
+                borderColor: "#ffffff1a", // Adjust the border color to match design
+              },
+              "&:hover .MuiOutlinedInput-notchedOutline": {
+                borderColor: "#ffffff66", // Add hover border color
+              },
+              "&:focus .MuiOutlinedInput-notchedOutline": {
+                borderColor: "#ffffff", // Add focus border color
+              },
+            }}
+          >
+            <MenuItem value="" disabled>
+              Time Zone
+            </MenuItem>
+            <MenuItem value="Central Time - US & Canada">
+              Central Time - US & Canada
+            </MenuItem>
+            <MenuItem value="Eastern Time - US & Canada">
+              Eastern Time - US & Canada
+            </MenuItem>
+            <MenuItem value="Pacific Time - US & Canada">
+              Pacific Time - US & Canada
+            </MenuItem>
+          </Select>
+
+          <Box sx={{ display: "flex", gap: 2, mt: 2 }}>
+            <Button
+              variant="contained"
+              onClick={handleSubmit}
+              sx={{
+                bgcolor: "#00FC9E",
+                color: "#000",
+                "&:hover": {
+                  bgcolor: "#00d584",
+                },
+              }}
+            >
+              Save changes
+            </Button>
+            <Button
+              variant="outlined"
+              sx={{
+                borderColor: "#3d4054",
+                color: "#fff",
+                "&:hover": {
+                  borderColor: "#4d5169",
+                },
+              }}
+            >
+              Delete Account
+            </Button>
+          </Box>
+        </Box>
+      </Box>
+
+      <Box sx={{ width: 300 }}>
+        <InfoCard
+          icon={<Lock sx={{ color: "#6f7287" }} />}
+          title="Why isn't my info shown here?"
+          description="We're hiding some account details to protect your identity."
+        />
+        <InfoCard
+          icon={<Info sx={{ color: "#6f7287" }} />}
+          title="Which details can be edited?"
+          description="Details Airbnb uses to verify your identity can't be changed. Contact info and some personal details can be edited, but we may ask you to verify your identity the next time you book or create a listing."
+        />
+        <InfoCard
+          icon={<Group sx={{ color: "#6f7287" }} />}
+          title="What info is shared with others?"
+          description="Airbnb only releases contact information for hosts and guests after a reservation is confirmed."
+        />
+      </Box>
+    </Box>
   );
 };
 

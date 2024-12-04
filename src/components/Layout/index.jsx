@@ -58,12 +58,12 @@ const Layout = ({ children }) => {
     //   name: "Certificates",
     //   icon: <CertificateIcon />,
     // },
-    // {
-    //   id: 7,
-    //   path: "/profit-and-share",
-    //   name: "Profit and Share",
-    //   icon: <ProfitAndShareIcon />,
-    // },
+    {
+      id: 7,
+      path: "/profit-and-share",
+      name: "Profit and Share",
+      icon: <ProfitAndShareIcon />,
+    },
     {
       id: 8,
       path: "/billing-and-accounts",
@@ -98,7 +98,7 @@ const Layout = ({ children }) => {
 
   return (
     <div className="lg:flex min-h-[100vh] bg-[#0F1827]">
-      <div className="w-[80%] border-r border-custom-border bg-sidebar lg:w-[25%] xl:w-[17%]">
+      <div className="w-[80%] border-r border-custom-border bg-sidebar lg:w-[25%] xl:w-[17%] sticky top-0 h-[100vh] overflow-y-auto">
         <Sidebar menuItem={menuItem} />
       </div>
       <div className="w-full lg:w-[75%] xl:w-[83%]">

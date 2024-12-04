@@ -16,7 +16,7 @@ const FAQFunded = () => {
   ];
   return (
     <div
-      className="bg-[#020621] bg-cover bg-center bg-no-repeat"
+      className="bg-sidebar bg-cover bg-center bg-no-repeat"
       style={{
         backgroundImage: `url(${BgImage})`,
       }}

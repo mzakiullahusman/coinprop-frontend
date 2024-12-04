@@ -98,15 +98,12 @@ const TableDataGridHeadingFilters = ({
   }, [timefieldCount]);
 
   return (
-    <div 
-      className="border border-[#3d4054]"
+    <div
+      className="p-8 border border-custom-border bg-sidebar text-white rounded-2xl"
       style={{
-        borderRadius: "12px",
-        background: "#0c1029",
-        color: "white",
         backdropFilter: "blur(1.9px)",
         WebkitBackdropFilter: "blur(1.9px)",
-        padding: "24px",
+        // padding: "24px",
       }}
     >
       <div className="flex justify-between items-center">
@@ -186,8 +183,8 @@ const TableDataGridHeadingFilters = ({
             columns={modifiedColumns}
             sx={{
               border: "none",
-              background: "#040a25",
-              color: "white",
+              background: "#182230",
+              color: "black",
               backdropFilter: "blur(1.9px)",
               WebkitBackdropFilter: "blur(1.9px)",
               //   "& .MuiDataGrid-root": {
@@ -197,34 +194,34 @@ const TableDataGridHeadingFilters = ({
                 borderTopRightRadius: "8px !important",
               },
               "& .MuiDataGrid-scrollbarFiller": {
-                background: "#2A80B3",
+                background: "#01FF9D",
               },
               "& .MuiDataGrid-columnHeader": {
-                background: "#2A80B3",
+                background: "#01FF9D",
                 height: "40px !important",
-                paddingBottom: "16px"
+                paddingBottom: "16px",
               },
               "& .MuiDataGrid-columnHeaders": {
-                background: "#2A80B3",
+                background: "#01FF9D",
                 height: "55px",
-                paddingY: "16px"
+                paddingY: "16px",
               },
               "& .MuiDataGrid-columnHeaderTitle": {
-                background: "#2A80B3",
+                background: "#01FF9D",
                 lineHeight: "40px",
               },
               "& .MuiDataGrid-columnHeaderTitleContainer": {
-                background: "#2A80B3",
+                background: "#01FF9D",
                 height: "40px",
               },
               "& .MuiDataGrid-columnHeaderDraggableContainer": {
                 height: "40px",
-                background: "#2A80B3",
-                color: "white",
+                background: "#01FF9D",
+                color: "black",
                 display: "flex",
                 alignItems: "center",
-                fontSize: "18px",
-                fontWeight: 400
+                fontSize: "1rem",
+                fontWeight: 400,
               },
               "& .MuiDataGrid-cell": {
                 color: "white",
@@ -241,7 +238,7 @@ const TableDataGridHeadingFilters = ({
                 borderTop: "none",
               },
               "& .MuiButtonBase-root, .MuiSvgIcon-root": {
-                  color: "white"
+                color: "white",
               },
               "& .MuiSelect-select-MuiInputBase-input": { fontSize: "12px" },
             }}

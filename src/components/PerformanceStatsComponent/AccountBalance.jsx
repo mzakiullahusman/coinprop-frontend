@@ -31,7 +31,7 @@ const AccountBalance = () => {
     <div className="grid grid-cols-2 gap-8 p-8 min-h-2 bg-sidebar rounded-lg text-white">
       {/* Account Balance Section */}
       <div className="grid grid-cols-2 gap-9">
-        <div className="text-xl">
+        <div className="text-lg">
           <h2 className="text-xl mb-4">Account balance</h2>
           <div className="flex justify-between pb-3 border-b-2 border-b-custom-border pt-3">
             <span>High:</span>
@@ -54,7 +54,7 @@ const AccountBalance = () => {
           </div>
         </div>
 
-        <div className="text-xl">
+        <div className="text-lg">
           <h2 className="text-xl mb-4 text-transparent">Ac</h2>
           <div className="flex justify-between pb-3 border-b-2 border-b-custom-border pt-3">
             <span>Best Day of Month:</span>
@@ -115,7 +115,7 @@ const AccountBalance = () => {
         <ul className="list-none pl-0 space-y-2">
           <li className="flex items-center">
             <span className="mr-2 text-red-500 text-xl">✖</span>
-            <span className="text-xl mr-2">
+            <span className="text-lg mr-2">
               Do not let your account balance hit or go below{" "}
               <span className="text-custom-cyan">
                 ${target.toLocaleString()}

@@ -5,7 +5,7 @@ const UserSearchField = ({ value, onChange }) => {
   return (
     <div
       className="flex items-center 2xl:gap-1.5 w-full h-[40px] p-3.5 rounded-lg"
-      style={{ border: "1px solid #2A80B3", background: "#11152e" }}
+      style={{ border: "1px solid #3d4054", background: "#182230" }}
     >
       <input
         className="flex-1 bg-transparent border-none focus:outline-none text-white text-[14px] font-medium leading-4 lg:leading-normal"

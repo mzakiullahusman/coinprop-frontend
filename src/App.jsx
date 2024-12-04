@@ -93,7 +93,7 @@ function App() {
                   path="/affiliate-portal"
                   element={<AffiliatesPortal />}
                 />
-                <Route path="/certificates" element={<Certificates />} />
+                {/* <Route path="/certificates" element={<Certificates />} /> */}
                 <Route path="/profit-and-share" element={<ProfitAndShare />} />
                 <Route
                   path="/billing-and-accounts"

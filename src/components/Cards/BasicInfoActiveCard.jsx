@@ -4,8 +4,8 @@ import { motion } from "framer-motion";
 const BasicInfoActiveCard = ({ title, status, isBlinkingDot }) => {
   const isActive =
     status === "Active" || status === "active" || status === "funded";
-  const fillColor = isActive ? "#00C07B" : "orange";
-  const textColor = isActive ? "#00C07B" : "orange";
+  const fillColor = isActive ? "#01FF9D" : "orange";
+  const textColor = isActive ? "#01FF9D" : "orange";
 
   const circleAnimation = isBlinkingDot ? { opacity: [1, 0, 1] } : {};
 
@@ -14,7 +14,7 @@ const BasicInfoActiveCard = ({ title, status, isBlinkingDot }) => {
     : {};
 
   return (
-    <div className="w-full flex flex-col items-start gap-3 p-6 flex-1 bg-[#11152e] border border-[#3d4054] backdrop-blur-lg rounded-xl">
+    <div className="w-full flex flex-col items-start gap-3 p-6 flex-1 bg-sidebar border border-custom-border backdrop-blur-lg rounded-xl">
       <h2 className="text-white font-inter text-sm font-normal leading-normal">
         {title}
       </h2>

@@ -23,11 +23,11 @@ const UserDatePicker = ({
         maxDate={maxDate}
         sx={{
           "& .MuiOutlinedInput-root": {
-            border: isNovaTheme ? "1px solid #B35BF5" : "1px solid #2B312F",
-            background: isNovaTheme ? "rgba(179, 91, 245, 0.22)" : "#11152e",
+            border: isNovaTheme ? "1px solid #9ca3af" : "1px solid #3d4054",
+            background: isNovaTheme ? "#182230" : "#182230",
             borderRadius: "12px",
             height: "42px",
-            fontFamily: "Arial",
+            fontFamily: "Poppins",
             fontSize: "14px",
             color: "white",
           },
@@ -36,10 +36,10 @@ const UserDatePicker = ({
           },
           "& .MuiInputLabel-root": {
             color: "#ffffff",
-            fontFamily: "Arial",
+            fontFamily: "Poppins",
             fontSize: "14px",
             transform: "translateY(10px)",
-            pl: "6px",
+            pl: "0.7rem",
             "&.Mui-focused": {
               display: "none",
             },

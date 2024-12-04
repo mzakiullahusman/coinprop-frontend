@@ -12,24 +12,24 @@ const DashboardIcon = ({ active }) => {
       >
         <path
           d="M7.62891 8.33398L7.62891 13.334"
-          stroke="#8A8A8A"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
+          stroke={active ? "#01FF9D" : "white"}
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
         />
         <path
           d="M10.9619 10V13.3333"
-          stroke="#8A8A8A"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
+          stroke={active ? "#01FF9D" : "white"}
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
         />
         <path
           d="M14.2949 6.66602V13.3327"
-          stroke="#8A8A8A"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
+          stroke={active ? "#01FF9D" : "white"}
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
         />
         <rect
           x="3.46191"
@@ -37,8 +37,8 @@ const DashboardIcon = ({ active }) => {
           width="15"
           height="15"
           rx="2"
-          stroke="#8A8A8A"
-          strokeWidth="2"
+          stroke={active ? "#01FF9D" : "white"}
+          stroke-width="2"
         />
       </svg>
     </div>

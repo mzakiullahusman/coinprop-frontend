@@ -8,7 +8,7 @@ const PageCardMain = ({
 }) => {
   return (
     <div
-      className={`w-full flex flex-col items-start ${gap} p-4 md:p-6 bg-[#11152e] rounded-xl ${
+      className={`w-full flex flex-col items-start ${gap} p-4 md:p-6 bg-sidebar rounded-xl ${
         isBlur ? "backdrop-blur-[20px]" : ""
       } ${isAboveMargin ? "lg:mt-[76px]" : ""}`}
     >

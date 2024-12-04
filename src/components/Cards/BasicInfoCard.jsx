@@ -24,7 +24,7 @@ const BasicInfoCard = ({
 
   return (
     <div
-      className={`w-full flex flex-col items-start gap-3 p-3 sm:p-6 flex-1 bg-[#0c1029] backdrop-blur-lg rounded-xl ${borderClass} ${gradientBgClass} `}
+      className={`w-full flex flex-col items-start gap-3 p-3 sm:p-6 flex-1 bg-sidebar backdrop-blur-lg rounded-xl ${borderClass} ${gradientBgClass} `}
     >
       <h2 className="font-inter text-sm font-normal leading-normal">{title}</h2>
       <div className="flex justify-between items-center">
@@ -37,7 +37,7 @@ const BasicInfoCard = ({
           {body}
         </p>
         {differenceAmount && (
-          <p className="text-[18px] font-semibold text-[#2A80B3]">
+          <p className="text-[18px] font-semibold text-custom-cyan">
             {differenceAmount}
           </p>
         )}

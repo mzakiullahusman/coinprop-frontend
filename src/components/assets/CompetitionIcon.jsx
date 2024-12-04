@@ -12,7 +12,7 @@ const CompetitionIcon = ({ active }) => {
       >
         <path
           d="M14.3408 8.40039L11.9633 11.9666C11.5374 12.6055 10.5802 12.5459 10.2369 11.8591L10.1114 11.6083C9.76807 10.9216 8.81088 10.862 8.38497 11.5008L6.00749 15.0671"
-          stroke="#8A8A8A"
+          stroke={active ? "#01FF9D" : "white"}
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -23,7 +23,7 @@ const CompetitionIcon = ({ active }) => {
           width="15"
           height="15"
           rx="2"
-          stroke="#8A8A8A"
+          stroke={active ? "#01FF9D" : "white"}
           strokeWidth="2"
         />
       </svg>

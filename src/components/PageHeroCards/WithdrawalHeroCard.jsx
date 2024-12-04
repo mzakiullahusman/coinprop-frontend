@@ -98,10 +98,10 @@ const WithdrawalHeroCard = ({
   return (
     <>
       <div
-        className="w-full rounded-xl p-[40px] flex flex-col bg-[#0c1029] border border-[#3d4054] justify-center items-center lg:items-start min-h-[395px] "
+        className="w-full rounded-xl p-[40px] flex flex-col bg-sidebar border border-[#3d4054] justify-center items-center lg:items-start min-h-[395px] "
       >
         <div className="w-[70%] lg:w-1/2 text-center lg:text-start">
-          <h2 className="text-[#2A80B3] text-[24px] xl:text-[48px] font-medium mb-6">
+          <h2 className="text-custom-cyan text-[24px] xl:text-[48px] font-medium mb-6">
             {title}
           </h2>
           <p className="text-[16px] mt-[12px]">{description}</p>

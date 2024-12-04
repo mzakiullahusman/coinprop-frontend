@@ -11,7 +11,7 @@ import { styled } from "@mui/system";
 import IconToggle from "./IconToggle";
 
 const StyledAccordion = styled(Accordion)({
-  backgroundColor: "#11152e",
+  backgroundColor: "#182230",
   border: "1px solid #3d4054",
   borderRadius: "8px",
   boxShadow: "none",
@@ -65,7 +65,7 @@ const FaqsGrid = () => {
   };
 
   return (
-    <Box sx={{ padding: "20px", backgroundColor: "#11152e" }}>
+    <Box sx={{ padding: "20px", backgroundColor: "#182230", borderRadius:"0.8rem" }}>
       <Grid container spacing={1}>
         {faqs.map((faq, index) => (
           <Grid item xs={12} md={6} key={index}>

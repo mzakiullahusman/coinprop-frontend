@@ -8,7 +8,7 @@ import {
   ResponsiveContainer,
 } from "recharts";
 
-const DailyAccountBalance = () => {
+const DailyAccountBalanceChart = () => {
   // Dummy data
   const data = [
     { month: "Jan", balance: 2000 },
@@ -61,7 +61,8 @@ const DailyAccountBalance = () => {
       <ResponsiveContainer width="100%" height={400}>
         <BarChart
           data={data}
-          margin={{ top: 10, right: 20, left: 30, bottom: 0 }}
+          margin={{ top: 10, right: 20, left: 30, bottom: 10 }}
+          fontSize={15}
         >
           <XAxis dataKey="month" stroke="#ccc" />
           <YAxis stroke="#ccc" />
@@ -71,13 +72,18 @@ const DailyAccountBalance = () => {
               borderRadius: "8px",
               border: "none",
               color: "#fff",
+              fontSize:"0.7rem"
             }}
           />
-          <Bar dataKey="balance" fill="#01FF9D" radius={[10, 10, 0, 0]} />
+          <Bar
+            dataKey="balance"
+            fill="#01FF9D"
+            radius={[50, 50, 0, 0]}
+          />
         </BarChart>
       </ResponsiveContainer>
     </div>
   );
 };
 
-export default DailyAccountBalance;
+export default DailyAccountBalanceChart;

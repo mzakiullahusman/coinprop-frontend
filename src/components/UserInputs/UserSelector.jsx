@@ -29,16 +29,16 @@ const UserSelector = ({
 
   return (
     <div
-      className={`relative flex flex-col justify-center items-start gap-1.5 w-full p-3.5 rounded-lg ${
+      className={`relative flex flex-col justify-center items-start gap-1.5 w-full p-3.5 rounded-lg bg-sidebar  ${
         label ? "h-[54px]" : "h-[40px]"
       }`}
       style={{
         border: isNovaTheme
           ? `1px solid ${isFocused ? "#2A80B3" : "#B35BF5"}`
           : `1px solid ${isFocused ? "#3d4054" : "#2B312F"}`,
-        background: isNovaTheme
-          ? `rgba(179, 91, 245, ${isFocused ? "0.3" : "0.22"})`
-          : "#11152e",
+        // background: isNovaTheme
+        //   ? `rgba(179, 91, 245, ${isFocused ? "0.3" : "0.22"})`
+        //   : "#11152e",
         boxShadow: isFocused
           ? isNovaTheme
             ? "0 0 0 3px rgba(179, 91, 245, 0.5)"
@@ -66,7 +66,7 @@ const UserSelector = ({
       </button>
       {isOpen && !isDisabled && (
         <div
-          className="absolute top-full left-0 right-0 mt-1 bg-[#11152e] border border-[#2B312F] rounded-lg z-10"
+          className="absolute top-full left-0 right-0 mt-1 bg-gray-8  00 border border-[#2B312F] rounded-lg z-10"
           style={{ maxHeight: "200px", overflowY: "auto" }}
         >
           {options.map((option) => (

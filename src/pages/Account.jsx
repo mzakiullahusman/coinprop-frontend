@@ -4,6 +4,7 @@ import TableAccountsStandings from "@components/Tables/TableAccounts";
 import { getLeaderboard } from "../services/mt5Service";
 import Loader from "../components/Loader";
 import { useAuth } from "../context/AuthContext";
+import RiskManagementCard from "@components/Cards/RiskManagementCard";
 const leaderboardData = [
   {
     performa_no: "12819151",
@@ -134,13 +135,7 @@ const Account = () => {
       />
 
       
-      <div class="flex items-center p-4 bg-sidebar text-white rounded-lg shadow-md mt-2 border border-white/10">
-        <span class="w-2 h-2 rounded-full bg-teal-400 mr-2"></span>
-        <p class="text-sm">
-          Risk Management is knowing that you can’t take every opportunity, but
-          that you understand which opportunity you take.
-        </p>
-      </div>
+     <RiskManagementCard />
 
       <div className="flex space-x-4 bg-gray-900 my-6">
         {cardsData.map((card, index) => (
