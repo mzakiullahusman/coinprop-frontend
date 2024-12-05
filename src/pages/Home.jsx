@@ -142,8 +142,9 @@ const Home = () => {
           index={true}
         />
       </div>
-
-      <AboutAceFunded data={aceFunded} />
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-8 bg-[#020621]  text-white">
+        <AboutAceFunded data={aceFunded} />
+      </div>
 
       {/* </div> */}
 

@@ -49,6 +49,28 @@ const HomeItWorks = () => {
         "Commodo nec mi id ullamcorper vitae augue neque dis. Nunc lacinia viverra orci.",
     },
   ];
+
+  const mainSections = [
+    {
+      title: "Our Vision",
+      description:
+        "Our vision is to be the path to a better lifestyle, improving lives through innovative solutions.",
+    },
+    {
+      title: "Our Mission",
+      description:
+        "Our mission is to turn people who trade into better traders, with healthier habits, through learning by doing.",
+    },
+    {
+      title: "Our Values",
+      values: [
+        "Empower traders to achieve better habits.",
+        "Foster a culture of learning by doing.",
+        "Promote transparency and integrity.",
+        "Innovate for the betterment of trading practices.",
+      ],
+    },
+  ];
   return (
     <>
       <div className="bg-[#020621]">
@@ -59,7 +81,7 @@ const HomeItWorks = () => {
           }}
         >
           <HowItWorksCommon />
-          <MainWork />
+          <MainWork data={mainSections} />
         </div>
         <div className="bg-[#08122a] border border-white border-opacity-20 rounded-[14px] p-5 mt-2 xl:p-8 hover:shadow-lg transition mx-4 lg:mx-20 px-4 lg:px-20 py-5 md:py-10">
           <TextMain
@@ -68,7 +90,9 @@ const HomeItWorks = () => {
             description="Commodo nec mi id ullamcorper vitae augue neque dis. Nunc lacinia viverra orci diam. Nibh est vitae suspendisse parturient sed lorem eu."
             index={true}
           />
-          <AboutAceFunded text="Values" data={workData} />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-8 text-white">
+            <AboutAceFunded text="Values" data={workData} />
+          </div>
         </div>
         <div className="mt-4 md:mt-12">
           <TextMain

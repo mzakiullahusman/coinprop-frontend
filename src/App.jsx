@@ -39,11 +39,11 @@ import CustomerSupport from "./pages/CustomerSupport";
 import Faqs from "./pages/Faqs";
 import Profile from "./pages/Profile";
 import AccountSecurity from "./pages/Profile/AccountSecurity";
-
-// components
 import Layout from "./components/Layout";
 import "./App.css";
 import HelpCenter from "./pages/HelpCenter";
+import ContactUs from "./pages/ContactUs";
+import Careers from "./pages/Careers";
 
 const AuthRoutes = () => (
   // <PublicRoute>
@@ -64,6 +64,8 @@ function App() {
         <Route path="/trading-combine" element={<TradingCombine />} />
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/help-center" element={<HelpCenter />} />
+        <Route path="/contact-us" element={<ContactUs />} />
+        <Route path="/careers" element={<Careers />} />
         <Route path="/terms-&-conditions" element={<TermsOfService />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/" element={<Navigate to="/auth/sign-in" />} />

@@ -1,6 +1,4 @@
 import React from "react";
-// import AceFundedTrader from "../components/AceFundedTrader";
-// import Partners from "../components/Partners";
 import HowItWorksBg from "@assets/images/HowItWorksBg.png";
 import HowItWorksCommon from "@components/HowItWorksCommon";
 import AceFundedTrader from "@components/AceFundedTrader";
@@ -20,6 +18,28 @@ const AboutUs = () => {
     { text: "Collaboration" },
     { text: "Adaptability" },
   ];
+
+  const mainSections = [
+    {
+      title: "Our Vision",
+      description:
+        "Our vision is to be the path to a better lifestyle, improving lives through innovative solutions.",
+    },
+    {
+      title: "Our Mission",
+      description:
+        "Our mission is to turn people who trade into better traders, with healthier habits, through learning by doing.",
+    },
+    {
+      title: "Our Values",
+      values: [
+        "Empower traders to achieve better habits.",
+        "Foster a culture of learning by doing.",
+        "Promote transparency and integrity.",
+        "Innovate for the betterment of trading practices.",
+      ],
+    },
+  ];
   return (
     <>
       <div className="bg-[#020621]">
@@ -29,8 +49,8 @@ const AboutUs = () => {
             backgroundImage: `url(${HowItWorksBg})`,
           }}
         >
-          <HowItWorksCommon index={true} />
-          <MainWork />
+          <HowItWorksCommon text="About Us" index={true} />
+          <MainWork data={mainSections} />
         </div>
         <div className="flex flex-col lg:flex-row items-center gap-4 lg:gap-20 pr-4 py-5 lg:py-10 lg:pr-20">
           <div className="w-full lg:w-[45%]">

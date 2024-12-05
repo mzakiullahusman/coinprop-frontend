@@ -21,7 +21,7 @@ const HelpCenter = () => {
           <Help />
         </div>
       </div>
-      <div className=" xl:px-28">
+      <div className="xl:px-28">
         <FAQComponent />
       </div>
       <AceFundedTrader />
