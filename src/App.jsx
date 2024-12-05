@@ -43,6 +43,7 @@ import AccountSecurity from "./pages/Profile/AccountSecurity";
 // components
 import Layout from "./components/Layout";
 import "./App.css";
+import HelpCenter from "./pages/HelpCenter";
 
 const AuthRoutes = () => (
   // <PublicRoute>
@@ -62,8 +63,8 @@ function App() {
         <Route path="/how-it-works" element={<HowItWorks />} />
         <Route path="/trading-combine" element={<TradingCombine />} />
         <Route path="/about-us" element={<AboutUs />} />
-        <Route path="/faq" element={<FAQ />} />
-        <Route path="/terms-of-service" element={<TermsOfService />} />
+        <Route path="/help-center" element={<HelpCenter />} />
+        <Route path="/terms-&-conditions" element={<TermsOfService />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/" element={<Navigate to="/auth/sign-in" />} />
         <Route path="/auth/*" element={<AuthRoutes />} />

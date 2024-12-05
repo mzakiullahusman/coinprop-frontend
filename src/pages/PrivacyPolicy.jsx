@@ -1,5 +1,6 @@
 import React from "react";
 import BgImage from "@assets/images/BgImage.png";
+import AceFundedTrader from "@components/AceFundedTrader";
 
 const PrivacyPolicy = () => {
   const contentData = [
@@ -21,14 +22,9 @@ const PrivacyPolicy = () => {
   const filteredContent = Array(4).fill(contentData[0]);
   return (
     <>
-      <div
-        className="bg-[#020621] bg-cover bg-center bg-no-repeat px-4 md:px-12 py-5  md:py-10"
-        style={{
-          backgroundImage: `url(${BgImage})`,
-        }}
-      >
-        <div className="text-[32px] capitalize tracking-[-1px] xl:tracking-[-4px] mb-12 xl:leading-[100px] text-white  lg:text-[60px] xl:text-[84px] font-redhat font-medium">
-          Privacy Policy.
+      <div className="bg-[#0f1827] px-4 md:px-12 py-5  md:py-10">
+        <div className="text-[32px] capitalize tracking-[-1px] mb-6 xl:leading-[80px] text-white  lg:text-[64px]  font-poppins font-bold">
+          Privacy Policy
         </div>
         <div className="space-y-8">
           {filteredContent.map((item, index) => (
@@ -41,6 +37,7 @@ const PrivacyPolicy = () => {
             </div>
           ))}
         </div>
+        <AceFundedTrader />
       </div>
     </>
   );

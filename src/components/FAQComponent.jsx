@@ -57,8 +57,8 @@ const FAQComponent = () => {
               openIndex === index ? "bg-gray-900" : "bg-[#0f1827]"
             } rounded-[24px] p-4 w-full transition duration-300 ease-in-out group-hover:bg-gradient-to-br group-hover:from-gray-700 group-hover:to-gray-900`}
           >
-            <div className="flex flex-col xl:flex-row gap-3 xl:gap-12 justify-between px-6 items-center">
-              <div className="flex flex-col xl:flex-row items-center gap-3 xl:gap-9">
+            <div className="flex flex-col lg:flex-row gap-3 xl:gap-12 justify-between px-6 items-center">
+              <div className="flex flex-col lg:flex-row items-center gap-3 xl:gap-12">
                 <div className="bg-gradient-to-r from-[#00fc9e] to-[#1c7ef0] text-transparent bg-clip-text font-poppins font-normal text-[64px]">
                   {String(item.id).padStart(2, "0")}
                 </div>

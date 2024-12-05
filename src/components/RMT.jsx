@@ -1,15 +1,14 @@
 import React from "react";
-import TickIcon from "@assets/icons/TickIcon.svg";
 
 import TraderGraph from "@assets/icons/TradingGraph.svg";
-import TextMain from "./TextMain";
+import RMTRight from "./RMTRight";
 const RMT = () => {
   const tickList = [
     { text: "Innovation" },
-    { text: "Transparency" },
-    { text: "Collaboration" },
     { text: "Entrepreneurial Spirit" },
+    { text: "Transparency" },
     { text: "Diversity and Inclusion" },
+    { text: "Collaboration" },
     { text: "Adaptability" },
   ];
 
@@ -34,23 +33,7 @@ const RMT = () => {
           </div>
         </div>
         <div className="w-full items-start flex flex-col gap-y-2 lg:w-1/2">
-          <TextMain
-            text="About Us"
-            description="Commodo nec mi id ullamcorper vitae augue neque dis nunc lacinia viverra orci diam."
-            index={false}
-            textStyling="gradient"
-          />
-
-          <div className="grid xl:grid-cols-2 gap-x-20 gap-y-6 text-white mt-6">
-            {tickList.map((item, index) => (
-              <div key={index} className="flex items-center gap-3">
-                <img src={TickIcon} alt="tickIcon" />
-                <span className="font-poppins font-normal text-lg md:text-[22px]">
-                  {item.text}
-                </span>
-              </div>
-            ))}
-          </div>
+          <RMTRight tickList={tickList} />
         </div>
       </div>
     </>

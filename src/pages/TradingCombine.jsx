@@ -51,9 +51,9 @@ const HomeItWorkss = () => {
 
   return (
     <>
-      <div className="bg-[#020621]  px-4 lg:px-20 py-5 md:py-10">
+      <div className="bg-[#020621] ">
         <div
-          className="bg-cover bg-center bg-no-repeat"
+          className="bg-cover bg-center bg-no-repeat  px-4 lg:px-20 py-5 md:py-10"
           style={{
             backgroundImage: `url(${HowItWorksBg})`,
           }}
@@ -73,28 +73,37 @@ const HomeItWorkss = () => {
             GET STARTED TODAY
             <img className="" src={BlackArrowRight} alt="Arrow" />
           </button>
-        </div>
-        <div className="flex flex-col lg:flex-row justify-center items-center gap-8 xl:gap-20">
-          <div className="w-full lg:w-[60%]">
-            <Rule text="Follow the trading plan" />
+
+          <div className="flex flex-col lg:flex-row justify-center items-center gap-8 xl:gap-20">
+            <div className="w-full lg:w-[60%]">
+              <Rule index={true} text="Follow the trading plan" />
+            </div>
+            <div className="w-full lg:w-[40%]">
+              <img className="" src={RuleImg} alt="RuleImg" />
+            </div>
           </div>
-          <div className="w-full lg:w-[40%]">
-            <img className="" src={RuleImg} alt="RuleImg" />
+          <div className="flex flex-col lg:flex-row justify-center items-center mt-8 gap-8 xl:gap-20">
+            <div className="w-full lg:w-[45%]">
+              <div className="bg-white h-[300px] border rounded-[24px] lg:h-[450px]"></div>
+            </div>
+            <div className="w-full lg:w-[55%]">
+              <Rule index={false} text="Trade with the best products" />
+            </div>
           </div>
+          <WithDrawalSection />
+          <div className="bg-[#0f1827] bg-cover bg-center bg-no-repeat px-4 md:px-12 py-5 md:py-10">
+            <TextMain
+              text="Steps"
+              title="Steps to become funded trader"
+              description="Our platform makes crypto investments simple and accessible for all users."
+            />
+            <HowItWorks mainData={features} />
+          </div>
+          <div className="px-3 lg:px-20 xl:px-28">
+            <FAQComponent />
+          </div>
+          <AceFundedTrader />
         </div>
-        <WithDrawalSection />
-        <div className="bg-[#0f1827] bg-cover bg-center bg-no-repeat px-4 md:px-12 py-5 md:py-10">
-          <TextMain
-            text="Steps"
-            title="Steps to become funded trader"
-            description="Our platform makes crypto investments simple and accessible for all users."
-          />
-          <HowItWorks mainData={features} />
-        </div>
-        <div className="px-3 lg:px-20 xl:px-28">
-          <FAQComponent />
-        </div>
-        <AceFundedTrader />
       </div>
     </>
   );
