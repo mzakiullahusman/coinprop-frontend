@@ -22,7 +22,7 @@ import TradingCombine from "./pages/TradingCombine";
 import AboutUs from "./pages/AboutUs";
 import TermsOfService from "./pages/TermsOfService";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
-import FAQ from "./pages/FAQ";
+import ForexVsFuture from "./pages/ForexVsFuture";
 import ChooseFunding from "./pages/ChooseFunding";
 import BillingInfoCheckout from "./pages/BillingInfoCheckout";
 import NewChallengeCheckout from "./pages/NewChallengeCheckout";
@@ -66,6 +66,7 @@ function App() {
         <Route path="/help-center" element={<HelpCenter />} />
         <Route path="/contact-us" element={<ContactUs />} />
         <Route path="/careers" element={<Careers />} />
+        <Route path="/forex-vs-future" element={<ForexVsFuture />} />
         <Route path="/terms-&-conditions" element={<TermsOfService />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/" element={<Navigate to="/auth/sign-in" />} />
