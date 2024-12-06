@@ -14,43 +14,45 @@ const CoinPropFutures = () => {
         <br /> Achieve Unparalleled Results
       </div>
 
-      <div className="flex flex-col justify-center items-center bg-white bg-opacity-[2%]">
+      <div className="flex flex-col justify-center my-5 items-center bg-white bg-opacity-[2%]">
         <div className="rounded-[14px] border bg-white bg-opacity-[2%] border-white border-opacity-10 p-5 w-full max-w-6xl">
-          <table className="w-full text-center">
-            <thead>
-              <tr className="border-b border-white border-opacity-10 ">
-                <th className="text-lg lg:text-2xl font-poppins font-normal px-4 py-2">
-                  Instrument
-                </th>
-                <th className="text-lg lg:text-2xl font-poppins font-normal px-4 py-2">
-                  Description
-                </th>
-                <th className="text-lg lg:text-2xl font-poppins font-normal px-4 py-2">
-                  Tick Size
-                </th>
-                <th className="text-lg lg:text-2xl font-poppins font-normal px-4 py-2">
-                  Tick Value
-                </th>
-              </tr>
-            </thead>
+          <div className="overflow-x-auto">
+            <table className="w-full text-center">
+              <thead>
+                <tr className="border-b border-white border-opacity-10 ">
+                  <th className="text-sm md:text-2xl font-poppins font-normal px-4 py-2">
+                    Instrument
+                  </th>
+                  <th className="text-sm md:text-2xl font-poppins font-normal px-4 py-2">
+                    Description
+                  </th>
+                  <th className="text-sm md:text-2xl font-poppins font-normal px-4 py-2">
+                    Tick Size
+                  </th>
+                  <th className="text-sm md:text-2xl font-poppins font-normal px-4 py-2">
+                    Tick Value
+                  </th>
+                </tr>
+              </thead>
 
-            <tbody>
-              <tr className="border-b border-white border-opacity-10">
-                <td className="text-lg lg:text-2xl font-poppins font-normal px-4 py-2">
-                  ES
-                </td>
-                <td className="text-lg lg:text-2xl font-poppins font-normal px-4 py-2">
-                  S&P 500
-                </td>
-                <td className="text-lg lg:text-2xl font-poppins font-normal px-4 py-2">
-                  .25
-                </td>
-                <td className="text-lg lg:text-2xl font-poppins font-normal px-4 py-2">
-                  $12.50
-                </td>
-              </tr>
-            </tbody>
-          </table>
+              <tbody>
+                <tr className="border-b border-white border-opacity-10">
+                  <td className="text-sm md:text-2xl font-poppins font-normal px-4 py-2">
+                    ES
+                  </td>
+                  <td className="text-sm md:text-2xl font-poppins font-normal px-4 py-2">
+                    S&P 500
+                  </td>
+                  <td className="text-sm md:text-2xl font-poppins font-normal px-4 py-2">
+                    .25
+                  </td>
+                  <td className="text-sm md:text-2xl font-poppins font-normal px-4 py-2">
+                    $12.50
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
 

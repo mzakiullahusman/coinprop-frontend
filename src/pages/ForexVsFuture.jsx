@@ -6,6 +6,7 @@ import FAQComp1 from "@components/FAQComp1";
 import Laptop from "@assets/images/Laptop.png";
 import Future from "@assets/images/Future.png";
 import CoinPropFutures from "@components/CoinPropFutures";
+import AceFundedTrader from "@components/AceFundedTrader";
 const ForexVsFuture = () => {
   return (
     <>
@@ -30,6 +31,7 @@ const ForexVsFuture = () => {
         </div>
         <FAQComp1 />
         <CoinPropFutures />
+        <AceFundedTrader />
       </div>
     </>
   );
