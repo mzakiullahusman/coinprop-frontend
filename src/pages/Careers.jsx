@@ -6,6 +6,8 @@ import FAQComponent from "@components/FAQComponent";
 import HowItWorksBg from "@assets/images/HowItWorksBg.png";
 import MainWork from "@components/MainWork";
 import AboutAceFunded from "@components/AboutAceFunded";
+import TextMain from "@components/TextMain";
+import CareerCard from "@components/CareerCard";
 
 const Careers = () => {
   const data = [
@@ -83,9 +85,17 @@ const Careers = () => {
         <HowItWorksCommon text="Explore Careers at Risk Master" index={true} />
         <MainWork data={data} />
       </div>
+      <TextMain
+        text="Process"
+        title="Recruitment Process Overview"
+        description="Commodo nec mi id ullamcorper vitae augue neque dis. Nunc lacinia viverra orci diam. Nibh est vitae suspendisse parturient sed lorem eu."
+        index={true}
+        textStyling="gradient"
+      />
       <div className="flex flex-wrap md:flex-nowrap justify-center px-4 lg:px-16 py-5 md:py-10 items-start gap-4">
         <AboutAceFunded text="Process" data={workData} />
       </div>
+      <CareerCard />
       <div className="xl:px-28">
         <FAQComponent />
       </div>

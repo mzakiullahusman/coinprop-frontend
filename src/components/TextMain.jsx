@@ -13,7 +13,7 @@ const TextMain = ({ text, title, description, index, textStyling }) => {
         <img src={ButtonIcon} alt="Icon" />
         {text}
       </button>
-      {textStyling === "gradient" && text !== "FAQs" ? (
+      {textStyling === "gradient" && text !== "FAQs" && text !== "Process" ? (
         <div className="text-[28px] capitalize text-white lg:text-[50px] xl:text-[44px] font-poppins font-semibold">
           what we bring for{" "}
           <span className="bg-gradient-to-r from-[#00fc9e] to-[#1c7ef0] text-transparent bg-clip-text">
@@ -23,6 +23,13 @@ const TextMain = ({ text, title, description, index, textStyling }) => {
       ) : textStyling === "gradient" && text === "FAQs" ? (
         <div className="text-[28px] capitalize text-white text-center lg:text-[50px] xl:text-[44px] font-poppins font-semibold">
           Frequently Asked <span className="text-[#01ff9d]">Questions?</span>
+        </div>
+      ) : textStyling === "gradient" && text === "Process" ? (
+        <div className="text-[28px] capitalize text-white text-center lg:text-[50px] xl:text-[44px] font-poppins font-semibold">
+          <span className="bg-gradient-to-r from-[#00fc9e] to-[#00fc9e] text-transparent bg-clip-text">
+            Recruitment{" "}
+          </span>{" "}
+          Process Overview
         </div>
       ) : (
         <div
@@ -41,10 +48,14 @@ const TextMain = ({ text, title, description, index, textStyling }) => {
       ) : (
         <div
           className={`text-base ${
-            textStyling === "gradient" ? "text-[#bababa]" : " text-white"
+            text === "Process" && index === true
+              ? "text-[#bababa]"
+              : textStyling === "gradient"
+              ? "text-[#bababa]"
+              : "text-white"
           } lg:text-lg font-poppins font-light ${
             index === false ? "text-left" : "px-3 md:px-20 text-center"
-          } `}
+          }`}
         >
           {description}
         </div>
