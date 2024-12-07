@@ -14,7 +14,7 @@ import ProfitAndShareIcon from "../assets/ProfitAndShareIcon";
 import TradersMindIcon from "../assets/TradersMindIcon";
 import BillingAndAccountsIcon from "../assets/BillingAndAccountsIcon";
 import CustomerSupportIcon from "../assets/CustomerSupportIcon";
-
+import SettingIcon from "@components/assets/SettingIcon";
 import background from "@assets/images/background.png";
 import { useAuth } from "../../context/AuthContext";
 
@@ -28,12 +28,12 @@ const Layout = ({ children }) => {
       name: "Performance Stats",
       icon: <DashboardIcon />,
     },
-    // {
-    //   id: 2,
-    //   path: "/trading-account",
-    //   name: "Trading Terminal",
-    //   icon: <TradingAccountIcon />,
-    // },
+    {
+      id: 2,
+      path: "/trading-view",
+      name: "Trading Terminal",
+      icon: <TradingAccountIcon />,
+    },
     {
       id: 3,
       path: "/accounts",
@@ -46,24 +46,19 @@ const Layout = ({ children }) => {
       name: "Competitions",
       icon: <CompetitionIcon />,
     },
-    {
-      id: 5,
-      path: "/affiliate-portal",
-      name: "Affiliate Portal",
-      icon: <AffiliateIcon />,
-    },
+
     // {
     //   id: 6,
     //   path: "/certificates",
     //   name: "Certificates",
     //   icon: <CertificateIcon />,
     // },
-    {
-      id: 7,
-      path: "/profit-and-share",
-      name: "Profit and Share",
-      icon: <ProfitAndShareIcon />,
-    },
+    // {
+    //   id: 7,
+    //   path: "/profit-and-share",
+    //   name: "Profit and Share",
+    //   icon: <ProfitAndShareIcon />,
+    // },
     {
       id: 8,
       path: "/billing-and-accounts",
@@ -71,23 +66,35 @@ const Layout = ({ children }) => {
       icon: <BillingAndAccountsIcon />,
     },
     {
-      id: 8.25,
-      path: "/news-feed",
-      name: "News Feed",
-      icon: <LiveNewsIcon />,
+      id: 5,
+      path: "/affiliate-portal",
+      name: "Affiliate Portal",
+      icon: <AffiliateIcon />,
     },
     {
-      id: 8.5,
-      path: "/news-calendar",
-      name: "News Calendar",
-      icon: <NewsCalendar />,
+      id: 5,
+      path: "/profile",
+      name: "Settings",
+      icon: <SettingIcon />,
     },
-    {
-      id: 9,
-      path: "/customer-support",
-      name: "Customer Support",
-      icon: <CustomerSupportIcon />,
-    },
+    // {
+    //   id: 8.25,
+    //   path: "/news-feed",
+    //   name: "News Feed",
+    //   icon: <LiveNewsIcon />,
+    // },
+    // {
+    //   id: 8.5,
+    //   path: "/news-calendar",
+    //   name: "News Calendar",
+    //   icon: <NewsCalendar />,
+    // },
+    // {
+    //   id: 9,
+    //   path: "/customer-support",
+    //   name: "Customer Support",
+    //   icon: <CustomerSupportIcon />,
+    // },
     {
       id: 10,
       path: "/faqs",
