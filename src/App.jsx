@@ -39,6 +39,7 @@ import Faqs from "./pages/Faqs";
 import Profile from "./pages/Profile";
 import AccountSecurity from "./pages/Profile/AccountSecurity";
 import Account from "./pages/Account";
+import TradingInterface from "./pages/TradingInterface";
 // components
 import Layout from "./components/Layout";
 import "./App.css";
@@ -65,6 +66,7 @@ function App() {
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/" element={<Navigate to="/auth/sign-in" />} />
         <Route path="/auth/*" element={<AuthRoutes />} />
+        <Route path="/trading-view" element={<TradingInterface />} />
         <Route
           path="/*"
           element={
@@ -85,6 +87,7 @@ function App() {
                 <Route path="/news-calendar" element={<NewsCalendar />} />
                 <Route path="/accounts" element={<Account />} />
                 <Route path="/competitions" element={<Competitions />} />
+
                 <Route
                   path="/competition-standings"
                   element={<CompetitionStandings />}
