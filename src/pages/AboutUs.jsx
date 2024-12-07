@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import HowItWorksBg from "@assets/images/HowItWorksBg.png";
 import HowItWorksCommon from "@components/HowItWorksCommon";
 import AceFundedTrader from "@components/AceFundedTrader";
@@ -10,6 +10,8 @@ import Crypto1 from "@assets/images/Crypto1.png";
 import TextMain from "@components/TextMain";
 import AboutUsComponent from "@components/AboutUsComponent";
 import RMTRight from "@components/RMTRight";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const AboutUs = () => {
   const tickList = [
@@ -44,6 +46,13 @@ const AboutUs = () => {
       ],
     },
   ];
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      easing: "ease-in-out",
+      // once: true,
+    });
+  }, []);
   return (
     <div className="bg-[#020621]">
       <div
@@ -51,12 +60,16 @@ const AboutUs = () => {
         style={{
           backgroundImage: `url(${HowItWorksBg})`,
         }}
+        data-aos="fade-up"
       >
         <HowItWorksCommon text="About Us" index={true} />
         <MainWork data={mainSections} />
       </div>
 
-      <div className="relative w-full h-screen flex justify-center items-center">
+      <div
+        className="relative w-full h-screen flex justify-center items-center"
+        data-aos="fade-up"
+      >
         <img src={About2} alt="About2" />
         <button className="absolute">
           <img
@@ -67,7 +80,10 @@ const AboutUs = () => {
         </button>
       </div>
 
-      <div className="flex flex-col lg:flex-row items-center gap-4 lg:gap-20 pr-4 py-5 lg:py-10 lg:pr-20">
+      <div
+        data-aos="fade-up"
+        className="flex flex-col lg:flex-row items-center gap-4 lg:gap-20 pr-4 py-5 lg:py-10 lg:pr-20"
+      >
         <div className="w-full lg:w-[45%]">
           <img className="lg:w-full " src={Crypto} alt="Crypto" />
         </div>
@@ -83,7 +99,10 @@ const AboutUs = () => {
         </div>
       </div>
 
-      <div className="flex flex-col lg:flex-row items-center gap-4 pl:4 lg:pl-20 py-10 lg:py-20 lg:gap-20 ">
+      <div
+        data-aos="fade-up"
+        className="flex flex-col lg:flex-row items-center gap-4 pl:4 lg:pl-20 py-10 lg:py-20 lg:gap-20 "
+      >
         <div className="w-full lg:w-1/2 ">
           <RMTRight tickList={tickList} />
         </div>
@@ -92,7 +111,9 @@ const AboutUs = () => {
         </div>
       </div>
 
-      <AceFundedTrader />
+      <div data-aos="fade-up">
+        <AceFundedTrader />
+      </div>
     </div>
   );
 };

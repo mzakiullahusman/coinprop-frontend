@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import HowItWorksCommon from "@components/HowItWorksCommon";
 import AceFundedTrader from "@components/AceFundedTrader";
@@ -9,6 +9,8 @@ import AboutAceFunded from "@components/AboutAceFunded";
 import TextMain from "@components/TextMain";
 import CareerCard from "@components/CareerCard";
 import CareerSwipe from "@components/CareerSwipe";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Careers = () => {
   const data = [
@@ -75,9 +77,17 @@ const Careers = () => {
         "Commodo nec mi id ullamcorper vitae augue neque dis. Nunc lacinia viverra orci.",
     },
   ];
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      easing: "ease-in-out",
+      // once: true,
+    });
+  }, []);
   return (
     <div className="bg-[#020621]">
       <div
+        data-aos="fade-up"
         className="bg-cover bg-center bg-no-repeat gap-6 px-4 lg:px-16 py-5 md:py-10"
         style={{
           backgroundImage: `url(${HowItWorksBg})`,
@@ -86,15 +96,17 @@ const Careers = () => {
         <HowItWorksCommon text="Explore Careers at Risk Master" index={true} />
         <MainWork data={data} />
       </div>
-      <TextMain
-        text="Process"
-        title="Recruitment Process Overview"
-        description="Commodo nec mi id ullamcorper vitae augue neque dis. Nunc lacinia viverra orci diam. Nibh est vitae suspendisse parturient sed lorem eu."
-        index={true}
-        textStyling="gradient"
-      />
-      <div className="flex flex-wrap md:flex-nowrap justify-center px-4 lg:px-16 py-5 md:py-10 items-start gap-4">
-        <AboutAceFunded text="Process" data={workData} />
+      <div data-aos="fade-up">
+        <TextMain
+          text="Process"
+          title="Recruitment Process Overview"
+          description="Commodo nec mi id ullamcorper vitae augue neque dis. Nunc lacinia viverra orci diam. Nibh est vitae suspendisse parturient sed lorem eu."
+          index={true}
+          textStyling="gradient"
+        />
+        <div className="flex flex-wrap md:flex-nowrap justify-center px-4 lg:px-16 py-5 md:py-10 items-start gap-4">
+          <AboutAceFunded text="Process" data={workData} />
+        </div>
       </div>
       <TextMain
         text="Open Roles"
@@ -102,14 +114,18 @@ const Careers = () => {
         description="Commodo nec mi id ullamcorper vitae augue neque dis."
         index={true}
       />
-      <CareerSwipe />
-      <CareerCard />
-
-      <div className="xl:px-28">
+      <div data-aos="fade-up">
+        <CareerSwipe />
+      </div>
+      <div>
+        <CareerCard />
+      </div>
+      <div data-aos="fade-up" className="xl:px-28">
         <FAQComponent />
       </div>
-
-      <AceFundedTrader />
+      <div data-aos="fade-up">
+        <AceFundedTrader />
+      </div>
     </div>
   );
 };
