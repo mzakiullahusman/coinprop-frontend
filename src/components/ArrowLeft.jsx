@@ -22,7 +22,7 @@ const ArrowLeft = () => {
           d="M23.2008 16.4321H9.20081M9.20081 16.4321L16.2008 23.4321M9.20081 16.4321L16.2008 9.43213"
           stroke="white"
           strokeWidth="2"
-          stroke-linecap="round"
+          strokeLinecap="round"
           strokeLinejoin="round"
         />
       </g>

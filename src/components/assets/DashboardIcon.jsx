@@ -14,21 +14,21 @@ const DashboardIcon = ({ active }) => {
           d="M7.62891 8.33398L7.62891 13.334"
           stroke="#8A8A8A"
           strokeWidth="2"
-          stroke-linecap="round"
+          strokeLinecap="round"
           strokeLinejoin="round"
         />
         <path
           d="M10.9619 10V13.3333"
           stroke="#8A8A8A"
           strokeWidth="2"
-          stroke-linecap="round"
+          strokeLinecap="round"
           strokeLinejoin="round"
         />
         <path
           d="M14.2949 6.66602V13.3327"
           stroke="#8A8A8A"
           strokeWidth="2"
-          stroke-linecap="round"
+          strokeLinecap="round"
           strokeLinejoin="round"
         />
         <rect

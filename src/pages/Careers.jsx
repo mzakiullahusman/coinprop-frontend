@@ -8,6 +8,7 @@ import MainWork from "@components/MainWork";
 import AboutAceFunded from "@components/AboutAceFunded";
 import TextMain from "@components/TextMain";
 import CareerCard from "@components/CareerCard";
+import CareerSwipe from "@components/CareerSwipe";
 
 const Careers = () => {
   const data = [
@@ -95,7 +96,15 @@ const Careers = () => {
       <div className="flex flex-wrap md:flex-nowrap justify-center px-4 lg:px-16 py-5 md:py-10 items-start gap-4">
         <AboutAceFunded text="Process" data={workData} />
       </div>
+      <TextMain
+        text="Open Roles"
+        title="Some Things We’ve Done"
+        description="Commodo nec mi id ullamcorper vitae augue neque dis."
+        index={true}
+      />
+      <CareerSwipe />
       <CareerCard />
+
       <div className="xl:px-28">
         <FAQComponent />
       </div>
