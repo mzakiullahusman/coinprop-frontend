@@ -28,12 +28,12 @@
 }
 
 .slider-controler .swiper-button-prev {
-  left: 30% !important;
-  transform: translateX(38%) !important;
+  left: 27% !important;
+  transform: translateX(28%) !important;
 }
 .slider-controler .swiper-button-next {
-  left: 68% !important;
-  transform: translateX(-62%) !important;
+  left: 71% !important;
+  transform: translateX(-71%) !important;
 }
 
 @media (max-width: 1024px) {

@@ -46,6 +46,7 @@ import ContactUs from "./pages/ContactUs";
 import Careers from "./pages/Careers";
 import RiskDisclosure from "./pages/RiskDisclosure";
 import Disclosure from "./pages/Disclosure";
+import LayoutLanding from "@components/LayoutLanding/LayoutLanding";
 
 const AuthRoutes = () => (
   // <PublicRoute>
@@ -57,22 +58,30 @@ const AuthRoutes = () => (
   // </PublicRoute>
 );
 
+const LandingRoutes = () => (
+  <LayoutLanding>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/how-it-works" element={<HowItWorks />} />
+      <Route path="/trading-combine" element={<TradingCombine />} />
+      <Route path="/about-us" element={<AboutUs />} />
+      <Route path="/help-center" element={<HelpCenter />} />
+      <Route path="/contact-us" element={<ContactUs />} />
+      <Route path="/careers" element={<Careers />} />
+      <Route path="/forex-vs-future" element={<ForexVsFuture />} />
+      <Route path="/terms-&-conditions" element={<TermsOfService />} />
+      <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+      <Route path="/risk-disclosure" element={<RiskDisclosure />} />
+      <Route path="/disclosure" element={<Disclosure />} />
+    </Routes>
+  </LayoutLanding>
+);
+
 function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/how-it-works" element={<HowItWorks />} />
-        <Route path="/trading-combine" element={<TradingCombine />} />
-        <Route path="/about-us" element={<AboutUs />} />
-        <Route path="/help-center" element={<HelpCenter />} />
-        <Route path="/contact-us" element={<ContactUs />} />
-        <Route path="/careers" element={<Careers />} />
-        <Route path="/forex-vs-future" element={<ForexVsFuture />} />
-        <Route path="/terms-&-conditions" element={<TermsOfService />} />
-        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-        <Route path="/risk-disclosure" element={<RiskDisclosure />} />
-        <Route path="/disclosure" element={<Disclosure />} />
+        <Route path="/landing/*" element={<LandingRoutes />} />
         <Route path="/" element={<Navigate to="/auth/sign-in" />} />
         <Route path="/auth/*" element={<AuthRoutes />} />
         <Route

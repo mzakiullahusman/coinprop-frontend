@@ -60,3 +60,16 @@ html {
   transition: "background 0.3s ease-in-out";
   box-shadow: inset 0px 0px 30px rgba(31, 217, 173, 0.8);
 }
+
+.gradient-header {
+  padding: 12px 24px;
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  color: white;
+  border-radius: 24px;
+  border: none;
+  cursor: pointer;
+  transition: "background 0.3s ease-in-out";
+  box-shadow: inset 0px 0px 30px rgba(123, 136, 133, 0.8);
+}
