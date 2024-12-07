@@ -1,5 +1,5 @@
 import React from "react";
-import BgImage from "@assets/images/BgImage.png";
+import BgStar from "@assets/images/BgStar.png";
 import AceFundedTrader from "@components/AceFundedTrader";
 
 const PrivacyPolicy = () => {
@@ -22,7 +22,12 @@ const PrivacyPolicy = () => {
   const filteredContent = Array(4).fill(contentData[0]);
   return (
     <>
-      <div className="bg-[#0f1827] px-4 md:px-12 py-5  md:py-10">
+      <div
+        className="bg-cover bg-center bg-no-repeat bg-[#0f1827] px-4 md:px-12 py-5  md:py-10 "
+        style={{
+          backgroundImage: `url(${BgStar})`,
+        }}
+      >
         <div className="text-[32px] capitalize tracking-[-1px] mb-6 xl:leading-[80px] text-white  lg:text-[64px]  font-poppins font-bold">
           Privacy Policy
         </div>
@@ -30,7 +35,7 @@ const PrivacyPolicy = () => {
           {filteredContent.map((item, index) => (
             <div
               key={index}
-              className="flex flex-col gap-y-6 font-redhat font-medium text-white text-base capitalize lg:text-[20px]"
+              className="flex flex-col gap-y-6 font-poppins font-medium text-white text-base capitalize lg:text-[20px]"
             >
               <span>{item.title}</span>
               <span className="leading-[54px]">{item.description}</span>

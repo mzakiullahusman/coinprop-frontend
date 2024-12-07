@@ -28,7 +28,7 @@ const HowItWorksCommon = ({ index, text }) => {
               <div className="h-[50px] w-[6px] text-center mx-auto bg-[#01ff9d]"></div>
             ))}
           {text === "About Us" ? (
-            <div className="font-poppins text-center mt-2 font-normal text-lg lg:text-2xl">
+            <div className="font-poppins leading-[36px] text-center mt-2 font-normal text-lg lg:text-2xl">
               We’re Special and We Know It
               <br /> Traders have withdrawn millions since 2012, and it’s not
               luck — we

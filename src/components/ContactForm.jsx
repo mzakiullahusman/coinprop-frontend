@@ -131,6 +131,25 @@ const ContactForm = () => {
           </div>
         </div>
       </div>
+      <div className="w-full mt-3">
+        <label
+          htmlFor="message"
+          className="block text-lg lg:text-[20px] my-2 font-medium text-white"
+        >
+          Message
+        </label>
+
+        <textarea
+          type="text"
+          id="message"
+          name="message"
+          value={formData.message}
+          onChange={handleChange}
+          rows="6"
+          required
+          className="w-full resize-none p-5  border border-white border-opacity-20 text-sm font-poppins font-normal rounded-md bg-white bg-opacity-[2%] text-white placeholder:text-white focus:ring-blue-500 focus:outline-none"
+        />
+      </div>
 
       <button
         type="submit"

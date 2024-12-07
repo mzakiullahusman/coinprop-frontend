@@ -44,6 +44,8 @@ import "./App.css";
 import HelpCenter from "./pages/HelpCenter";
 import ContactUs from "./pages/ContactUs";
 import Careers from "./pages/Careers";
+import RiskDisclosure from "./pages/RiskDisclosure";
+import Disclosure from "./pages/Disclosure";
 
 const AuthRoutes = () => (
   // <PublicRoute>
@@ -69,6 +71,8 @@ function App() {
         <Route path="/forex-vs-future" element={<ForexVsFuture />} />
         <Route path="/terms-&-conditions" element={<TermsOfService />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/risk-disclosure" element={<RiskDisclosure />} />
+        <Route path="/disclosure" element={<Disclosure />} />
         <Route path="/" element={<Navigate to="/auth/sign-in" />} />
         <Route path="/auth/*" element={<AuthRoutes />} />
         <Route
