@@ -17,11 +17,12 @@ import Register from "./pages/authentication/Register";
 import Dashboard from "./pages/Dashboard";
 import TradingAccount from "./pages/TradingAccount";
 import Home from "./pages/Home";
-import HowItWorks from "./pages/HomeItWorks";
+import HowItWorks from "./pages/HowItWorks";
+import TradingCombine from "./pages/TradingCombine";
 import AboutUs from "./pages/AboutUs";
 import TermsOfService from "./pages/TermsOfService";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
-import FAQ from "./pages/FAQ";
+import ForexVsFuture from "./pages/ForexVsFuture";
 import ChooseFunding from "./pages/ChooseFunding";
 import BillingInfoCheckout from "./pages/BillingInfoCheckout";
 import NewChallengeCheckout from "./pages/NewChallengeCheckout";
@@ -43,6 +44,12 @@ import TradingInterface from "./pages/TradingInterface";
 // components
 import Layout from "./components/Layout";
 import "./App.css";
+import HelpCenter from "./pages/HelpCenter";
+import ContactUs from "./pages/ContactUs";
+import Careers from "./pages/Careers";
+import RiskDisclosure from "./pages/RiskDisclosure";
+import Disclosure from "./pages/Disclosure";
+import LayoutLanding from "@components/LayoutLanding/LayoutLanding";
 
 const AuthRoutes = () => (
   // <PublicRoute>
@@ -54,16 +61,30 @@ const AuthRoutes = () => (
   // </PublicRoute>
 );
 
+const LandingRoutes = () => (
+  <LayoutLanding>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/how-it-works" element={<HowItWorks />} />
+      <Route path="/trading-combine" element={<TradingCombine />} />
+      <Route path="/about-us" element={<AboutUs />} />
+      <Route path="/help-center" element={<HelpCenter />} />
+      <Route path="/contact-us" element={<ContactUs />} />
+      <Route path="/careers" element={<Careers />} />
+      <Route path="/forex-vs-future" element={<ForexVsFuture />} />
+      <Route path="/terms-&-conditions" element={<TermsOfService />} />
+      <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+      <Route path="/risk-disclosure" element={<RiskDisclosure />} />
+      <Route path="/disclosure" element={<Disclosure />} />
+    </Routes>
+  </LayoutLanding>
+);
+
 function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/how-it-works" element={<HowItWorks />} />
-        <Route path="/about-us" element={<AboutUs />} />
-        <Route path="/faq" element={<FAQ />} />
-        <Route path="/terms-of-service" element={<TermsOfService />} />
-        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/landing/*" element={<LandingRoutes />} />
         <Route path="/" element={<Navigate to="/auth/sign-in" />} />
         <Route path="/auth/*" element={<AuthRoutes />} />
         <Route path="/trading-view" element={<TradingInterface />} />

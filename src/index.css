@@ -26,3 +26,32 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+.slider-controler .swiper-button-prev {
+  left: 27% !important;
+  transform: translateX(28%) !important;
+}
+.slider-controler .swiper-button-next {
+  left: 71% !important;
+  transform: translateX(-71%) !important;
+}
+
+@media (max-width: 1024px) {
+  .slider-controler .swiper-button-prev {
+    left: 10% !important;
+    transform: translateX(-25%) !important;
+  }
+
+  .slider-controler .swiper-button-next {
+    left: 90% !important;
+    transform: translateX(-75%) !important;
+  }
+}
+
+.slider-controler .slider-arrow {
+  width: 3rem;
+}
+
+.slider-controler .slider-arrow::after {
+  content: "";
+}

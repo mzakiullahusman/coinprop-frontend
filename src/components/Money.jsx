@@ -2,6 +2,7 @@ import React from "react";
 import Minus from "@assets/icons/Minus.svg";
 import Plus from "@assets/icons/Plus.svg";
 import ProfitImage from "@assets/images/ProfitImage.png";
+import MoneyPrices from "./MoneyPrices";
 const Money = () => {
   return (
     <div className="flex flex-col lg:flex-row justify-between gap-12 xl:gap-60 px-4 md:px-12 py-5 md:py-10 items-center">
@@ -15,16 +16,7 @@ const Money = () => {
           tortor ut ac ullamcorper ac et facilisis.
         </div>
         <div className="flex justify-between items-center">
-          <div className="font-poppins bg-gradient-to-r from-[#00fc9e] to-[#1c7ef0] bg-clip-text text-transparent font-semibold text-2xl lg:text-[37px]">
-            41.5%
-          </div>
-
-          <div className="font-poppins bg-gradient-to-r from-[#00fc9e] to-[#1c7ef0] bg-clip-text text-transparent font-semibold text-2xl lg:text-[37px]">
-            $2.5T
-          </div>
-          <div className="font-poppins bg-gradient-to-r from-[#00fc9e] to-[#1c7ef0] bg-clip-text text-transparent font-semibold text-2xl lg:text-[37px]">
-            $300B
-          </div>
+          <MoneyPrices />
         </div>
       </div>
       <div className="w-full flex flex-col p-5 lg:p-6 gap-9 lg:w-1/2 bg-white bg-opacity-5 border border-white border-opacity-10 rounded-[16px] ">

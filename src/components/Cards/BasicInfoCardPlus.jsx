@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./cards.module.css";
-import ArrowDown from "../assets/ArrowDown";
+import ArrowDown from "../assets/Arrow";
 
 const BasicInfoCardPlus = ({
   title,

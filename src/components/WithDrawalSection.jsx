@@ -1,5 +1,4 @@
 import React from "react";
-import TickIcon from "@assets/icons/TickIcon.svg";
 import BrandIcon1 from "@assets/icons/BrandIcon1.svg";
 import BrandIcon2 from "@assets/icons/BrandIcon2.svg";
 import BrandIcon3 from "@assets/icons/BrandIcon3.svg";
@@ -15,14 +14,8 @@ import ArrowPlusIcon from "@assets/icons/ArrowPlusIcon.svg";
 import TickIconLg from "@assets/icons/TickIconLg.svg";
 import Graph from "@assets/icons/Graph.svg";
 import TextMain from "./TextMain";
+import AboutUsComponent from "./AboutUsComponent";
 const WithDrawalSection = () => {
-  const tickList = [
-    { text: "Up To $400,000 Starting Capital" },
-    { text: "First Withdrawal On Demand" },
-    { text: "Unlimited Days Available" },
-    { text: "Up To 90% Performance Split" },
-  ];
-
   const diveIcons = [
     { src: BrandIcon1, alt: "BrandIcon1" },
     { src: BrandIcon2, alt: "BrandIcon2" },
@@ -127,16 +120,7 @@ const WithDrawalSection = () => {
             index={false}
           />
 
-          <div className="grid xl:grid-cols-2 gap-x-20 gap-y-6 text-white mt-6">
-            {tickList.map((item, index) => (
-              <div key={index} className="flex items-center gap-3">
-                <img src={TickIcon} alt="tickIcon" />
-                <span className="font-poppins font-normal text-[22px]">
-                  {item.text}
-                </span>
-              </div>
-            ))}
-          </div>
+          <AboutUsComponent />
         </div>
       </div>
       <div className="flex flex-col md:flex-row items-center xl:py-12 justify-center gap-12 xl:gap-20 ">

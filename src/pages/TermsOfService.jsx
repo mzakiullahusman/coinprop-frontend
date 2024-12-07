@@ -1,5 +1,6 @@
+import AceFundedTrader from "@components/AceFundedTrader";
+import BgStar from "@assets/images/BgStar.png";
 import React from "react";
-import BgImage from "@assets/images/BgImage.png";
 
 const TermsOfService = () => {
   const contentData = [
@@ -22,25 +23,26 @@ const TermsOfService = () => {
   return (
     <>
       <div
-        className="bg-[#020621] bg-cover bg-center bg-no-repeat px-4 md:px-12 py-5  md:py-10"
+        className="bg-cover bg-center bg-no-repeat bg-[#0f1827] px-4 md:px-12 py-5  md:py-10 "
         style={{
-          backgroundImage: `url(${BgImage})`,
+          backgroundImage: `url(${BgStar})`,
         }}
       >
-        <div className="text-[32px] capitalize tracking-[-1px] xl:tracking-[-4px] mb-12 xl:leading-[100px] text-white  lg:text-[60px] xl:text-[84px] font-redhat font-medium">
-          Terms Of service.
+        <div className="text-[32px] capitalize tracking-[-1px] mb-6 xl:leading-[80px] text-white  lg:text-[64px]  font-poppins font-bold">
+          Terms & Conditions
         </div>
         <div className="space-y-8">
           {filteredContent.map((item, index) => (
             <div
               key={index}
-              className="flex flex-col gap-y-6 font-redhat font-medium text-white text-base capitalize lg:text-[20px]"
+              className="flex flex-col gap-y-6 font-poppins font-medium text-white text-base capitalize lg:text-[20px]"
             >
               <span>{item.title}</span>
               <span className="leading-[54px]">{item.description}</span>
             </div>
           ))}
         </div>
+        <AceFundedTrader />
       </div>
     </>
   );
