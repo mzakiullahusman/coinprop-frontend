@@ -2,13 +2,14 @@ import React, { useState } from "react";
 import Logo from "@assets/icons/Logo.svg";
 import BgStar from "@assets/images/BgStar.png";
 import PlusIcon from "@assets/icons/PlusIcon.svg";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const router = useNavigate();
   const navLinks = [
     { name: "How It Works", path: "/landing/how-it-works" },
-    { name: "About", path: "landing/about-us" },
+    { name: "About", path: "/landing/about-us" },
     { name: "Tools", path: "landing/#" },
     { name: "Affiliate", path: "/landing/affiliates" },
     { name: "Resources", path: "/landing/resources" },
@@ -50,12 +51,15 @@ const Header = () => {
 
         <div className="hidden xl:flex  items-center gap-y-4 md:gap-y-0 gap-x-4 mt-4 md:mt-0">
           <Link
-            to="/login"
+            to="/auth/sign-in"
             className=" text-white text-sm md:text-base font-poppins font-light hover:opacity-90 transition"
           >
             Log in
           </Link>
-          <button className=" text-white border border-white border-opacity-20 px-4 py-3 text-sm md:text-base font-poppins font-light rounded-full shadow-lg hover:opacity-90 transition">
+          <button
+            onClick={() => router("/auth/sign-up")}
+            className=" text-white border border-white border-opacity-20 px-4 py-3 text-sm md:text-base font-poppins font-light rounded-full shadow-lg hover:opacity-90 transition"
+          >
             Sign up
           </button>
         </div>
