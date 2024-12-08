@@ -28,12 +28,12 @@ const Layout = ({ children }) => {
       name: "Performance Stats",
       icon: <DashboardIcon />,
     },
-    // {
-    //   id: 2,
-    //   path: "/trading-account",
-    //   name: "Trading Terminal",
-    //   icon: <TradingAccountIcon />,
-    // },
+    {
+      id: 2,
+      path: "/trading-view",
+      name: "Trading Terminal",
+      icon: <TradingAccountIcon />,
+    },
     {
       id: 3,
       path: "/accounts",
@@ -64,24 +64,24 @@ const Layout = ({ children }) => {
       name: "Profit and Share",
       icon: <ProfitAndShareIcon />,
     },
-    {
-      id: 8,
-      path: "/billing-and-accounts",
-      name: "Billing",
-      icon: <BillingAndAccountsIcon />,
-    },
-    {
-      id: 8.25,
-      path: "/news-feed",
-      name: "News Feed",
-      icon: <LiveNewsIcon />,
-    },
-    {
-      id: 8.5,
-      path: "/news-calendar",
-      name: "News Calendar",
-      icon: <NewsCalendar />,
-    },
+    // {
+    //   id: 8,
+    //   path: "/billing-and-accounts",
+    //   name: "Accounts",
+    //   icon: <BillingAndAccountsIcon />,
+    // },
+    // {
+    //   id: 8.25,
+    //   path: "/news-feed",
+    //   name: "News Feed",
+    //   icon: <LiveNewsIcon />,
+    // },
+    // {
+    //   id: 8.5,
+    //   path: "/news-calendar",
+    //   name: "News Calendar",
+    //   icon: <NewsCalendar />,
+    // },
     {
       id: 9,
       path: "/customer-support",

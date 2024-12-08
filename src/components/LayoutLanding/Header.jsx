@@ -24,7 +24,7 @@ const Header = () => {
       }}
     >
       <div className="flex justify-between items-center w-full xl:w-auto">
-        <img src={Logo} alt="Logo" className="h-12 w-12" />
+        <img src={Logo} alt="Logo" className="h-24 w-24" />
 
         <button
           className="text-white xl:hidden text-2xl"
