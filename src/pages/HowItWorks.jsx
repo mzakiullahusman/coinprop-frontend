@@ -116,7 +116,7 @@ const HomeItWorks = () => {
         </div>
       </div>
 
-      <div className="px-3 lg:px-20 xl:px-28" data-aos="fade-left">
+      <div className="px-3 lg:px-20 xl:px-28" data-aos="fade-up">
         <FAQComponent />
       </div>
       <div data-aos="fade-up">

@@ -172,7 +172,7 @@ const Home = () => {
       <div data-aos="fade-up">
         <RMT />
       </div>
-      <div data-aos="fade-left">
+      <div data-aos="fade-up">
         {" "}
         <Testimonial />
       </div>

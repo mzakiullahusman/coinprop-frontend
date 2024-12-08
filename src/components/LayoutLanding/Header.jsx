@@ -10,10 +10,10 @@ const Header = () => {
   const navLinks = [
     { name: "How It Works", path: "/landing/how-it-works" },
     { name: "About", path: "/landing/about-us" },
-    { name: "Tools", path: "landing/#" },
-    { name: "Affiliate", path: "/landing/affiliates" },
-    { name: "Resources", path: "/landing/resources" },
-    { name: "Earn Funding Button", path: "/landing/earn-funding" },
+    { name: "Tools", path: "/landing/trading-combine" },
+    { name: "Affiliate", path: "/landing/careers" },
+    { name: "Resources", path: "/landing/help-center" },
+    { name: "Earn Funding Button", path: "/landing/forex-vs-future" },
   ];
 
   return (
