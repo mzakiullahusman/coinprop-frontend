@@ -18,7 +18,7 @@ const AuthHero = ({ type }) => {
 
           {/* Title Row */}
           <div className="w-full mb-4">
-            <h1 className="text-4xl">Sign Up wit Coin prop.</h1>
+            <h1 className="text-4xl">Sign Up with Coin Prop.</h1>
           </div>
 
           {/* Subtitle Row */}

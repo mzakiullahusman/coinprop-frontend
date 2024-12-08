@@ -5,7 +5,7 @@ const Register = () => {
   return (
     <>
       <section
-        className="w-full bg-cover bg-center min-h-screen"
+        className="w-full bg-cover bg-center min-h-screen lg:min-h-[120%]"
         style={{ backgroundImage: `url(${background})` }}
       >
         <div className="flex flex-col lg:flex-row justify-center items-center gap-8 lg:gap-16 xl:gap-24 px-6 md:px-12 lg:px-24 xl:px-40 min-h-screen">
@@ -18,7 +18,7 @@ const Register = () => {
               <img
                 src={sideImage}
                 alt="coin-prop"
-                className="object-cover w-full h-[120%] -translate-y-[5%] rounded-3xl border border-white/30"
+                className="object-cover w-full h-[110%] -translate-y-[5%] rounded-3xl border border-white/30"
               />
             </div>
           </div>

@@ -102,7 +102,7 @@ const AuthLoginPresenter = ({
             </div>
           </FormControl>
 
-          <div className="flex justify-center lg:justify-between text-[14px] text-custom-color flex-wrap lg:flex-nowrap">
+          <div className="flex justify-center gap-4 items-center lg:justify-between text-[14px] text-custom-color flex-wrap lg:flex-nowrap">
             <div
               className="flex items-center cursor-pointer"
               onClick={toggleRememberPassword}
@@ -116,7 +116,7 @@ const AuthLoginPresenter = ({
             </div>
             <Link
               to="/auth/forgot-password"
-              className="text-custom-color mt-2 lg:mt-0"
+              className="text-custom-color lg:mt-0"
             >
               Forgot Password
             </Link>
