@@ -18,17 +18,18 @@ function CareerSwipe() {
         effect={"coverflow"}
         // grabCursor={true}
         centeredSlides={true}
-        loop={true}
+        // loop={true}
         coverflowEffect={{
           rotate: 0,
-          stretch: 0,
-          depth: 100,
-          modifier: 12,
+          stretch: 100,
+          depth: 10,
+          modifier: 10,
         }}
         slidesPerView={"auto"}
+        initialSlide={1}
         navigation={{
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
+          nextEl: ".swiper-button-prev",
+          prevEl: ".swiper-button-next",
         }}
         modules={[EffectCoverflow, Pagination, Navigation]}
       >

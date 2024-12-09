@@ -68,7 +68,7 @@ html {
   font-weight: 400;
   color: white;
   border-radius: 24px;
-  border: none;
+  border: 1px solid grey;
   cursor: pointer;
   transition: "background 0.3s ease-in-out";
   box-shadow: inset 0px 0px 30px rgba(123, 136, 133, 0.8);

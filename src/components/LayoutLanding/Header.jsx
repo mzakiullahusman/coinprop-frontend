@@ -18,7 +18,7 @@ const Header = () => {
 
   return (
     <div
-      className="bg-[#020621] px-4 lg:px-16 py-5 md:py-10 flex flex-col xl:flex-row justify-between items-center bg-cover bg-center bg-no-repeat"
+      className="bg-[#020621] px-4 lg:px-20 py-5 2xl:px-24 md:py-10 flex flex-col xl:flex-row justify-between items-center bg-cover bg-center bg-no-repeat"
       style={{
         backgroundImage: `url(${BgStar})`,
       }}

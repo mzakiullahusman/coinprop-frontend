@@ -106,10 +106,7 @@ const Home = () => {
   return (
     <div className="bg-[#020621] ">
       <HomeFirst />
-      <div
-        className="bg-[#0f1827] px-4 md:px-12 py-5 md:py-10"
-        data-aos="fade-up"
-      >
+      <div className=" px-4 md:px-12 py-5 md:py-10" data-aos="fade-up">
         <TextMain
           text="Benefits"
           title="Risk Master Traders Benefits"
