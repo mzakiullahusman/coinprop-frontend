@@ -17,14 +17,9 @@ const Header = () => {
   ];
 
   return (
-    <div
-      className="bg-[#020621] px-4 lg:px-20 py-5 2xl:px-24 md:py-10 flex flex-col xl:flex-row justify-between items-center bg-cover bg-center bg-no-repeat"
-      style={{
-        backgroundImage: `url(${BgStar})`,
-      }}
-    >
-      <div className="flex justify-between items-center w-full xl:w-auto">
-        <img src={Logo} alt="Logo" className="h-12 w-12" />
+    <div className=" px-4 lg:px-16 pt-6 xl:px-24 flex flex-col xl:flex-row justify-between items-center">
+      <div className="flex justify-between items-center">
+        <img src={Logo} alt="Logo" className="h-12 w-12 lg:w-16 lg:h-16" />
 
         <button
           className="text-white xl:hidden text-2xl"
@@ -39,7 +34,7 @@ const Header = () => {
             <div key={index} className="flex items-center gap-2">
               <Link
                 to={link.path}
-                className="text-white hover:text-blue-400 transition duration-300 font-poppins font-light text-sm md:text-lg"
+                className="text-white hover:text-blue-400 transition duration-300 font-poppins font-light text-sm md:text-base"
               >
                 {link.name}
               </Link>
@@ -48,21 +43,20 @@ const Header = () => {
             </div>
           ))}
         </div>
-
-        <div className="hidden xl:flex  items-center gap-y-4 md:gap-y-0 gap-x-4 mt-4 md:mt-0">
-          <Link
-            to="/auth/sign-in"
-            className=" text-white text-sm md:text-base font-poppins font-light hover:opacity-90 transition"
-          >
-            Log in
-          </Link>
-          <button
-            onClick={() => router("/auth/sign-up")}
-            className=" text-white border border-white border-opacity-20 px-4 py-3 text-sm md:text-base font-poppins font-light rounded-full shadow-lg hover:opacity-90 transition"
-          >
-            Sign up
-          </button>
-        </div>
+      </div>
+      <div className="hidden xl:flex  items-center gap-y-4 md:gap-y-0 gap-x-4">
+        <Link
+          to="/auth/sign-in"
+          className=" text-white text-sm md:text-base font-poppins font-light hover:opacity-90 transition"
+        >
+          Log in
+        </Link>
+        <button
+          onClick={() => router("/auth/sign-up")}
+          className=" text-white border border-white border-opacity-20 px-4 py-3 text-sm md:text-base font-poppins font-light rounded-full shadow-lg hover:opacity-90 transition"
+        >
+          Sign up
+        </button>
       </div>
       {isMenuOpen && (
         <div className="flex flex-col xl:hidden gap-y-4  gap-x-6 text-center ">

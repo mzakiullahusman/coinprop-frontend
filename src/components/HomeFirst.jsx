@@ -25,10 +25,10 @@ const HomeFirst = () => {
 
   return (
     <div
-      className=" bg-cover bg-center bg-no-repeat px-4 lg:px-20 text-center py-5  md:py-10 flex flex-col items-center justify-center"
-      style={{
-        backgroundImage: `url(${BgImage})`,
-      }}
+      className="px-4 lg:px-20 text-center py-5  md:py-10 flex flex-col items-center justify-center"
+      // style={{
+      //   backgroundImage: `url(${BgImage})`,
+      // }}
     >
       <button className="flex items-center gap-1 gradient-div">
         <img src={ButtonIcon} alt="Icon" />

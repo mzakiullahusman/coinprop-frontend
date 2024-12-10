@@ -58,7 +58,7 @@ html {
   border: none;
   cursor: pointer;
   transition: "background 0.3s ease-in-out";
-  box-shadow: inset 0px 0px 30px rgba(31, 217, 173, 0.8);
+  box-shadow: inset 0px 0px 30px rgba(31, 217, 173, 0.7);
 }
 
 .gradient-header {
