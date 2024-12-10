@@ -13,32 +13,32 @@
 </g>
 <defs>
 <linearGradient id="paint0_linear_102_389" x1="13.0047" y1="30.1716" x2="44.665" y2="30.1716" gradientUnits="userSpaceOnUse">
-<stop stopColor="#00FC9E"/>
-<stop offset="1" stopColor="#1C7EF0"/>
+<stop stop-color="#00FC9E"/>
+<stop offset="1" stop-color="#1C7EF0"/>
 </linearGradient>
 <linearGradient id="paint1_linear_102_389" x1="19.0368" y1="34.7393" x2="23.6054" y2="34.7393" gradientUnits="userSpaceOnUse">
-<stop stopColor="#00FC9E"/>
-<stop offset="1" stopColor="#1C7EF0"/>
+<stop stop-color="#00FC9E"/>
+<stop offset="1" stop-color="#1C7EF0"/>
 </linearGradient>
 <linearGradient id="paint2_linear_102_389" x1="26.5748" y1="32.4328" x2="31.1433" y2="32.4328" gradientUnits="userSpaceOnUse">
-<stop stopColor="#00FC9E"/>
-<stop offset="1" stopColor="#1C7EF0"/>
+<stop stop-color="#00FC9E"/>
+<stop offset="1" stop-color="#1C7EF0"/>
 </linearGradient>
 <linearGradient id="paint3_linear_102_389" x1="34.0185" y1="30.1944" x2="38.5868" y2="30.1944" gradientUnits="userSpaceOnUse">
-<stop stopColor="#00FC9E"/>
-<stop offset="1" stopColor="#1C7EF0"/>
+<stop stop-color="#00FC9E"/>
+<stop offset="1" stop-color="#1C7EF0"/>
 </linearGradient>
 <linearGradient id="paint4_linear_102_389" x1="2.13165" y1="16.5569" x2="26.3451" y2="16.5569" gradientUnits="userSpaceOnUse">
-<stop stopColor="#00FC9E"/>
-<stop offset="1" stopColor="#1C7EF0"/>
+<stop stop-color="#00FC9E"/>
+<stop offset="1" stop-color="#1C7EF0"/>
 </linearGradient>
 <linearGradient id="paint5_linear_102_389" x1="6.65359" y1="16.5803" x2="21.7756" y2="16.5803" gradientUnits="userSpaceOnUse">
-<stop stopColor="#00FC9E"/>
-<stop offset="1" stopColor="#1C7EF0"/>
+<stop stop-color="#00FC9E"/>
+<stop offset="1" stop-color="#1C7EF0"/>
 </linearGradient>
 <linearGradient id="paint6_linear_102_389" x1="11.2697" y1="9.76308" x2="30.852" y2="9.76308" gradientUnits="userSpaceOnUse">
-<stop stopColor="#00FC9E"/>
-<stop offset="1" stopColor="#1C7EF0"/>
+<stop stop-color="#00FC9E"/>
+<stop offset="1" stop-color="#1C7EF0"/>
 </linearGradient>
 </defs>
 </svg>

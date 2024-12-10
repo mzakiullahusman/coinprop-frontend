@@ -57,9 +57,7 @@ const Header = ({ menuItem, logout }) => {
 
   return (
     <>
-      <div
-        className="flex justify-between items-center border-b border-[#3d4054] py-3 lg:py-5 px-4 lg:px-8 bg-sidebar"
-      >
+      <div className="flex justify-between items-center border-b border-[#3d4054] py-3 lg:py-5 px-4 lg:px-8 bg-sidebar">
         {/* Left section - Welcome message */}
         <div className="flex flex-col justify-start">
           <span className="text-gradient-color text-2xl">Welcome Zarror!</span>

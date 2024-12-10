@@ -28,16 +28,16 @@ const Footer = () => {
     {
       title: "Contact",
       links: [
-        { to: "/support-portal", text: "Support Portal" },
-        { to: "/live-chat", text: "Live Chat" },
-        { to: "/partner", text: "Partner" },
+        { to: "/landing/contact-us", text: "Contact" },
+        { to: "/landing/privacy-policy", text: "Privacy Policy" },
+        { to: "/landing/risk-disclosure", text: "Risk Disclosure" },
       ],
     },
     {
       title: "Legal",
       links: [
-        { to: "/support-portal", text: "Support Portal" },
-        { to: "/live-chat", text: "Live Chat" },
+        { to: "/landing", text: "Landing" },
+        { to: "/landing/disclosure", text: "Disclosure" },
         { to: "/partner", text: "Partner" },
       ],
     },
