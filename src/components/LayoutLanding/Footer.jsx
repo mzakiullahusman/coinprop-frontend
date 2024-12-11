@@ -1,6 +1,6 @@
 import React from "react";
 // import BgImage1 from "../assets/Images/BgImage1.png";
-import Logo from "@assets/icons/LogoMain.svg";
+import Logo from "@assets/icons/logoMain.svg";
 import Footer1 from "@assets/icons/Discord.svg";
 import Footer2 from "@assets/icons/Telegram.svg";
 import Footer3 from "@assets/icons/Twitter.svg";

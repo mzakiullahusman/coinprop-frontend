@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Logo from "@assets/icons/LogoMain.svg";
+import Logo from "@assets/icons/logoMain.svg";
 import PlusIcon from "@assets/icons/PlusIcon.svg";
 import { Link, useNavigate } from "react-router-dom";
 
