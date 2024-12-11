@@ -77,6 +77,29 @@ const Layout = ({ children }) => {
       path: "/profile",
       name: "Settings",
       icon: <SettingIcon />,
+    // {
+    //   id: 8,
+    //   path: "/billing-and-accounts",
+    //   name: "Accounts",
+    //   icon: <BillingAndAccountsIcon />,
+    // },
+    // {
+    //   id: 8.25,
+    //   path: "/news-feed",
+    //   name: "News Feed",
+    //   icon: <LiveNewsIcon />,
+    // },
+    // {
+    //   id: 8.5,
+    //   path: "/news-calendar",
+    //   name: "News Calendar",
+    //   icon: <NewsCalendar />,
+    // },
+    {
+      id: 9,
+      path: "/customer-support",
+      name: "Customer Support",
+      icon: <CustomerSupportIcon />,
     },
     // {
     //   id: 8.25,
