@@ -1,24 +1,35 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
-import path from 'path'
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+import path from 'path';
 
-// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
       '@': path.resolve(__dirname, 'src'),
-      '@components': '/src/components',
-      '@assets': '/src/assets',
-      '@icons': '/src/assets/icons',
-      '@constants': '/src/constants',
-      '@context': '/src/context',
-      '@pages': '/src/pages',
-      '@routes': '/src/routes',
-      '@services': '/src/services',
-      '@theme': '/src/theme',
-      '@utils': '/src/utils',
+      '@components': path.resolve(__dirname, 'src/components'),
+      '@assets': path.resolve(__dirname, 'src/assets'),
+      '@icons': path.resolve(__dirname, 'src/assets/icons'),
+      '@constants': path.resolve(__dirname, 'src/constants'),
+      '@context': path.resolve(__dirname, 'src/context'),
+      '@pages': path.resolve(__dirname, 'src/pages'),
+      '@routes': path.resolve(__dirname, 'src/routes'),
+      '@services': path.resolve(__dirname, 'src/services'),
+      '@theme': path.resolve(__dirname, 'src/theme'),
+      '@utils': path.resolve(__dirname, 'src/utils'),
     },
   },
   base: './',
-})
+  optimizeDeps: {
+    exclude: ['chunk-AECWKNT7.js'], // Replace with the actual dependency causing the issue
+  },
+  server: {
+    watch: {
+      ignored: ['**/node_modules/**'], // Avoid unnecessary recompilation
+    },
+  },
+  build: {
+    outDir: 'dist',
+    sourcemap: true, // Enable source maps for better debugging
+  },
+});

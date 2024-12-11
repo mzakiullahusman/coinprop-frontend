@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Chart from "react-apexcharts";
+import TransactionTable from "./TransactionTable";
 
 const CandleChart = () => {
   const [series, setSeries] = useState([
@@ -50,6 +51,7 @@ const CandleChart = () => {
       style: {
         color: "#d1d5db", // White title text
         fontSize: "16px",
+        fontWeight:"normal"
       },
     },
     xaxis: {
@@ -86,14 +88,15 @@ const CandleChart = () => {
   };
 
   return (
-    <div className="border-r-2 border-r-custom-border">
+    <div className="border-r-2 border-r-custom-border overflow-x-auto lg:overflow-x-hidden">
       <Chart
         options={options}
         series={series}
         type="candlestick"
-        height={460}
-        width={900}
+        height="460"
+        width="100%"
       />
+      <TransactionTable />
     </div>
   );
 };

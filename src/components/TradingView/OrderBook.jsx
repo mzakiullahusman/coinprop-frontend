@@ -3,7 +3,7 @@ import React from "react";
 const OrderRow = ({ time, price, amount, isBuy }) => {
   return (
     <div
-      className={`grid grid-cols-3 text-sm py-2 px-1 border-b-2 border-b-custom-border ${
+      className={`grid grid-cols-1 sm:grid-cols-3 text-sm py-2 px-1 border-b-2 border-b-custom-border ${
         isBuy
           ? "text-[#27AE60] bg-[#27AE60] bg-opacity-10"
           : "text-[#EB5757] bg-[#EB5757] bg-opacity-10"
