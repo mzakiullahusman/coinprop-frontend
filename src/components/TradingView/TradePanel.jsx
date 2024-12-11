@@ -2,11 +2,9 @@ import React from "react";
 
 const TradingPanel = () => {
   return (
-    <div className="flex bg-gray-900 text-white">
-      {/* Trading Panel */}
-      <div className="flex flex-col w-auto p-4">
-        {/* Dropdowns and Balance */}
-        <div className="flex items-center  mb-4">
+    <div className="flex flex-col lg:flex-row bg-gray-900 text-white">
+      <div className="flex flex-col w-full lg:w-auto p-4">
+        <div className="flex flex-wrap items-center mb-4 space-y-2 lg:space-y-0 lg:space-x-4">
           <div className="flex space-x-4">
             <select
               className="bg-gray-800 text-white p-2 px-10 text-sm rounded cursor-pointer"

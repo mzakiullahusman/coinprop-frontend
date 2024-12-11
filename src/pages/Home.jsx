@@ -6,6 +6,7 @@ import WithDrawalSection from "../components/WithDrawalSection";
 import Acc from "@assets/icons/Acc.svg";
 import ProveTrade from "@assets/icons/ProveTrade.svg";
 import EarnMoney from "@assets/icons/EarnMoney.svg";
+import BgImage from "@assets/images/BgImage.png";
 import Profit from "@assets/icons/WithDraw.svg";
 import Pro from "@assets/icons/Pro.svg";
 import ChallengeBg from "@assets/images/ChallengeBg.png";
@@ -104,12 +105,9 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="bg-[#020621] ">
+    <div>
       <HomeFirst />
-      <div
-        className="bg-[#0f1827] px-4 md:px-12 py-5 md:py-10"
-        data-aos="fade-up"
-      >
+      <div className=" px-4 md:px-12 py-5 md:py-10" data-aos="fade-up">
         <TextMain
           text="Benefits"
           title="Risk Master Traders Benefits"
@@ -117,10 +115,7 @@ const Home = () => {
         />
         <Benefits />
       </div>
-      <div
-        className="bg-[#0f1827] px-4 md:px-12 py-5 md:py-10"
-        data-aos="fade-up"
-      >
+      <div className=" px-4 md:px-12 py-5 md:py-10" data-aos="fade-up">
         <TextMain
           text="Steps"
           title="How It Works"

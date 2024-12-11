@@ -57,25 +57,24 @@ const Header = ({ menuItem, logout }) => {
 
   return (
     <>
-      <div
-        className="flex justify-between items-center border-b border-[#3d4054] py-3 lg:py-5 px-4 lg:px-8 bg-sidebar"
-      >
+      <div className="flex justify-between items-center border-b border-[#3d4054] py-3 lg:py-5 px-4 lg:px-8 bg-sidebar">
         {/* Left section - Welcome message */}
-        <div className="flex flex-col justify-start">
+        <div className="flex-col justify-start hidden sm:block">
           <span className="text-gradient-color text-2xl">Welcome Zarror!</span>
           <p className="text-sm">Hope you are healthy and happy today...</p>
         </div>
+
         {/* Right section - Action buttons */}
         <div className="flex lg:w-[25%] md:w-[40%] sm:text-inherit text-ellipsis whitespace-nowrap items-center">
           <div className="flex lg:hidden justify-start items-center gap-2 mr-4">
             <IconButton onClick={handleMenuClick}>
               <MenuIcon sx={{ color: "white" }} />
             </IconButton>
-            <img
+            {/* <img
               src={Logo}
               alt="CoinProp"
               className="hidden sm:block w-[75px] translate-y-1"
-            />
+            /> */}
           </div>
 
           <Button
