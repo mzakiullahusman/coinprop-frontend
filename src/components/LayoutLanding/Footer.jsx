@@ -1,6 +1,6 @@
 import React from "react";
 // import BgImage1 from "../assets/Images/BgImage1.png";
-import Logo from "@assets/icons/Logo.svg";
+import Logo from "@assets/icons/LogoMain.svg";
 import Footer1 from "@assets/icons/Discord.svg";
 import Footer2 from "@assets/icons/Telegram.svg";
 import Footer3 from "@assets/icons/Twitter.svg";
@@ -61,7 +61,7 @@ const Footer = () => {
       <div className="px-4 md:px-12 py-5 md:py-10">
         <div className="flex flex-col gap-y-8 xl:flex-row justify-between items-start">
           <div className="flex flex-col items-start gap-y-6 ">
-            <img src={Logo} alt="Logo" />
+            <img src={Logo} alt="Logo" className="w-32 h-32" />
             <div className="font-poppins 2xl:w-full text-base font-normal text-[#8d8d8d]">
               It is a long established fact that a reader will be
               <br /> distracted by the readable content

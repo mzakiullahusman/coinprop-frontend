@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import Logo from "@assets/icons/Logo.svg";
-import BgStar from "@assets/images/BgStar.png";
+import Logo from "@assets/icons/LogoMain.svg";
 import PlusIcon from "@assets/icons/PlusIcon.svg";
 import { Link, useNavigate } from "react-router-dom";
 
