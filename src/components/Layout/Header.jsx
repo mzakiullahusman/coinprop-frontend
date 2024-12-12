@@ -5,7 +5,6 @@ import MenuIcon from "@mui/icons-material/Menu";
 
 import { useAuth } from "../../context/AuthContext";
 import { getInitials } from "../../utils/getInitials";
-import Logo from "../../assets/icons/logoMain.svg";
 import { Avatar, Button, List, ListItemButton, Popover } from "@mui/material";
 import IconButton from "@mui/material/IconButton";
 
@@ -70,11 +69,6 @@ const Header = ({ menuItem, logout }) => {
             <IconButton onClick={handleMenuClick}>
               <MenuIcon sx={{ color: "white" }} />
             </IconButton>
-            {/* <img
-              src={Logo}
-              alt="CoinProp"
-              className="hidden sm:block w-[75px] translate-y-1"
-            /> */}
           </div>
 
           <Button
