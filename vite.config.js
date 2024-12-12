@@ -20,9 +20,6 @@ export default defineConfig({
     },
   },
   base: './',
-  optimizeDeps: {
-    exclude: ['chunk-AECWKNT7.js'], // Replace with the actual dependency causing the issue
-  },
   server: {
     watch: {
       ignored: ['**/node_modules/**'], // Avoid unnecessary recompilation
@@ -30,6 +27,6 @@ export default defineConfig({
   },
   build: {
     outDir: 'dist',
-    sourcemap: true, // Enable source maps for better debugging
+    sourcemap: false,
   },
 });
