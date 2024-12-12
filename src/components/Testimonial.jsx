@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import TextMain from "./TextMain";
-import TestimonialIcon from "@assets/icons/Logo.svg";
+import TestimonialIcon from "@assets/icons/TestimonialIcon.svg";
 import ArrowLeft from "../components/ArrowLeft";
 import ArrowRight from "../components/ArrowRight";
 

@@ -20,7 +20,7 @@ const benefitsData = [
 
 const Benefits = () => {
   return (
-    <div className="flex flex-col md:flex-row mt-12 justify-between items-center gap-6">
+    <div className="flex flex-col md:flex-row mt-9 justify-between items-center gap-6">
       {benefitsData.map((benefit, index) => (
         <div key={index} className="flex flex-col gap-3 text-center">
           <div className="font-poppins text-[#01ff9d] font-semibold text-[32px] sm:text-[40px] lg:text-[64px]">

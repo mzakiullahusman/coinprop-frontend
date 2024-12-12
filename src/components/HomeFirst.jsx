@@ -24,8 +24,8 @@ const HomeFirst = () => {
   ];
 
   return (
-    <>
-      <div className="text-center py-5  md:py-10 flex flex-col items-center justify-center">
+    <div>
+      <div className="text-center py-5 mt-12  md:py-10 flex flex-col items-center justify-center">
         <button className="flex items-center gap-1 gradient-div">
           <img src={ButtonIcon} alt="Icon" />
           Intelligent Solutions, Infinite Possibilities
@@ -41,7 +41,7 @@ const HomeFirst = () => {
             Innovative.
           </span>
         </div>
-        <div className="flex flex-col xl:flex-row justify-between items-center gap-8 xl:gap-12">
+        <div className="flex flex-col xl:flex-row justify-between items-center lg:items-start gap-8 xl:gap-12">
           <img src={LeftBlock} className="w-60 h-60" alt="Left Block" />
           <div className="flex flex-col items-center">
             <div className=" text-white text-[20px] font-poppins font-normal">
@@ -64,9 +64,13 @@ const HomeFirst = () => {
           </div>
           <img src={RightBlock} alt="Right Block" />
         </div>
-
-        <img src={BgImage} className="w-full" />
-        <div className="flex flex-col md:flex-row items-center justify-center gap-12 xl:gap-20 ">
+      </div>
+      <div className="relative mt-36">
+        <img
+          src={BgImage}
+          className="w-full absolute bottom-[-70px] bg-contain bg-no-repeat"
+        />
+        <div className="flex flex-col md:flex-row items-center justify-center md:bottom-[-50px] xl:bottom-0 mb-20 xl:mb-12  2xl:bottom-[70px] relative gap-12 xl:gap-20 ">
           {homeIcons.map((icon, index) => (
             <div key={index} className="flex items-center justify-center">
               <img src={icon.src} alt={icon.alt} />
@@ -74,7 +78,7 @@ const HomeFirst = () => {
           ))}
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

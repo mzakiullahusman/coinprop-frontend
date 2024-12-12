@@ -6,7 +6,7 @@ const AboutAceFunded = ({ text, data }) => {
       {data.map((feature, index) => (
         <div
           key={index}
-          className="p-6 rounded-[12px] shadow-lg hover:shadow-xl transition-shadow duration-300"
+          className="p-6 rounded-[12px] hover:shadow-xl transition-shadow duration-300"
         >
           <div
             className={`flex flex-col ${

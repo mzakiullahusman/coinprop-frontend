@@ -6,7 +6,6 @@ import WithDrawalSection from "../components/WithDrawalSection";
 import Acc from "@assets/icons/Acc.svg";
 import ProveTrade from "@assets/icons/ProveTrade.svg";
 import EarnMoney from "@assets/icons/EarnMoney.svg";
-import BgImage from "@assets/images/BgImage.png";
 import Profit from "@assets/icons/WithDraw.svg";
 import Pro from "@assets/icons/Pro.svg";
 import ChallengeBg from "@assets/images/ChallengeBg.png";
@@ -123,9 +122,9 @@ const Home = () => {
         />
         <HowItWorks mainData={features} />
       </div>
-      <Money />
+
       <div
-        className="bg-cover bg-[#0f1827] bg-center bg-no-repeat px-4 md:px-12 py-5 md:py-10 "
+        className="bg-cover bg-[#0f1827] rounded-b-[60px] bg-center bg-no-repeat px-4 md:px-12 py-5 md:py-10 "
         data-aos="fade-up"
         style={{
           backgroundImage: `url(${ChallengeBg})`,
@@ -143,27 +142,28 @@ const Home = () => {
 
         <ChooseChallenges />
       </div>
-      <div className="mt-6">
+
+      <Money />
+      <div className="mt-6 bg-white bg-opacity-[2%] p-4 lg:p-10">
         <TextMain
           text="Features"
           title="Risk Master Trader Features"
           description="Our platform makes crypto investments simple and accessible for all users."
           index={true}
         />
+        <div
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 text-white"
+          data-aos="fade-up"
+        >
+          <AboutAceFunded data={aceFunded} />
+        </div>
       </div>
-      <div
-        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-8 bg-[#020621]  text-white"
-        data-aos="fade-up"
-      >
-        <AboutAceFunded data={aceFunded} />
-      </div>
+
       {/* </div> */}
       <div data-aos="fade-up">
         <WithDrawalSection />
       </div>
-      <div data-aos="fade-up">
-        <WithDrawalSection />
-      </div>{" "}
+
       <div data-aos="fade-up">
         <RMT />
       </div>
