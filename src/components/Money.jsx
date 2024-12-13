@@ -7,10 +7,6 @@ import MoneyPrices from "./MoneyPrices";
 const Money = () => {
   const [profitRate, setProfitRate] = useState(5.7);
 
-  const handleSliderChange = (e) => {
-    setProfitRate(parseFloat(e.target.value)); // Update profit rate dynamically
-  };
-
   const [value, setValue] = useState(25000);
 
   const handleIncrease = () => {
@@ -40,7 +36,7 @@ const Money = () => {
           <MoneyPrices />
         </div>
       </div>
-      <div className="w-full flex flex-col p-5 lg:p-6 xl:p-12 gap-9 lg:w-1/2 xl:w-[45%] bg-white bg-opacity-5 border border-white border-opacity-10 rounded-[16px] ">
+      <div className="w-full flex flex-col p-5 lg:p-6 xl:p-12 gap-9 lg:w-1/2 xl:w-[45%] bg-white bg-opacity-[4%] border border-white border-opacity-[10%] rounded-[16px] ">
         <div className="font-poppins capitalize text-2xl font-medium text-center text-white lg:text-[32px]">
           estimate your profits!
         </div>
@@ -49,8 +45,8 @@ const Money = () => {
           <div className="font-poppins font-normal capitalize text-center text-base text-white lg:text-[20px]">
             account size
           </div>
-          <div className="rounded-full bg-transparent p-[2px] bg-gradient-to-r from-[#00fc9e] to-[#1c7ef0]">
-            <div className="w-full flex justify-between items-center bg-gray-900 rounded-full p-3">
+          <div className="rounded-full bg-white p-[2px] bg-gradient-to-r from-[#00fc9e] to-[#1c7ef0]">
+            <div className="w-full flex justify-between items-center bg-gray-800 rounded-full p-3">
               <button onClick={handleDecrease}>
                 <img src={Minus} alt="Minus" />
               </button>
@@ -82,16 +78,7 @@ const Money = () => {
           <div className="font-poppins font-semibold capitalize text-center text-2xl text-white lg:text-[30px]">
             {profitRate}%
           </div>
-          <Bar profitRate={profitRate} />
-          <input
-            type="range"
-            min="0"
-            max="10"
-            step="0.1"
-            value={profitRate}
-            onChange={handleSliderChange}
-            className="w-full mt-4"
-          />
+          <Bar profitRate={profitRate} setProfitRate={setProfitRate} />
         </div>
 
         <div className="font-poppins font-normal capitalize text-center text-base text-white lg:text-[20px]">

@@ -30,7 +30,7 @@ const WithDrawalSection = () => {
     <>
       <div className="flex flex-col lg:flex-row gap-20 px-4 md:px-12 py-5  md:py-10">
         <div className="w-full flex gap-x-3 items-start lg:w-1/2">
-          <div className="border-2 w-[30%] md:w-[15%] px-5 flex flex-col gap-y-6 p-8 border-white border-opacity-20 rounded-[16px]">
+          <div className="border w-[30%] md:w-[15%] px-5 flex flex-col gap-y-6 p-8 border-white bg-white bg-opacity-[4%] border-opacity-20 rounded-[23px]">
             <div className="font-poppins font-light text-base text-white lg:text-[26px] text-center">
               Tools
             </div>
@@ -57,8 +57,8 @@ const WithDrawalSection = () => {
               />
             </button>
           </div>
-          <div className="w-full flex flex-col gap-y-3 lg:w-[85%]">
-            <div className="border-2  px-5 flex flex-col items-center gap-y-4 p-8 border-white border-opacity-20 rounded-[16px]">
+          <div className="w-full flex flex-col gap-y-4 lg:w-[85%]">
+            <div className="border px-5 flex flex-col items-center gap-y-4 p-8 border-white bg-white bg-opacity-[4%] border-opacity-20 rounded-[23px]">
               <img src={TickIconLg} alt="TickIcon" className="w-24 h-24" />
               <div className="text-lg text-white lg:text-[23px]  font-bold">
                 Withdrawal Request Submitted
@@ -71,7 +71,7 @@ const WithDrawalSection = () => {
                 Go Home
               </button>
             </div>
-            <div className="border-2 px-5 flex flex-col gap-y-5 p-8 border-white border-opacity-20 rounded-[16px]">
+            <div className="border px-5 flex flex-col gap-y-5 p-8 border-white bg-white  bg-opacity-[4%] border-opacity-20 rounded-[23px]">
               <div className="flex items-center justify-between">
                 <div className="text-base text-white font-inter lg:text-lg  font-semibold">
                   Market
