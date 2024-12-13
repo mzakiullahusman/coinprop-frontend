@@ -14,7 +14,7 @@ const RMT = () => {
 
   return (
     <>
-      <div className="flex flex-col lg:flex-row px-4 md:px-12 py-5  md:py-10">
+      <div className="flex flex-col lg:flex-row px-4 md:px-12 xl:px-20 2xl:px-32 py-5  md:py-10">
         <div className="w-full items-center justify-center flex flex-col gap-y-2 lg:w-1/2">
           <img src={TraderGraph} alt="TraderGraph" />
           <div className="flex flex-col flex-wrap md:flex-row items-center gap-5">

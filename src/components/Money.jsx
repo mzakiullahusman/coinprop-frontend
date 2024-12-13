@@ -5,21 +5,21 @@ import ProfitImage from "@assets/images/ProfitImage.png";
 import MoneyPrices from "./MoneyPrices";
 const Money = () => {
   return (
-    <div className="flex flex-col lg:flex-row justify-between gap-12 xl:gap-60 px-4 md:px-12 py-5 md:py-10 items-center">
-      <div className="w-full flex flex-col gap-y-6 lg:w-1/2">
-        <div className="text-[28px] text-white lg:text-[50px] xl:text-[44px] font-poppins font-semibold">
+    <div className="flex flex-col lg:flex-row justify-between gap-12 xl:gap-60 px-4 md:px-12 xl:px-20 2xl:px-32 py-5 md:py-10 items-center">
+      <div className="w-full flex flex-col gap-y-6 lg:w-1/2 xl:w-[55%]">
+        <div className="text-[28px] text-white capitalize lg:text-[50px] xl:text-[44px] font-poppins font-semibold">
           How much money
           <br /> can you make?
         </div>
         <div className="text-base text-white lg:text-lg font-poppins font-light">
-          Id eleifend quis urna tellus tempor facilisis at semper ac. Interdum
-          tortor ut ac ullamcorper ac et facilisis.
+          Id eleifend quis urna tellus tempor facilisis at semper ac.
+          <br /> Interdum tortor ut ac ullamcorper ac et facilisis.
         </div>
-        <div className="flex justify-between items-center">
+        <div className="flex justify-between 2xl:justify-start 2xl:gap-32 items-center">
           <MoneyPrices />
         </div>
       </div>
-      <div className="w-full flex flex-col p-5 lg:p-6 gap-9 lg:w-1/2 bg-white bg-opacity-5 border border-white border-opacity-10 rounded-[16px] ">
+      <div className="w-full flex flex-col p-5 lg:p-6 xl:p-12 gap-9 lg:w-1/2 xl:w-[45%] bg-white bg-opacity-5 border border-white border-opacity-10 rounded-[16px] ">
         <div className="font-poppins capitalize text-2xl font-medium text-center text-white lg:text-[32px]">
           estimate your profits!
         </div>

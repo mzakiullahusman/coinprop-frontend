@@ -144,7 +144,7 @@ const Home = () => {
       </div>
 
       <Money />
-      <div className="mt-6 bg-white bg-opacity-[2%] p-4 lg:p-10">
+      <div className="mt-4 bg-white bg-opacity-[2%] p-4 lg:p-10 xl:p-14">
         <TextMain
           text="Features"
           title="Risk Master Trader Features"
@@ -160,7 +160,7 @@ const Home = () => {
       </div>
 
       {/* </div> */}
-      <div data-aos="fade-up">
+      <div className="mt-4" data-aos="fade-up">
         <WithDrawalSection />
       </div>
 
@@ -171,11 +171,14 @@ const Home = () => {
         {" "}
         <Testimonial />
       </div>
-      <div className="bg-white bg-opacity-[2%] border-white border rounded-[44px] border-opacity-20 m-4 md:m-8 xl:m-20 px-4 xl:px-10 py-5 xl:py-12">
+      <div className="bg-white bg-opacity-[2%] border-white border rounded-[44px] border-opacity-20 m-4 md:m-8 xl:m-20 2xl:mx-32 2xl:mt-16 px-4 xl:px-10 py-5 xl:py-12">
         <div data-aos="fade-up">
           <TalkingAbout />
         </div>
-        <FAQComponent />
+        <div className="mt-24">
+          {" "}
+          <FAQComponent />
+        </div>
       </div>
       <AceFundedTrader />
     </div>

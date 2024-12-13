@@ -65,12 +65,12 @@ const HomeFirst = () => {
           <img src={RightBlock} alt="Right Block" />
         </div>
       </div>
-      <div className="relative mt-36">
+      <div className="relative mt-40">
         <img
           src={BgImage}
-          className="w-full absolute bottom-[-70px] bg-contain bg-no-repeat"
+          className="w-full absolute bottom-[-10px] bg-contain bg-no-repeat"
         />
-        <div className="flex flex-col md:flex-row items-center justify-center md:bottom-[-50px] xl:bottom-0 mb-20 xl:mb-12  2xl:bottom-[70px] relative gap-12 xl:gap-20 ">
+        <div className="flex flex-col md:flex-row items-center justify-center md:bottom-[-50px] xl:bottom-[60px] mb-20 xl:mb-12  2xl:bottom-[70px] relative gap-12 xl:gap-20 ">
           {homeIcons.map((icon, index) => (
             <div key={index} className="flex items-center justify-center">
               <img src={icon.src} alt={icon.alt} />

@@ -35,7 +35,7 @@ const FAQComponent = () => {
   };
 
   return (
-    <div className="px-4 md:px-12 py-5 md:py-10">
+    <div className="px-4 md:px-12 xl:px-28 2xl:px-32 py-5 md:py-10">
       <TextMain
         text="FAQs"
         title="Frequently Asked Questions?"
@@ -49,13 +49,13 @@ const FAQComponent = () => {
           className={`group flex justify-center p-[1px] mt-8 rounded-[24px] items-center ${
             openIndex === index
               ? "bg-gradient-to-r from-[#00fc9e] to-[#1c7ef0]"
-              : "border border-opacity-30 border-white"
-          } transition duration-300 hover:bg-gradient-to-l hover:shadow-2xl hover:shadow-purple-600/30`}
+              : "border border-opacity-30 opacity-50 border-white"
+          } `}
         >
           <div
             className={`flex flex-col ${
-              openIndex === index ? "bg-gray-900" : "bg-[#0f1827]"
-            } rounded-[24px] p-4 w-full transition duration-300 ease-in-out group-hover:bg-gradient-to-br group-hover:from-gray-700 group-hover:to-gray-900`}
+              openIndex === index ? "bg-gray-900" : "bg-white bg-opacity-[4%]"
+            } rounded-[24px] p-4 w-full `}
           >
             <div className="flex flex-col lg:flex-row gap-3 xl:gap-12 justify-between px-6 items-center">
               <div className="flex flex-col lg:flex-row items-center gap-3 xl:gap-12">
@@ -77,10 +77,10 @@ const FAQComponent = () => {
               {/* Button to toggle */}
               <div
                 onClick={() => toggleOpen(index)}
-                className={`rounded-full text-lg flex items-center justify-center p-3 w-16 h-16 transition duration-300 ease-in-out hover:scale-105 ${
+                className={`rounded-full text-lg flex items-center bg-white bg-opacity-10 justify-center w-16 h-16 transition duration-300 ease-in-out hover:scale-105 ${
                   openIndex === index
-                    ? "bg-gradient-to-r from-[#00fc9e] to-[#1c7ef0]"
-                    : "bg-white bg-opacity-10"
+                    ? " to-[#1c7ef0] p-7 border-white border"
+                    : "  p-3"
                 } cursor-pointer`}
               >
                 {openIndex === index ? "x" : "+"}

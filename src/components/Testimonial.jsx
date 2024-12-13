@@ -47,7 +47,7 @@ const Testimonial = () => {
   };
 
   return (
-    <div className="px-4 md:px-12 py-5 md:py-10">
+    <div className="px-4 md:px-12 xl:px-20 2xl:px-32 py-5 md:py-10">
       <div className="flex flex-col md:flex-row gap-4 md:gap-0 mb-4 md:mb-0 justify-center md:justify-between items-center">
         <TextMain
           text="Testimonials"
@@ -95,7 +95,7 @@ const Testimonial = () => {
                 {testimonial.text}
               </div>
               <div className="flex flex-col justify-center items-center mt-9">
-                <div className="w-64 h-[1px] bg-gradient-to-r from-[#140F2A] via-[#FFFFFF] to-[#140F2A]"></div>
+                {/* <div className="w-64 h-[1px] bg-gradient-to-r from-[#140F2A] via-[#FFFFFF] to-[#140F2A]"></div> */}
                 <div className="mt-4 font-outfit font-bold text-2xl md:text-[34px] text-white">
                   {testimonial.author}
                 </div>

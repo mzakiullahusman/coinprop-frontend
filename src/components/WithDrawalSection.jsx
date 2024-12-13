@@ -123,7 +123,7 @@ const WithDrawalSection = () => {
           <AboutUsComponent />
         </div>
       </div>
-      <div className="flex flex-col md:flex-row items-center xl:py-12 justify-center gap-12 xl:gap-20 ">
+      <div className="flex flex-col md:flex-row items-center xl:py-12 justify-center gap-12 xl:gap-16 2xl:gap-24 ">
         {diveIcons.map((icon, index) => (
           <div key={index} className="flex items-center justify-center">
             <img src={icon.src} alt={icon.alt} />

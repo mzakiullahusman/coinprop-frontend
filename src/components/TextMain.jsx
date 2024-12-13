@@ -3,7 +3,7 @@ import ButtonIcon from "@assets/icons/ButtonIcon.svg";
 const TextMain = ({ text, title, description, index, textStyling }) => {
   return (
     <div
-      className={`flex flex-col gap-y-2 ${
+      className={`flex flex-col gap-y-1 ${
         index === false
           ? "justify-start items-start"
           : " justify-center items-center"
