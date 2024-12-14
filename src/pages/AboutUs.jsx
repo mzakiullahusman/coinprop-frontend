@@ -54,17 +54,17 @@ const AboutUs = () => {
     });
   }, []);
   return (
-    <div className="bg-[#020621]">
+    <>
       <div
-        className="bg-cover bg-center bg-no-repeat px-4 lg:px-20 py-5 md:py-10"
+        className="px-4 lg:px-20 py-5 md:py-10 "
         style={{
           backgroundImage: `url(${HowItWorksBg})`,
         }}
         data-aos="fade-up"
       >
         <HowItWorksCommon text="About Us" index={true} />
-        <MainWork data={mainSections} />
       </div>
+      <MainWork data={mainSections} />
 
       <div
         className="relative w-full h-screen flex justify-center items-center"
@@ -82,7 +82,7 @@ const AboutUs = () => {
 
       <div
         data-aos="fade-up"
-        className="flex flex-col lg:flex-row items-center gap-4 lg:gap-20 pr-4 py-5 lg:py-10 lg:pr-20"
+        className="flex flex-col xl:mt-5 lg:flex-row items-center gap-4 lg:gap-20 pr-4 py-5 lg:py-10 lg:pr-20"
       >
         <div className="w-full lg:w-[45%]">
           <img className="lg:w-full " src={Crypto} alt="Crypto" />
@@ -114,7 +114,7 @@ const AboutUs = () => {
       <div data-aos="fade-up">
         <AceFundedTrader />
       </div>
-    </div>
+    </>
   );
 };
 

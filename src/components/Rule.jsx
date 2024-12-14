@@ -74,7 +74,7 @@ const Rule = ({ index, text }) => {
           It is a long established fact that a reader
         </div>
       ) : (
-        <button className="bg-gradient-to-r from-[#00fc9e] to-[#1c7ef0] flex flex-row mt-5 gap-x-3 items-center text-[#141414] font-outfit text-[16px] px-8 py-3 rounded-full shadow-lg font-normal hover:opacity-90 transition">
+        <button className="bg-gradient-to-r capitalize from-[#00fc9e] to-[#1c7ef0] flex flex-row mt-5 gap-x-3 items-center text-[#141414] font-outfit text-[16px] px-8 py-3 rounded-full shadow-lg font-normal hover:opacity-90 transition">
           View the full product list
         </button>
       )}

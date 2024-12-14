@@ -2,7 +2,7 @@ import React from "react";
 
 const MainWork = ({ data }) => {
   return (
-    <div className="bg-[#08122a] border border-white border-opacity-20 rounded-[14px] p-5 mt-8 xl:p-8 hover:shadow-lg transition">
+    <div className="bg-white bg-opacity-[2%] border border-white border-opacity-20 rounded-[24px] p-5 mt-8 xl:p-8 mx-4 lg:mx-20 my-5 md:my-10 xl:my-16 hover:shadow-lg transition">
       <div className="flex flex-col lg:flex-row gap-10">
         {data.map((section, index) => (
           <div
@@ -23,7 +23,7 @@ const MainWork = ({ data }) => {
                   {section.values.map((value, idx) => (
                     <li
                       key={idx}
-                      className="font-normal text-base font-poppins text-white leading-[32px]"
+                      className="font-normal capitalize text-base font-poppins text-white leading-[32px]"
                     >
                       {value}
                     </li>

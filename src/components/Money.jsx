@@ -9,7 +9,7 @@ const Money = () => {
 
   const [value, setValue] = useState(25000);
 
-  const takeHomeProfit = (profitRate / 100) * value;
+  const takeHomeProfit = Math.round((profitRate / 100) * value);
 
   const handleIncrease = () => {
     if (value < 150000) {

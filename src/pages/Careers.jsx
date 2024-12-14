@@ -85,17 +85,17 @@ const Careers = () => {
     });
   }, []);
   return (
-    <div className="bg-[#020621]">
+    <>
       <div
         data-aos="fade-up"
-        className="bg-cover bg-center bg-no-repeat gap-6 px-4 lg:px-16 py-5 md:py-10"
+        className=" px-4 lg:px-16 py-5 md:py-10"
         style={{
           backgroundImage: `url(${HowItWorksBg})`,
         }}
       >
         <HowItWorksCommon text="Explore Careers at Risk Master" index={true} />
-        <MainWork data={data} />
       </div>
+      <MainWork data={data} />
       <div data-aos="fade-up">
         <TextMain
           text="Process"
@@ -117,7 +117,7 @@ const Careers = () => {
       <div data-aos="fade-up">
         <CareerSwipe />
       </div>
-      <div>
+      <div className="xl:mt-5">
         <CareerCard />
       </div>
       <div data-aos="fade-up" className="xl:px-28">
@@ -126,7 +126,7 @@ const Careers = () => {
       <div data-aos="fade-up">
         <AceFundedTrader />
       </div>
-    </div>
+    </>
   );
 };
 

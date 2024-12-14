@@ -15,12 +15,11 @@ const AboutUsComponent = () => {
               {item.text}
             </div>
 
-            <div>
-              {" "}
-              <img src={ArrowUpIcon} alt="ArrowUpIcon" />
-            </div>
+            <img src={ArrowUpIcon} alt="ArrowUpIcon" />
           </div>
-          <div className="w-full h-[1px] bg-gradient-to-r from-[#2f466a00] via-[#2f466a] to-[#2f466a00]"></div>
+          {index !== tickList.length - 1 && (
+            <div className="w-full h-[1px] bg-gradient-to-r from-[#2f466a00] via-[#2f466a] to-[#2f466a00]"></div>
+          )}
         </div>
       ))}
     </div>

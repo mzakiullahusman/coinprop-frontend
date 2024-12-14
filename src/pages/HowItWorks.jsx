@@ -71,23 +71,25 @@ const HomeItWorks = () => {
     {
       title: "Our Values",
       values: [
-        "Empower traders to achieve better habits.",
-        "Foster a culture of learning by doing.",
-        "Promote transparency and integrity.",
-        "Innovate for the betterment of trading practices.",
+        "We care deeply about and support the well-being of our team.",
+        "We strive to motivate and develop our traders.",
+        "We seek diverse perspectives.",
+        "We trust our team to take accountability and drive results.",
+        "We embrace feedback as a means for growth.",
+        "We are never finished learning and always seeking to improve.",
       ],
     },
   ];
   return (
     <>
       <div
-        className="bg-cover bg-center bg-no-repeat px-4 lg:px-20 py-5 md:py-10"
+        className="px-4 lg:px-20 py-5 md:py-10"
         style={{ backgroundImage: `url(${HowItWorksBg})` }}
         data-aos="fade-up"
       >
         <HowItWorksCommon />
-        <MainWork data={mainSections} />
       </div>
+      <MainWork data={mainSections} />
 
       <div
         className="bg-[#08122a] border border-white border-opacity-20 rounded-[14px] p-5 mt-2 xl:p-8 hover:shadow-lg transition mx-4 lg:mx-20 px-4 lg:px-20 py-5 md:py-10"
