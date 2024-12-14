@@ -35,28 +35,48 @@ const WithDrawalSection = () => {
     <>
       <div className="flex flex-col xl:flex-row gap-20 px-4 md:px-12 py-5  md:py-10">
         <div className="w-full flex flex-col md:flex-row gap-3 items-start xl:w-1/2">
-          <div className="border w-full justify-between items-center md:w-[15%] md:px-5 flex flex-row sm:flex-col p-4 gap-6 sm:p-8 border-white bg-white bg-opacity-[4%] border-opacity-20 rounded-[23px]">
+          <div className="border w-full justify-between items-center md:w-[15%] md:px-5 flex flex-row sm:flex-col p-4 md:gap-7 lg:gap-[26px] 2xl:gap-[25px] sm:p-8 border-white bg-white bg-opacity-[4%] border-opacity-20 rounded-[23px]">
             <div className="font-poppins font-light text-base text-white lg:text-[26px] text-center">
               Tools
             </div>
             <button className="sm:mx-auto">
-              <img src={ArrowIcon1} alt="ArrowIcon1" />
+              <img
+                src={ArrowIcon1}
+                className="w-8 h-8 md:w-[50px] md:h-[50px] lg:w-[54px] lg:h-[54px] xl:w-[55px]"
+                alt="ArrowIcon1"
+              />
             </button>
 
             <button className="sm:mx-auto">
-              <img src={ArrowIcon2} alt="ArrowIcon2" />
+              <img
+                src={ArrowIcon2}
+                className="w-8 h-8 md:w-[50px] md:h-[50px] lg:w-[54px] lg:h-[54px] xl:w-[55px]"
+                alt="ArrowIcon2"
+              />
             </button>
 
             <button className="sm:mx-auto">
-              <img src={ArrowIcon3} alt="ArrowIcon3" />
+              <img
+                src={ArrowIcon3}
+                className="w-8 h-8 md:w-[50px] md:h-[50px] lg:w-[54px] lg:h-[54px] xl:w-[55px]"
+                alt="ArrowIcon3"
+              />
             </button>
 
             <button className="sm:mx-auto">
-              <img src={ArrowIcon4} alt="ArrowIcon4" />
+              <img
+                src={ArrowIcon4}
+                className="w-8 h-8 md:w-[50px] md:h-[50px] lg:w-[54px] lg:h-[54px] xl:w-[55px]"
+                alt="ArrowIcon4"
+              />
             </button>
 
             <button className="sm:mx-auto">
-              <img src={ArrowPlusIcon} alt="ArrowPlusIcon" />
+              <img
+                src={ArrowPlusIcon}
+                className="w-8 h-8 md:w-[50px] md:h-[50px] lg:w-[54px] lg:h-[54px] xl:w-[55px]"
+                alt="ArrowPlusIcon"
+              />
             </button>
           </div>
           <div className="w-full flex flex-col gap-y-4 lg:w-[85%]">
@@ -96,7 +116,7 @@ const WithDrawalSection = () => {
                   <div className="border-l rounded-r-lg border-2 border-[#f2f2f7] h-11 "></div>
                   <div className="flex flex-col">
                     <div className=" text-white font-inter text-lg  font-semibold">
-                      Crypto
+                      crypto
                     </div>
                     <div className="flex items-center gap-x-2 text-xs text-[#01ff9d] font-inter">
                       <span className="font-semibold">$38,795</span>
@@ -124,30 +144,37 @@ const WithDrawalSection = () => {
           <AboutUsComponent />
         </div>
       </div>
-      {/* <div className="flex flex-col md:flex-row items-center xl:py-12 justify-center gap-12 xl:gap-16 2xl:gap-24 ">
-        {diveIcons.map((icon, index) => (
-          <div key={index} className="flex items-center justify-center">
-            <img src={icon.src} alt={icon.alt} />
-          </div>
-        ))}
-      </div> */}
 
       <Swiper
         modules={[Autoplay]}
         autoplay={{
-          delay: 2000,
+          delay: 0,
           disableOnInteraction: false,
         }}
+        speed={3000}
         loop={true}
-        centeredSlides={true}
+        slidesPerView={5}
+        spaceBetween={30}
         allowTouchMove={false}
-        slidesPerView="auto"
-        spaceBetween={5}
-        className="py-12"
+        breakpoints={{
+          0: {
+            slidesPerView: 3,
+          },
+          640: {
+            slidesPerView: 4,
+          },
+          1024: {
+            slidesPerView: 5,
+          },
+        }}
+        className="w-full max-w-[90%] h-28 xl:h-48"
       >
         {diveIcons.map((icon, index) => (
-          <SwiperSlide key={index}>
-            <img src={icon.src} alt={icon.alt} className="max-w-full h-auto" />
+          <SwiperSlide
+            key={index}
+            className="flex justify-center items-center opacity-80 hover:opacity-100 transition-opacity"
+          >
+            <img src={icon.src} alt={icon.alt} className="h-8" />
           </SwiperSlide>
         ))}
       </Swiper>

@@ -10,7 +10,7 @@ const AceFundedTrader = () => {
         backgroundImage: `url(${LastBgImage})`,
       }}
     >
-      <div className="relative w-full flex items-center justify-center overflow-hidden ">
+      <div className="relative w-full flex items-center pt-12 justify-center overflow-hidden ">
         <div className="absolute w-full min-h-screen overflow-hidden blur-[40px]">
           <div className="absolute left-[20%] top-[40%] bg-gradient-to-r from-[#00fc9e] to-[#1c7ef0] h-[270px] w-[290px] rounded-[40%_50%_30%_40%] opacity-70 animate-transform_one"></div>
 
