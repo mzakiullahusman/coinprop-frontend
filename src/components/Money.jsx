@@ -24,7 +24,7 @@ const Money = () => {
   };
 
   return (
-    <div className="flex flex-col lg:flex-row justify-between gap-12 xl:gap-60 px-4 md:px-12 xl:px-20 2xl:px-32 py-5 md:py-10 items-center">
+    <div className="flex flex-col lg:flex-row justify-between gap-12 xl:gap-60 px-4 mt-20 md:px-12 xl:px-20 2xl:px-32 py-5 md:py-10 items-center">
       <div className="w-full flex flex-col gap-y-6 lg:w-1/2 xl:w-[55%]">
         <div className="text-[28px] text-white capitalize lg:text-[50px] xl:text-[44px] font-poppins font-semibold">
           How much money
