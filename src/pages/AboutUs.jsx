@@ -67,7 +67,7 @@ const AboutUs = () => {
       <MainWork data={mainSections} />
 
       <div
-        className="relative w-full h-screen flex justify-center items-center"
+        className="relative w-full flex justify-center items-center"
         data-aos="fade-up"
       >
         <img src={About2} alt="About2" />
@@ -82,7 +82,7 @@ const AboutUs = () => {
 
       <div
         data-aos="fade-up"
-        className="flex flex-col xl:mt-5 lg:flex-row items-center gap-4 lg:gap-20 pr-4 py-5 lg:py-10 lg:pr-20"
+        className="flex flex-col mt-12 lg:flex-row items-center gap-4 lg:gap-20 pr-4 py-5 lg:py-10 lg:pr-20"
       >
         <div className="w-full lg:w-[45%]">
           <img className="lg:w-full " src={Crypto} alt="Crypto" />
