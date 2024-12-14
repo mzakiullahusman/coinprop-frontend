@@ -8,29 +8,43 @@ import LiveCard from "../components/Cards/LiveCard";
 import { getLiveNews } from "../services/externalService";
 
 const LiveNews = () => {
-  const [search, setSearch] = useState("");
   const [newsData, setNewsData] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [loading, setLoading] = useState(false);
   const itemsPerPage = 10;
+  const [totalCount, setTotalCount] = useState(0);
 
+  // Adjusted getLiveAPI function
   const getLiveAPI = async () => {
     setLoading(true);
-    let res = await getLiveNews({ search });
-    if (res.status === 200) setNewsData(res.data?.data || []);
-    else setNewsData([]);
-    setLoading(false);
+    try {
+      const res = await getLiveNews();
+      if (res) {
+        const { count, results } = res;
+        setTotalCount(count);
+        // Transform API data to fit `LiveCard` expectations
+        const transformedData = results.map((item) => ({
+          source_name: item.source?.title || "Unknown Source",
+          title: item.title,
+          date: new Date(item.published_at).toLocaleDateString(),
+          text: `Read about ${item.title} on ${item.domain}`,
+          news_url: item.url,
+        }));
+        setNewsData(transformedData);
+      }
+    } catch (error) {
+      console.error("Failed to fetch live news:", error);
+      setNewsData([]);
+    } finally {
+      setLoading(false);
+    }
   };
 
   useEffect(() => {
     getLiveAPI();
-  }, [search]);
+  }, [ currentPage]);
 
-  const totalPages = Math.ceil(newsData.length / itemsPerPage);
-  const currentData = newsData.slice(
-    (currentPage - 1) * itemsPerPage,
-    currentPage * itemsPerPage
-  );
+  const totalPages = Math.ceil(totalCount / itemsPerPage);
 
   const handlePageChange = (event, value) => {
     setCurrentPage(value);
@@ -41,21 +55,19 @@ const LiveNews = () => {
   }
 
   return (
-    <>
-      <div className="flex flex-col gap-[24px] lg:pt-[76px]">
-        <NewsSearch search={search} setSearch={setSearch} />
-        <LiveCard data={currentData} />
-        <Stack spacing={2} alignItems="center" sx={{ mt: 3 }}>
-          <Pagination
-            count={totalPages}
-            page={currentPage}
-            onChange={handlePageChange}
-            color="primary"
-            sx={{button:{color: '#ffffff'}, div:{color: "#ffffff"}}}
-          />
-        </Stack>
-      </div>
-    </>
+    <div className="flex flex-col gap-[24px] lg:pt-[76px]">
+      <NewsSearch />
+      <LiveCard data={newsData} />
+      <Stack spacing={2} alignItems="center" sx={{ mt: 3 }}>
+        <Pagination
+          count={totalPages}
+          page={currentPage}
+          onChange={handlePageChange}
+          color="primary"
+          sx={{ button: { color: "#FFFFFF" }, div: { color: "#FFFFFF" } }}
+        />
+      </Stack>
+    </div>
   );
 };
 
