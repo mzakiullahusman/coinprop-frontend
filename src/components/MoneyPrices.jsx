@@ -5,9 +5,9 @@ const MoneyPrices = ({ textSize }) => {
     <>
       <div className="flex flex-col gap-y-1">
         <div
-          className={`font-poppins bg-gradient-to-r from-[#00fc9e] to-[#1c7ef0] bg-clip-text text-transparent font-semibold ${
+          className={`font-poppins bg-gradient-to-r text-center from-[#00fc9e] to-[#1c7ef0] bg-clip-text text-transparent font-semibold ${
             textSize === "big"
-              ? "text-[26px] sm:text-[46px] lg:text-[64px] leading-[96px]"
+              ? "text-[38px] lg:text-[64px] leading-[96px]"
               : "lg:text-[37px]"
           } text-2xl `}
         >
@@ -23,7 +23,7 @@ const MoneyPrices = ({ textSize }) => {
         <div
           className={`font-poppins bg-gradient-to-r from-[#00fc9e] to-[#1c7ef0] bg-clip-text text-transparent font-semibold ${
             textSize === "big"
-              ? "text-[26px] sm:text-[46px] lg:text-[64px] text-center leading-[96px]"
+              ? "text-[38px] lg:text-[64px] text-center leading-[96px]"
               : "lg:text-[37px]"
           } text-2xl `}
         >
@@ -40,7 +40,7 @@ const MoneyPrices = ({ textSize }) => {
         <div
           className={`font-poppins bg-gradient-to-r from-[#00fc9e] to-[#1c7ef0] bg-clip-text text-transparent font-semibold ${
             textSize === "big"
-              ? "text-[26px] sm:text-[46px] lg:text-[64px] text-center leading-[96px]"
+              ? "text-[38px] lg:text-[64px] text-center leading-[96px]"
               : "lg:text-[37px]"
           } text-2xl `}
         >

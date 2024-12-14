@@ -14,7 +14,7 @@ const Mail = () => {
         stroke="white"
         strokeWidth="1.2"
         strokeLinecap="round"
-        stroke-linejoin="round"
+        strokeLinejoin="round"
       />
     </svg>
   );

@@ -92,7 +92,7 @@ const HomeItWorks = () => {
       <MainWork data={mainSections} />
 
       <div
-        className="bg-[#08122a] border border-white border-opacity-20 rounded-[14px] p-5 mt-2 xl:p-8 hover:shadow-lg transition mx-4 lg:mx-20 px-4 lg:px-20 py-5 md:py-10"
+        className="bg-white bg-opacity-[2%] my-4 md:my-6 xl:my-20 border border-white border-opacity-20 rounded-[14px] p-5 xl:p-8 hover:shadow-lg transition mx-4 lg:mx-20 px-4 lg:px-20 py-5 md:py-10"
         data-aos="fade-up"
       >
         <TextMain
@@ -106,22 +106,22 @@ const HomeItWorks = () => {
         </div>
       </div>
 
-      <div className="mt-4 md:mt-12" data-aos="fade-up">
+      <div className="mt-20 xl:mt-32" data-aos="fade-up">
         <TextMain
           text="Integrations"
           title="Insights into the Crypto Landscape"
           description="Commodo nec mi id ullamcorper vitae augue neque dis. Nunc lacinia viverra orci diam. Nibh est vitae suspendisse parturient sed lorem eu."
           index={true}
         />
-        <div className="flex justify-center items-center gap-8 md:gap-16 lg:gap-36 mt-8">
+        <div className="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-16 lg:gap-36 mt-8">
           <MoneyPrices textSize="big" />
         </div>
       </div>
 
-      <div className="px-3 lg:px-20 xl:px-28" data-aos="fade-up">
+      <div className="px-3 mt-20 xl:mt-32 lg:px-20 xl:px-28" data-aos="fade-up">
         <FAQComponent />
       </div>
-      <div data-aos="fade-up">
+      <div data-aos="fade-up" className="mt-12 xl:mt-20">
         <AceFundedTrader />
       </div>
     </>
