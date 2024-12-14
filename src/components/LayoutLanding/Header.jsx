@@ -17,7 +17,7 @@ const Header = () => {
 
   return (
     <div className=" px-4 lg:px-16 pt-6 xl:px-24 flex flex-col xl:flex-row justify-between items-center relative z-50">
-      <div className="flex justify-between items-center">
+      <div className="flex w-full xl:w-[60px] justify-between items-center">
         <img src={Logo} alt="Logo" className="h-12 w-12 lg:w-16 lg:h-16" />
 
         <button

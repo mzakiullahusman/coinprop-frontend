@@ -91,12 +91,12 @@ const Testimonial = () => {
               className="border border-white border-opacity-20 bg-white bg-opacity-5 p-10 rounded-[24px]"
             >
               <img src={testimonial.icon} alt="TestimonialIcon" />
-              <div className="text-white text-base md:text-lg font-light mt-4">
+              <div className="text-white text-base md:text-lg font-light mt-5">
                 {testimonial.text}
               </div>
               <div className="flex flex-col justify-center items-center mt-9">
-                {/* <div className="w-64 h-[1px] bg-gradient-to-r from-[#140F2A] via-[#FFFFFF] to-[#140F2A]"></div> */}
-                <div className="mt-4 font-outfit font-bold text-2xl md:text-[34px] text-white">
+                <div className="w-64 h-[1px] bg-gradient-to-r from-[#140F2A] via-[#FFFFFF] to-[#140F2A]"></div>
+                <div className="mt-5 font-outfit font-bold text-2xl md:text-[34px] text-white">
                   {testimonial.author}
                 </div>
               </div>

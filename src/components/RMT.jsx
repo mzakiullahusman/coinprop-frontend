@@ -32,7 +32,7 @@ const RMT = () => {
             </button>
           </div>
         </div>
-        <div className="w-full items-start flex flex-col gap-y-2 lg:w-1/2">
+        <div className="w-full items-start flex flex-col gap-y-7 lg:w-1/2">
           <RMTRight tickList={tickList} />
         </div>
       </div>

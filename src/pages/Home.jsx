@@ -160,7 +160,7 @@ const Home = () => {
       </div>
 
       {/* </div> */}
-      <div className="mt-4" data-aos="fade-up">
+      <div className="mt-8" data-aos="fade-up">
         <WithDrawalSection />
       </div>
 

@@ -16,7 +16,7 @@ const RMTRight = ({ tickList }) => {
 
       <div className="grid xl:grid-cols-2 gap-y-6 text-white mt-6">
         {tickList.map((item, index) => (
-          <div key={index} className="flex items-center gap-3">
+          <div key={index} className="flex items-center gap-5">
             <img src={TickIcon} alt="tickIcon" />
             <span className="font-poppins font-normal text-lg md:text-[22px]">
               {item.text}

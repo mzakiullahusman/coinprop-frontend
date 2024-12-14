@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Streric from "@assets/icons/Steric.svg";
 import Quote from "@assets/icons/quote.svg";
 import ArrowLeft from "../components/ArrowLeft";
@@ -6,6 +6,35 @@ import ArrowRight from "../components/ArrowRight";
 import TalkingAboutBgImg from "@assets/images/TalkingAboutBgImg.png";
 
 const TalkingAbout = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const handleNext = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex < testimonials.length - 1 ? prevIndex + 1 : prevIndex
+    );
+  };
+
+  const handlePrev = () => {
+    setCurrentIndex((prevIndex) => (prevIndex > 0 ? prevIndex - 1 : prevIndex));
+  };
+  const testimonials = [
+    {
+      id: 1,
+      text: "I've been using the communication tools from this company for several months now, and I'm blown away by how much they've improved our workflow.",
+      name: "James Rhye",
+      role: "Lead Designer, Layers",
+      avatarColor: "#ffd88d",
+    },
+    {
+      id: 2,
+      text: "I've been using the communication tools from this company for several months now, and I'm blown away by how much they've improved our workflow.",
+      name: "James Rhye New",
+      role: "Lead Designer, Layers",
+      avatarColor: "#ffd88d",
+    },
+  ];
+
+  const { text, name, role, avatarColor } = testimonials[currentIndex];
   return (
     <div className="flex flex-col xl:flex-row gap-12 xl:gap-32 justify-between items-center">
       <div className="w-full lg:w-[45%] xl:w-[40%]">
@@ -46,7 +75,7 @@ const TalkingAbout = () => {
           </div>
         </div>
       </div>
-      <div className="w-full flex flex-col justify-center items-center lg:w-[55%] xl:w-[60%]">
+      {/* <div className="w-full flex flex-col justify-center items-center lg:w-[55%] xl:w-[60%]">
         <div className="relative">
           <img
             className="hidden md:block"
@@ -78,6 +107,56 @@ const TalkingAbout = () => {
                   <ArrowLeft />
                 </button>
                 <button>
+                  <ArrowRight />
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> */}
+      <div className="w-full flex flex-col justify-center items-center lg:w-[55%] xl:w-[60%]">
+        <div className="relative">
+          <img
+            className="hidden md:block"
+            src={TalkingAboutBgImg}
+            alt="TalkingAboutBgImage"
+          />
+          <div className="md:absolute md:top-14 md:left-[70px] z-1 border-2 border-white border-opacity-20 bg-white bg-opacity-5 p-10 rounded-[50px] backdrop-blur-[20px]">
+            <img className="mt-10" src={Quote} alt="Quote" />
+            <div className="leading-[40px] text-justify font-poppins text-semibold text-xl lg:text-[26px] mt-9 text-white">
+              {text}
+            </div>
+            <div className="border-t border-white border-opacity-10 mt-9 w-full"></div>
+            <div className="flex flex-col md:flex-row gap-6 md:gap-[0px] justify-between items-center mt-9">
+              <div className="flex items-center gap-3 ">
+                <div
+                  className="rounded-full md:h-16 md:w-16"
+                  style={{ backgroundColor: avatarColor }}
+                ></div>
+                <div className="flex flex-col gap-1">
+                  <div className="font-poppins font-bold text-lg text-white">
+                    {name}
+                  </div>
+                  <div className="font-poppins font-medium text-xs text-white">
+                    {role}
+                  </div>
+                </div>
+              </div>
+              <div className="flex items-center gap-4">
+                <button
+                  disabled={currentIndex === 0}
+                  className={`${currentIndex === 0 ? "opacity-50" : ""}`}
+                  onClick={handlePrev}
+                >
+                  <ArrowLeft />
+                </button>
+                <button
+                  onClick={handleNext}
+                  disabled={currentIndex === testimonials.length - 1}
+                  className={`${
+                    currentIndex === testimonials.length - 1 ? "opacity-50" : ""
+                  }`}
+                >
                   <ArrowRight />
                 </button>
               </div>

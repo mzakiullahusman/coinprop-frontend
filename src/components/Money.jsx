@@ -9,6 +9,8 @@ const Money = () => {
 
   const [value, setValue] = useState(25000);
 
+  const takeHomeProfit = (profitRate / 100) * value;
+
   const handleIncrease = () => {
     if (value < 150000) {
       setValue((prevValue) => prevValue + 25000);
@@ -82,12 +84,12 @@ const Money = () => {
         </div>
 
         <div className="font-poppins font-normal capitalize text-center text-base text-white lg:text-[20px]">
-          Take Home on 97% profit split $6,413 /month
+          Take Home on 97% profit split: ${takeHomeProfit}/month
         </div>
         <div className="font-poppins font-normal capitalize text-center text-base text-white lg:text-[20px]">
           <span className="bg-gradient-to-r from-[#00fc9e] text-2xl lg:text-[40px] to-[#1c7ef0] text-transparent bg-clip-text">
             {" "}
-            $6,413
+            ${takeHomeProfit}
           </span>
           <span className="text-base lg:text-[20px]">/Month</span>
         </div>

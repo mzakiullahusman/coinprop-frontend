@@ -11,6 +11,11 @@ import ArrowIcon2 from "@assets/icons/ArrowIcon2.svg";
 import ArrowIcon3 from "@assets/icons/ArrowIcon3.svg";
 import ArrowIcon4 from "@assets/icons/ArrowIcon4.svg";
 import ArrowPlusIcon from "@assets/icons/ArrowPlusIcon.svg";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import { Autoplay } from "swiper/modules";
 import TickIconLg from "@assets/icons/TickIconLg.svg";
 import Graph from "@assets/icons/Graph.svg";
 import TextMain from "./TextMain";
@@ -34,27 +39,24 @@ const WithDrawalSection = () => {
             <div className="font-poppins font-light text-base text-white lg:text-[26px] text-center">
               Tools
             </div>
-            <button className="rounded-full bg-[#01ff9d] mx-auto h-14 w-14 flex flex-col p-[10px]">
-              <img src={ArrowIcon1} className="h-10 w-10" alt="ArrowIcon1" />
+            <button className="mx-auto">
+              <img src={ArrowIcon1} alt="ArrowIcon1" />
             </button>
 
-            <button className="rounded-full bg-white bg-opacity-20 mx-auto h-14 w-14 flex flex-col p-[10px]">
-              <img src={ArrowIcon2} className="h-10 w-10" alt="ArrowIcon1" />
+            <button className="mx-auto">
+              <img src={ArrowIcon2} alt="ArrowIcon2" />
             </button>
 
-            <button className="rounded-full bg-white bg-opacity-20 mx-auto h-14 w-14 flex flex-col p-[10px]">
-              <img src={ArrowIcon3} className="h-10 w-10" alt="ArrowIcon1" />
+            <button className="mx-auto">
+              <img src={ArrowIcon3} alt="ArrowIcon3" />
             </button>
 
-            <button className="rounded-full bg-white bg-opacity-20 mx-auto h-14 w-14 flex flex-col p-[10px]">
-              <img src={ArrowIcon4} className="h-10 w-10" alt="ArrowIcon1" />
+            <button className="mx-auto">
+              <img src={ArrowIcon4} alt="ArrowIcon4" />
             </button>
-            <button>
-              <img
-                src={ArrowPlusIcon}
-                className="h-14 w-14 m-auto"
-                alt="ArrowIcon1"
-              />
+
+            <button className="mx-auto">
+              <img src={ArrowPlusIcon} alt="ArrowPlusIcon" />
             </button>
           </div>
           <div className="w-full flex flex-col gap-y-4 lg:w-[85%]">
@@ -123,13 +125,33 @@ const WithDrawalSection = () => {
           <AboutUsComponent />
         </div>
       </div>
-      <div className="flex flex-col md:flex-row items-center xl:py-12 justify-center gap-12 xl:gap-16 2xl:gap-24 ">
+      {/* <div className="flex flex-col md:flex-row items-center xl:py-12 justify-center gap-12 xl:gap-16 2xl:gap-24 ">
         {diveIcons.map((icon, index) => (
           <div key={index} className="flex items-center justify-center">
             <img src={icon.src} alt={icon.alt} />
           </div>
         ))}
-      </div>
+      </div> */}
+
+      <Swiper
+        modules={[Autoplay]}
+        autoplay={{
+          delay: 2000,
+          disableOnInteraction: false,
+        }}
+        loop={true}
+        centeredSlides={true}
+        allowTouchMove={false}
+        slidesPerView="auto"
+        spaceBetween={5}
+        className="py-12"
+      >
+        {diveIcons.map((icon, index) => (
+          <SwiperSlide key={index}>
+            <img src={icon.src} alt={icon.alt} className="max-w-full h-auto" />
+          </SwiperSlide>
+        ))}
+      </Swiper>
     </>
   );
 };
