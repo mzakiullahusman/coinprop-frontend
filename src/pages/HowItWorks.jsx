@@ -79,7 +79,7 @@ const HomeItWorks = () => {
     },
   ];
   return (
-    <div className="bg-[#020621]">
+    <>
       <div
         className="bg-cover bg-center bg-no-repeat px-4 lg:px-20 py-5 md:py-10"
         style={{ backgroundImage: `url(${HowItWorksBg})` }}
@@ -122,7 +122,7 @@ const HomeItWorks = () => {
       <div data-aos="fade-up">
         <AceFundedTrader />
       </div>
-    </div>
+    </>
   );
 };
 

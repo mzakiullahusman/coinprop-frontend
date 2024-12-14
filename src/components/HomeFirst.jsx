@@ -1,7 +1,7 @@
 import React from "react";
 import ButtonIcon from "@assets/icons/ButtonIcon.svg";
 import LeftBlock from "@assets/images/LeftBlock.png";
-import RightBlock from "@assets/icons/RightBlock.svg";
+import RightBlock from "@assets/images/RightBlock.png";
 import TrustPilot from "@assets/icons/TrustPilot.svg";
 import Match from "@assets/icons/Match.svg";
 import Icon1 from "@assets/icons/Icon1.svg";
@@ -9,7 +9,7 @@ import Icon2 from "@assets/icons/Icon2.svg";
 import Icon3 from "@assets/icons/Icon3.svg";
 import Icon4 from "@assets/icons/Icon4.svg";
 import Icon5 from "@assets/icons/Icon5.svg";
-import BlackArrowRight from "@assets/icons/BlackArrowRight.svg";
+import BlackArrowRight from "@assets/icons/RightBlackArrow.svg";
 import BgImage from "@assets/images/BgImage.png";
 
 // import Icon1 from "../assets/Icons/Icon1.svg";
@@ -24,8 +24,8 @@ const HomeFirst = () => {
   ];
 
   return (
-    <div>
-      <div className="text-center py-5 mt-12  md:py-10 flex flex-col items-center justify-center">
+    <>
+      <div className="text-center py-5 mt-4 md:py-10 flex flex-col items-center justify-center">
         <button className="flex items-center gap-1 gradient-div">
           <img src={ButtonIcon} alt="Icon" />
           Intelligent Solutions, Infinite Possibilities
@@ -41,8 +41,8 @@ const HomeFirst = () => {
             Innovative.
           </span>
         </div>
-        <div className="flex flex-col xl:flex-row justify-between items-center lg:items-start gap-8 xl:gap-12">
-          <img src={LeftBlock} className="w-60 h-60" alt="Left Block" />
+        <div className="flex flex-col xl:flex-row justify-between items-center xl:items-start gap-8 xl:gap-12">
+          <img src={LeftBlock} className="z-50 w-60 h-60" alt="Left Block" />
           <div className="flex flex-col items-center">
             <div className=" text-white text-[20px] font-poppins font-normal">
               Our platform makes crypto investments simple and accessible for
@@ -57,12 +57,12 @@ const HomeFirst = () => {
               </div>
             </div>
 
-            <button className="bg-gradient-to-r from-[#00fc9e] to-[#1c7ef0] flex flex-row mt-8 gap-x-3 items-center text-[#141414]  font-outfit text-[20px] px-8 py-3 rounded-full shadow-lg font-normal hover:opacity-90 transition">
+            <button className="bg-gradient-to-r z-50 from-[#00fc9e] to-[#1c7ef0] flex flex-row mt-8 gap-x-3 items-center text-[#141414]  font-outfit text-[20px] px-8 py-3 rounded-full shadow-lg font-normal hover:opacity-90 transition">
               Start Challenge
               <img src={BlackArrowRight} alt="Arrow" />
             </button>
           </div>
-          <img src={RightBlock} alt="Right Block" />
+          <img className="z-50" src={RightBlock} alt="Right Block" />
         </div>
       </div>
       <div className="relative mt-40">
@@ -70,7 +70,7 @@ const HomeFirst = () => {
           src={BgImage}
           className="w-full absolute bottom-[-10px] bg-contain bg-no-repeat"
         />
-        <div className="flex flex-col md:flex-row items-center justify-center md:bottom-[-50px] xl:bottom-[60px] mb-20 xl:mb-12  2xl:bottom-[70px] relative gap-12 xl:gap-20 ">
+        <div className="flex flex-col md:flex-row items-center justify-center bottom-28 md:bottom-[-50px] xl:bottom-[10px] mb-20 xl:mb-12  2xl:bottom-[70px] relative gap-12 xl:gap-20 ">
           {homeIcons.map((icon, index) => (
             <div key={index} className="flex items-center justify-center">
               <img src={icon.src} alt={icon.alt} />
@@ -78,7 +78,7 @@ const HomeFirst = () => {
           ))}
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
