@@ -33,29 +33,29 @@ const WithDrawalSection = () => {
 
   return (
     <>
-      <div className="flex flex-col lg:flex-row gap-20 px-4 md:px-12 py-5  md:py-10">
-        <div className="w-full flex gap-x-3 items-start lg:w-1/2">
-          <div className="border w-[30%] md:w-[15%] px-5 flex flex-col gap-y-6 p-8 border-white bg-white bg-opacity-[4%] border-opacity-20 rounded-[23px]">
+      <div className="flex flex-col xl:flex-row gap-20 px-4 md:px-12 py-5  md:py-10">
+        <div className="w-full flex flex-col md:flex-row gap-3 items-start xl:w-1/2">
+          <div className="border w-full justify-between items-center md:w-[15%] md:px-5 flex flex-row sm:flex-col p-4 gap-6 sm:p-8 border-white bg-white bg-opacity-[4%] border-opacity-20 rounded-[23px]">
             <div className="font-poppins font-light text-base text-white lg:text-[26px] text-center">
               Tools
             </div>
-            <button className="mx-auto">
+            <button className="sm:mx-auto">
               <img src={ArrowIcon1} alt="ArrowIcon1" />
             </button>
 
-            <button className="mx-auto">
+            <button className="sm:mx-auto">
               <img src={ArrowIcon2} alt="ArrowIcon2" />
             </button>
 
-            <button className="mx-auto">
+            <button className="sm:mx-auto">
               <img src={ArrowIcon3} alt="ArrowIcon3" />
             </button>
 
-            <button className="mx-auto">
+            <button className="sm:mx-auto">
               <img src={ArrowIcon4} alt="ArrowIcon4" />
             </button>
 
-            <button className="mx-auto">
+            <button className="sm:mx-auto">
               <img src={ArrowPlusIcon} alt="ArrowPlusIcon" />
             </button>
           </div>
@@ -106,7 +106,6 @@ const WithDrawalSection = () => {
                   </div>
                 </div>
 
-                {/* Right Section (Graph) */}
                 <div>
                   <img src={Graph} alt="Graph" />
                 </div>
@@ -114,7 +113,7 @@ const WithDrawalSection = () => {
             </div>
           </div>
         </div>
-        <div className="w-full items-start flex flex-col gap-y-2 lg:w-1/2">
+        <div className="w-full items-start flex flex-col gap-y-2 xl:w-1/2">
           <TextMain
             text="About Us"
             title="Why Crypto with Risk Master Trader?"

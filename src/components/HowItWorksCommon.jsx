@@ -23,10 +23,13 @@ const HowItWorksCommon = ({ index, text }) => {
       )}
       {index && (
         <>
-          {text === "About Us" ||
-            (text === "Forex To Futures" && (
-              <div className="h-[50px] w-[6px] text-center mx-auto bg-[#01ff9d]"></div>
-            ))}
+          {text === "About Us" && (
+            <div className="h-[50px] w-[6px] text-center mx-auto bg-[#01ff9d]"></div>
+          )}
+
+          {text === "Forex To Futures" && (
+            <div className="h-[50px] w-[6px] text-center mx-auto bg-[#01ff9d]"></div>
+          )}
           {text === "About Us" ? (
             <div className="font-poppins leading-[36px] text-center mt-2 font-normal text-lg lg:text-2xl">
               We’re Special and We Know It

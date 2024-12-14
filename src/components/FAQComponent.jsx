@@ -35,7 +35,7 @@ const FAQComponent = () => {
   };
 
   return (
-    <div className="px-4 md:px-12 xl:px-28 2xl:px-32 py-5 md:py-10">
+    <div className="px-1 md:px-12 xl:px-28 2xl:px-32 py-5 md:py-10">
       <TextMain
         text="FAQs"
         title="Frequently Asked Questions?"

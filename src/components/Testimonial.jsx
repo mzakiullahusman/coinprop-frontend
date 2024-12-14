@@ -47,7 +47,7 @@ const Testimonial = () => {
   };
 
   return (
-    <div className="px-4 md:px-12 xl:px-20 2xl:px-32 py-5 md:py-10">
+    <div className="px-4 md:px-12 xl:px-20 2xl:px-32 mt-12 py-5 md:py-10">
       <div className="flex flex-col md:flex-row gap-4 md:gap-0 mb-4 md:mb-0 justify-center md:justify-between items-center">
         <TextMain
           text="Testimonials"

@@ -171,7 +171,7 @@ const Home = () => {
         {" "}
         <Testimonial />
       </div>
-      <div className="bg-white bg-opacity-[2%] border-white border rounded-[44px] border-opacity-20 m-4 md:m-8 xl:m-20 2xl:mx-32 2xl:mt-16 px-4 xl:px-10 py-5 xl:py-12">
+      <div className="bg-white bg-opacity-[2%] border-white border rounded-[44px] border-opacity-20 mx-4 mt-9 xl:mx-20 2xl:mx-32 2xl:mt-16 px-4 xl:px-10 py-5 xl:py-12">
         <div data-aos="fade-up">
           <TalkingAbout />
         </div>
@@ -180,7 +180,10 @@ const Home = () => {
           <FAQComponent />
         </div>
       </div>
-      <AceFundedTrader />
+      <div className="mt-16 lg:mt-20">
+        {" "}
+        <AceFundedTrader />
+      </div>
     </div>
   );
 };
