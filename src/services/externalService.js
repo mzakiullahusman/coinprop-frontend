@@ -1,17 +1,41 @@
 import axios from "axios";
 
-export const getLiveNews = async ({ search }) => {
+// export const getLiveNews = async ({ search }) => {
+//   try {
+//     let res = await axios.get(
+//       `https://cryptopanic.com/api/v1/posts/?auth_token=${
+//         import.meta.env.VITE_APP_NEWS_FEED_API
+//       }`
+//     );
+//     return res;
+//   } catch (e) {
+//     console.log(e, "failed");
+//   }
+// };
+export const getLiveNews = async () => {
   try {
-    let res = await axios.get(
-      `https://forexnewsapi.com/api/v1?currencypair=EUR-USD&search=${search}&items=100&token=${
-        import.meta.env.VITE_APP_NEWS_FEED_API
-      }`
+    const res = await axios.get(
+      `https://thingproxy.freeboard.io/fetch/https://cryptopanic.com/api/v1/posts/?auth_token=${import.meta.env.VITE_APP_NEWS_FEED_API}`
     );
-    return res;
+    return res.data;
   } catch (e) {
     console.log(e, "failed");
   }
 };
+
+// export const getLiveNews = async () => {
+//   try {
+//     const res = await axios.get(
+//       `https://api.allorigins.win/get?url=${encodeURIComponent(
+//         `https://cryptopanic.com/api/v1/posts/?auth_token=${import.meta.env.VITE_APP_NEWS_FEED_API}`
+//       )}`
+//     );
+//     // The response data will be in the "contents" field
+//     return JSON.parse(res.data.contents.results);
+//   } catch (e) {
+//     console.log(e, "failed");
+//   }
+// };
 
 export const getStockNewsNew = async () => {
   try {

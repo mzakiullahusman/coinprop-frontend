@@ -78,12 +78,12 @@ const Layout = ({ children }) => {
       name: "Settings",
       icon: <SettingIcon />,
     },
-    // {
-    //   id: 8.25,
-    //   path: "/news-feed",
-    //   name: "News Feed",
-    //   icon: <LiveNewsIcon />,
-    // },
+    {
+      id: 8.25,
+      path: "/news-feed",
+      name: "News Feed",
+      icon: <LiveNewsIcon />,
+    },
     // {
     //   id: 8.5,
     //   path: "/news-calendar",
