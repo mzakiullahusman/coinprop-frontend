@@ -19,7 +19,7 @@ export default defineConfig({
       "@utils": path.resolve(__dirname, "src/utils"),
     },
   },
-  base: './',
+  base: '/',
   server: {
     watch: {
       ignored: ["**/node_modules/**"], // Avoid unnecessary recompilation
