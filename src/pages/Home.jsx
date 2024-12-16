@@ -123,8 +123,9 @@ const Home = () => {
         />
         <HowItWorks mainData={features} />
       </div>
-
-      <RMTVsTrade />
+      <div data-aos="fade-up">
+        <RMTVsTrade />
+      </div>
 
       <div
         className="bg-cover bg-[#0f1827] rounded-b-[60px] bg-center bg-no-repeat px-4 md:px-12 py-5 md:py-10 "
