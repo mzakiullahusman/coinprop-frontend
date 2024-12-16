@@ -1,8 +1,10 @@
+import { useEffect } from "react";
 import {
   BrowserRouter as Router,
   Routes,
   Route,
   Navigate,
+  useLocation,
 } from "react-router-dom";
 
 // import PrivateRoute from "./routes/PrivateRoutes";
@@ -81,6 +83,15 @@ const LandingRoutes = () => (
 );
 
 function App() {
+   const location = useLocation();
+   const navigate = useNavigate();
+
+   useEffect(() => {
+     if (location.pathname.endsWith("/") && location.pathname !== "/") {
+       navigate(location.pathname.slice(0, -1), { replace: true });
+     }
+   }, [location, navigate]);
+
   return (
     <Router>
       <Routes>
