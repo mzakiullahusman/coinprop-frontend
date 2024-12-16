@@ -28,6 +28,7 @@ import CursorClick from "@assets/icons/CursorClick.svg";
 import ChartLine from "@assets/icons/Chartline.svg";
 import Bell from "@assets/icons/Bell.svg";
 import { useEffect } from "react";
+import RMTVsTrade from "@components/RMTVsTrade";
 
 const Home = () => {
   const features = [
@@ -122,6 +123,8 @@ const Home = () => {
         />
         <HowItWorks mainData={features} />
       </div>
+
+      <RMTVsTrade />
 
       <div
         className="bg-cover bg-[#0f1827] rounded-b-[60px] bg-center bg-no-repeat px-4 md:px-12 py-5 md:py-10 "
