@@ -11,6 +11,11 @@ import Icon4 from "@assets/icons/Icon4.svg";
 import Icon5 from "@assets/icons/Icon5.svg";
 import BlackArrowRight from "@assets/icons/RightBlackArrow.svg";
 import BgImage from "@assets/images/BgImage.png";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import { Autoplay } from "swiper/modules";
 
 // import Icon1 from "../assets/Icons/Icon1.svg";
 
@@ -70,13 +75,41 @@ const HomeFirst = () => {
           src={BgImage}
           className="w-full absolute bottom-[-10px] bg-contain bg-no-repeat"
         />
-        <div className="flex flex-col md:flex-row items-center justify-center bottom-28 md:bottom-[-50px] xl:bottom-[10px] mb-20 xl:mb-12  2xl:bottom-[70px] relative gap-12 xl:gap-20 ">
+
+        <Swiper
+          modules={[Autoplay]}
+          autoplay={{
+            delay: 0,
+            disableOnInteraction: false,
+          }}
+          speed={3000}
+          loop={true}
+          slidesPerView={4}
+          spaceBetween={10}
+          breakpoints={{
+            0: {
+              slidesPerView: 2,
+            },
+            768: {
+              slidesPerView: 2,
+            },
+            1024: {
+              slidesPerView: 4,
+            },
+          }}
+          allowTouchMove={false}
+          className="w-full max-w-[91%] sm:max-w-[85%] xl:max-w-[70%] relative bottom-[-30px] xl:bottom-[20px] mb-20 2xl:mb-12 2xl:bottom-[70px]"
+        >
           {homeIcons.map((icon, index) => (
-            <div key={index} className="flex items-center justify-center">
-              <img src={icon.src} alt={icon.alt} />
-            </div>
+            <SwiperSlide
+              key={index}
+              className="flex justify-center items-center opacity-80 hover:opacity-100 transition-opacity"
+            >
+              <img src={icon.src} alt={icon.alt} className="h-8" />
+            </SwiperSlide>
           ))}
-        </div>
+          <div />
+        </Swiper>
       </div>
     </>
   );
