@@ -113,7 +113,7 @@ function App() {
         <Route path="/landing/*" element={<LandingRoutes />} />
         <Route path="/" element={<Navigate to="/auth/sign-in" />} />
         <Route path="/auth/*" element={<AuthRoutes />} />
-        <Route path="/trading-view" element={<TradingInterface />} />
+        <Route path="/app/trading-view" element={<TradingInterface />} />
        <Route path="/app/*" element={<DashboardRoutes />}/>
       </Routes>
     </Router>

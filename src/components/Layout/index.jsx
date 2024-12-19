@@ -30,7 +30,7 @@ const Layout = ({ children }) => {
     },
     {
       id: 2,
-      path: "/trading-view",
+      path: "/app/trading-view",
       name: "Trading Terminal",
       icon: <TradingAccountIcon />,
     },

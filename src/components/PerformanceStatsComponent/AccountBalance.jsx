@@ -28,11 +28,11 @@ const AccountBalance = () => {
   const currentProgress = 2016.32; // Example current progress value
 
   return (
-    <div className="grid grid-cols-2 gap-8 p-8 min-h-2 bg-sidebar rounded-lg text-white">
+    <div className="grid grid-cols-1 gap-8 p-4 md:p-6 lg:p-8 lg:grid-cols-2 min-h-2 bg-sidebar rounded-lg text-white">
       {/* Account Balance Section */}
-      <div className="grid grid-cols-2 gap-9">
-        <div className="text-lg">
-          <h2 className="text-xl mb-4">Account balance</h2>
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
+        <div className="text-base md:text-lg">
+          <h2 className="text-lg md:text-xl mb-4">Account balance</h2>
           <div className="flex justify-between pb-3 border-b-2 border-b-custom-border pt-3">
             <span>High:</span>
             <span>${high.toFixed(2)}</span>
@@ -54,8 +54,8 @@ const AccountBalance = () => {
           </div>
         </div>
 
-        <div className="text-lg">
-          <h2 className="text-xl mb-4 text-transparent">Ac</h2>
+        <div className="text-base md:text-lg">
+          <h2 className="text-lg md:text-xl mb-4 text-transparent">Ac</h2>
           <div className="flex justify-between pb-3 border-b-2 border-b-custom-border pt-3">
             <span>Best Day of Month:</span>
             <span>${bestDayOfMonth.toFixed(2)}</span>
@@ -79,9 +79,9 @@ const AccountBalance = () => {
 
       {/* Objectives and Rules Section */}
       <div>
-        <h2 className="text-xl mb-4">Objectives</h2>
+        <h2 className="text-lg md:text-xl mb-4">Objectives</h2>
         <ul className="list-none pl-0 mb-4 space-y-4">
-          <li className="flex items-center text-xl">
+          <li className="flex flex-col sm:flex-row items-start sm:items-center text-base md:text-xl">
             <span className="mr-2 text-custom-cyan">✔</span>
             <span>
               Reach & maintain the target of{" "}
@@ -101,8 +101,8 @@ const AccountBalance = () => {
           <span className="text-sm text-gray-300">
             {currentProgress.toLocaleString()}/${target.toLocaleString()}
           </span>
-          <li className="flex items-center text-xl">
-            <span className="mr-2 text-custom-cyan ">✔</span>
+          <li className="flex flex-col sm:flex-row items-start sm:items-center text-base md:text-xl">
+            <span className="mr-2 text-custom-cyan">✔</span>
             <span>
               Reach & maintain the target of{" "}
               <span className="text-custom-cyan">
@@ -111,11 +111,11 @@ const AccountBalance = () => {
             </span>
           </li>
         </ul>
-        <h2 className="text-xl mb-4">Rules:</h2>
+        <h2 className="text-lg md:text-xl mb-4">Rules:</h2>
         <ul className="list-none pl-0 space-y-2">
-          <li className="flex items-center">
-            <span className="mr-2 text-red-500 text-xl">✖</span>
-            <span className="text-lg mr-2">
+          <li className="flex flex-col sm:flex-row items-start sm:items-center">
+            <span className="mr-2 text-red-500 text-lg md:text-xl">✖</span>
+            <span className="text-base md:text-lg">
               Do not let your account balance hit or go below{" "}
               <span className="text-custom-cyan">
                 ${target.toLocaleString()}
