@@ -5,7 +5,7 @@ import BlackArrowRight from "@assets/icons/RightBlackArrow.svg";
 const AceFundedTrader = () => {
   return (
     <section
-      className="my-40 lg:my-0"
+      className="lg:my-0"
       style={{
         backgroundImage: `url(${LastBgImage})`,
       }}
@@ -20,7 +20,7 @@ const AceFundedTrader = () => {
         </div>
 
         {/* Main Content */}
-        <div className="px-4 md:px-12 py-5 md:py-10 ">
+        <div className="py-20 lg:py-36 ">
           <div className="text-center capitalize  text-white font-bold font-poppins text-[32px] tracking-[-1px] xl:tracking-[-4px] xl:leading-[126px] lg:text-[60px] xl:text-[84px]">
             Are you ready to Funded
             <br /> Trader?

@@ -1,6 +1,5 @@
 import AceFundedTrader from "@components/AceFundedTrader";
 import FAQComponent from "@components/FAQComponent";
-import BgStar from "@assets/images/BgStar.png";
 import React, { useEffect } from "react";
 import HelpCenterSidebar from "@components/HelpCenterSidebar";
 import Help from "@components/Help";
@@ -16,12 +15,9 @@ const HelpCenter = () => {
     });
   }, []);
   return (
-    <div className="bg-[#020621] px-4 lg:px-20 py-5  md:py-10">
+    <div className="py-5 md:py-10">
       <div
-        className="bg-cover bg-center bg-no-repeat flex flex-col lg:flex-row gap-6 "
-        style={{
-          backgroundImage: `url(${BgStar})`,
-        }}
+        className=" px-4 lg:px-20  flex flex-col lg:flex-row gap-9 "
         data-aos="fade-up"
       >
         <div className="w-full md:w-[37%] 2xl:w-[25%]">
@@ -31,7 +27,7 @@ const HelpCenter = () => {
           <Help />
         </div>
       </div>
-      <div className="xl:px-28" data-aos="fade-up">
+      <div className="px-3 xl:px-36" data-aos="fade-up">
         <FAQComponent />
       </div>
       <div data-aos="fade-up">
