@@ -79,7 +79,33 @@ const LandingRoutes = () => (
     </Routes>
   </LayoutLanding>
 );
-
+// Dashboard Routes
+const DashboardRoutes = () => (
+  <Layout>
+    <Routes>
+      <Route path="dashboard" element={<Dashboard />} />
+      <Route path="accounts" element={<Account />} />
+      <Route path="trading-account" element={<TradingAccount />} />
+      <Route path="choose-funding" element={<ChooseFunding />} />
+      <Route path="billing-info-checkout" element={<BillingInfoCheckout />} />
+      <Route path="new-challenge-checkout" element={<NewChallengeCheckout />} />
+      <Route path="news-calendar" element={<NewsCalendar />} />
+      <Route path="competitions" element={<Competitions />} />
+      {/* <Route
+        path="competition-standings"
+        element={<CompetitionStandings />}
+      /> */}
+      <Route path="affiliate-portal" element={<AffiliatesPortal />} />
+      <Route path="profit-and-share" element={<ProfitAndShare />} />
+      <Route path="billing-and-accounts" element={<BillingAndAccounts />} />
+      <Route path="news-feed" element={<LiveNews />} />
+      <Route path="customer-support" element={<CustomerSupport />} />
+      <Route path="faqs" element={<Faqs />} />
+      <Route path="profile" element={<Profile />} />
+      <Route path="account-security" element={<AccountSecurity />} />
+    </Routes>
+  </Layout>
+);
 function App() {
   return (
     <Router>
@@ -87,52 +113,8 @@ function App() {
         <Route path="/landing/*" element={<LandingRoutes />} />
         <Route path="/" element={<Navigate to="/auth/sign-in" />} />
         <Route path="/auth/*" element={<AuthRoutes />} />
-        <Route path="/trading-view" element={<TradingInterface />} />
-        <Route
-          path="/*"
-          element={
-            // <PrivateRoute>
-            <Layout>
-              <Routes>
-                <Route path="/dashboard" element={<Dashboard />} />
-                <Route path="/trading-account" element={<TradingAccount />} />
-                <Route path="/choose-funding" element={<ChooseFunding />} />
-                <Route
-                  path="/billing-info-checkout"
-                  element={<BillingInfoCheckout />}
-                />
-                <Route
-                  path="/new-challenge-checkout"
-                  element={<NewChallengeCheckout />}
-                />
-                <Route path="/news-calendar" element={<NewsCalendar />} />
-                <Route path="/accounts" element={<Account />} />
-                <Route path="/competitions" element={<Competitions />} />
-
-                <Route
-                  path="/competition-standings"
-                  element={<CompetitionStandings />}
-                />
-                <Route
-                  path="/affiliate-portal"
-                  element={<AffiliatesPortal />}
-                />
-                {/* <Route path="/certificates" element={<Certificates />} /> */}
-                <Route path="/profit-and-share" element={<ProfitAndShare />} />
-                <Route
-                  path="/billing-and-accounts"
-                  element={<BillingAndAccounts />}
-                />
-                <Route path="/news-feed" element={<LiveNews />} />
-                <Route path="/customer-support" element={<CustomerSupport />} />
-                <Route path="/faqs" element={<Faqs />} />
-                <Route path="/profile" element={<Profile />} />
-                <Route path="/account-security" element={<AccountSecurity />} />
-              </Routes>
-            </Layout>
-            // </PrivateRoute>
-          }
-        />
+        <Route path="/app/trading-view" element={<TradingInterface />} />
+       <Route path="/app/*" element={<DashboardRoutes />}/>
       </Routes>
     </Router>
   );

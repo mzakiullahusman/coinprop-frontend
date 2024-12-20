@@ -230,7 +230,7 @@ const rowsTradingDaysData = [
             />
           </div>
 
-          <div className="rounded-lg flex justify-between space-x-3">
+          <div className="rounded-lg flex flex-col lg:flex-row justify-between space-y-3 lg:space-y-0 lg:space-x-3">
             <div className="flex-1 rounded-lg shadow-lg bg-sidebar">
               <GaugeCard
                 title="Avg. Winning Trade"
