@@ -22,11 +22,11 @@ const TermsOfService = () => {
   const filteredContent = Array(4).fill(contentData[0]);
   return (
     <>
-      <div className="px-4 md:px-12 py-5  md:py-10 ">
-        <div className="text-[32px] capitalize tracking-[-1px] mb-6 xl:leading-[80px] text-white  lg:text-[64px]  font-poppins font-bold">
+      <div className=" py-5  md:py-10 ">
+        <div className="px-4 md:px-12 text-[32px] capitalize tracking-[-1px] mb-6 xl:leading-[80px] text-white  lg:text-[64px]  font-poppins font-bold">
           Terms & Conditions
         </div>
-        <div className="space-y-8">
+        <div className="px-4 md:px-12 space-y-8">
           {filteredContent.map((item, index) => (
             <div
               key={index}
