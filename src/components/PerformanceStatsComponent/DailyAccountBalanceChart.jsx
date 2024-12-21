@@ -72,13 +72,14 @@ const DailyAccountBalanceChart = () => {
               borderRadius: "8px",
               border: "none",
               color: "#fff",
-              fontSize:"0.7rem"
+              fontSize: "0.7rem",
             }}
           />
           <Bar
             dataKey="balance"
             fill="#01FF9D"
             radius={[50, 50, 0, 0]}
+            barSize={50}
           />
         </BarChart>
       </ResponsiveContainer>

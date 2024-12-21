@@ -144,7 +144,7 @@ const AuthLogin = () => {
       localStorage.removeItem("rememberMe");
     }
 
-    navigate("/dashboard");
+    navigate("/app/dashboard");
   };
 
   const handleResendOtp = async () => {
