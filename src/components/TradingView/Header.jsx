@@ -1,7 +1,10 @@
 import SettingIcon from "@components/assets/SettingIcon";
 import React from "react";
 
-const Header = () => {
+const Header = ({ selectedSymbol, setSelectedSymbol }) => {
+  const handleSymbolChange = (event) => {
+    setSelectedSymbol(event.target.value);
+  };
   return (
     <div className="flex flex-wrap items-center justify-between bg-gray-800 p-4 border-b border-gray-700 space-y-4 lg:space-y-0">
       {/* Pair and Price */}
@@ -9,13 +12,14 @@ const Header = () => {
         <div className="text-lg font-semibold flex items-center">
           <select
             className="bg-gray-700 text-white rounded px-2 py-1 mr-2 cursor-pointer"
-            defaultValue="SOL/USDT"
+            value={selectedSymbol}
+            onChange={handleSymbolChange}
           >
-            <option value="SOL/USDT">SOL/USDT</option>
-            <option value="BTC/USDT">BTC/USDT</option>
-            <option value="ETH/USDT">ETH/USDT</option>
-            <option value="ADA/USDT">ADA/USDT</option>
-            <option value="XRP/USDT">XRP/USDT</option>
+            <option value="SOLUSDT">SOL/USDT</option>
+            <option value="BTCUSDT">BTC/USDT</option>
+            <option value="ETHUSDT">ETH/USDT</option>
+            <option value="ADAUSDT">ADA/USDT</option>
+            <option value="XRPUSDT">XRP/USDT</option>
           </select>
           <span className="text-xl font-bold text-green-500">258.54</span>
         </div>

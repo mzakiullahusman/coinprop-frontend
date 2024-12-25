@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Sidebar from "@components/TradingView/Sidebar";
 import CandleChart from "@components/TradingView/CandleChart";
 import TradePanel from "@components/TradingView/TradePanel";
@@ -7,50 +7,29 @@ import OrderBook from "@components/TradingView/OrderBook";
 import TradingTable from "@components/TradingView/TradingTable";
 import setupApp from "@components/TradingView/KLineChartProComponent";
 import '@klinecharts/pro/dist/klinecharts-pro.css'
-const dummyOrders = [
-  { time: "16:59:32", price: "420.56", amount: "25", isBuy: false },
-  { time: "16:59:32", price: "258.54", amount: "220.46", isBuy: true },
-  { time: "17:00:01", price: "430.00", amount: "15", isBuy: false },
-  { time: "17:00:15", price: "260.12", amount: "210.30", isBuy: true },
-  { time: "17:00:01", price: "430.00", amount: "15", isBuy: false },
-  { time: "17:00:15", price: "260.12", amount: "210.30", isBuy: true },
-  { time: "17:00:01", price: "430.00", amount: "15", isBuy: false },
-  { time: "17:00:15", price: "260.12", amount: "210.30", isBuy: true },
-  { time: "17:00:01", price: "430.00", amount: "15", isBuy: false },
-  { time: "17:00:15", price: "260.12", amount: "210.30", isBuy: true },
-];
+
 const TradingInterface = () => {
   const myContainer = useRef(null);
+  const [selectedSymbol, setSelectedSymbol] = useState("SOLUSDT");
+
   useEffect(() => {
-    console.log("myContainer..", myContainer.current);
-    setupApp(myContainer.current)
-  }, []);
+    if (myContainer.current) {
+      myContainer.current.innerHTML = "";
+      setupApp(selectedSymbol);
+    }
+  }, [selectedSymbol]);
   
   return (
     <div className="flex bg-[#0F1827] text-white">
-      {/* Left Sidebar */}
-      <Sidebar />
-
-      {/* Main Content */}
       <div className="flex flex-col w-full">
-        {/* Header */}
-        <Header />
+        <Header selectedSymbol={selectedSymbol} setSelectedSymbol={setSelectedSymbol} />
 
-        {/* Main Trading Area */}
-        <div className="flex flex-1">
-          {/* Left Column - Chart */}
-          <div className="flex flex-row border-b-2 border-b-custom-border h-auto">
-            <div ref={myContainer}></div>
-            {/* <KLineChartProComponent /> */}
-            {/* <CandleChart /> */}
-            <OrderBook orders={dummyOrders} />
-          </div>
-
-          {/* Right Column - Trade Panel and Order Book */}
-          <div className="flex flex-col">
-            <TradePanel />
-          </div>
+        <div className="flex flex-1 flex-wrap gap-y-8">
+          <div id="container" ref={myContainer}></div>
+          <OrderBook symbol={selectedSymbol.toLowerCase()} />
+          <TradePanel />
         </div>
+        
         <TradingTable />
       </div>
     </div>
