@@ -1,6 +1,6 @@
 import React from "react";
 
-const TradingPanel = () => {
+const TradingPanel = ({ account, trades, realTimeData }) => {
   return (
     <div className="max-w-md mx-auto bg-gray-900 text-white p-4 rounded-lg">
       <div className="flex flex-col gap-4">
@@ -87,10 +87,10 @@ const TradingPanel = () => {
 
           <div className="mt-4 space-y-2 text-sm">
             {[
-              ["Available Margin", "4294.42 USDT"],
-              ["Used Margin", "0.00 USDT"],
-              ["Total Balance", "4294.42 USDT"],
-              ["Unrealized P&L", "0.00 USDT"]
+              ["Available Margin", `${realTimeData.availableMargin.toFixed(2)} USDT`],
+              ["Used Margin", `${realTimeData.usedMargin.toFixed(2)} USDT`],
+              ["Total Balance", `${realTimeData.totalBalance.toFixed(2)} USDT`],
+              ["Unrealized P&L", `${realTimeData.unrealizedPnL.toFixed(2)} USDT`],
             ].map(([label, value]) => (
               <div key={label} className="flex justify-between text-gray-400">
                 <span>{label}</span>
