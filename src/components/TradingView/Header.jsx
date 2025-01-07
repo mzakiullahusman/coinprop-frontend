@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import SettingIcon from "@components/assets/SettingIcon";
-import { getAccounts } from "@services/tradingService";
 
 const symbolsArr = ["BTCUSDT", "ETHUSDT", "BNBUSDT", "ADAUSDT", "SOLUSDT"];
 
@@ -12,29 +11,11 @@ const Header = ({
   selectedAccount,
   setSelectedAccount,
   accounts,
-  setAccounts,
  }) => {
   const [symbols, setSymbols] = useState(symbolsArr);
   const [price, setPrice] = useState(null);
   const [priceChange, setPriceChange] = useState(null);
   
-
-  useEffect(() => {
-    const fetchAccountData = async () => {
-      try {
-        const accountResponse = await getAccounts();
-        setAccounts(accountResponse.accounts);
-        if (accountResponse.accounts.length > 0) {
-          setSelectedAccount(accountResponse.accounts[0].id);
-          setPortfolioBalance(accountResponse.accounts[0].balance);
-        }
-      } catch (error) {
-        console.error("Error fetching accounts:", error);
-      }
-    };
-
-    fetchAccountData();
-  }, []);
 
   useEffect(() => {
     const ws = new WebSocket(
@@ -55,7 +36,7 @@ const Header = ({
   };
 
   const handleAccountChange = (event) => {
-    const selected = accounts.find((account) => account.id === event.target.value);
+    const selected = accounts.find((account) => account._id === event.target.value);
     setSelectedAccount(event.target.value);
     setPortfolioBalance(selected?.balance || "N/A");
   };

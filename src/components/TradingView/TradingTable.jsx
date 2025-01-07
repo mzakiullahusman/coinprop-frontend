@@ -1,31 +1,20 @@
-export default function TradingTable() {
-  const trades = [
-    {
-      id: 1,
-      contract: "SOL/USDT",
-      time: "2024-04-12",
-      timeDetail: "11:04:05:00",
-      side: "Close Long",
-      finalPrice: "246.24",
-      amount: "84.02",
-      role: "Taker",
-      type: "long",
-      fees: -127.50
-    },
-    {
-      id: 2,
-      contract: "SOL/USDT",
-      time: "2024-04-12",
-      timeDetail: "11:04:05:00",
-      side: "Close Short",
-      finalPrice: "246.24",
-      amount: "84.02",
-      role: "Taker",
-      type: "short",
-      fees: 500.20
-    },
-  ];
+const timeConvert = (isoString) => {
+  const date = new Date(isoString);
+  
+  const year = date.getFullYear();
+  const month = (date.getMonth() + 1).toString().padStart(2, '0'); 
+  const day = date.getDate().toString().padStart(2, '0');
+  
+  let hours = date.getHours();
+  const ampm = hours >= 12 ? 'PM' : 'AM';
+  hours = hours % 12 || 12; 
+  
+  const formattedDateTime = `${month}/${day}/${year} ${hours}:${date.getMinutes().toString().padStart(2, '0')}:${date.getSeconds().toString().padStart(2, '0')} ${ampm}`; 
+  
+  return formattedDateTime;
+}
 
+export default function TradingTable({ trades }) {
   return (
     <div className=" bg-sidebar text-white p-4">
       <div className="overflow-x-auto">
@@ -37,8 +26,8 @@ export default function TradingTable() {
               <th className="text-left p-2 font-thin text-lg">Side:</th>
               <th className="text-left p-2 font-thin text-lg">Final Price:</th>
               <th className="text-left p-2 font-thin text-lg">Amount:</th>
-              <th className="text-left p-2 font-thin text-lg">Role:</th>
-              <th className="text-left p-2 font-thin text-lg">Fees:</th>
+              <th className="text-left p-2 font-thin text-lg">Intial Price:</th>
+              <th className="text-left p-2 font-thin text-lg">Leverage:</th>
             </tr>
           </thead>
           <tbody>
@@ -46,53 +35,44 @@ export default function TradingTable() {
               <tr key={trade.id} className="bg-sidebar text-sm">
                 <td className="p-2">
                   <div className="flex items-center gap-2">
-                    <span>{trade.contract}</span>
+                    <span>{trade.tradePair}</span>
                     <span className="text-xs text-gray-400">{">"}</span>
                   </div>
                 </td>
                 <td className="p-2">
                   <div className="flex flex-col">
-                    <span>{trade.time}</span>
-                    <span className="text-xs text-custom-cyan">
-                      {trade.timeDetail}
-                    </span>
+                    <span>{timeConvert(trade.createdAt)}</span>
                   </div>
                 </td>
                 <td className="p-2">
                   <span
                     className={
-                      trade.type === "long" ? "text-green-500" : "text-red-500"
+                      trade.profitType === "Long" ? "text-green-500" : "text-red-500"
                     }
                   >
-                    {trade.side}
+                    {trade.profitType}
                   </span>
                 </td>
                 <td className="p-2">
                   <div className="flex flex-col">
-                    <span>{trade.finalPrice}</span>
+                    <span>{trade.sellingPrice}</span>
                     <span className="text-xs text-custom-cyan">USDT</span>
                   </div>
                 </td>
                 <td className="p-2">
                   <div className="flex flex-col">
-                    <span>{trade.amount}</span>
-                    <span className="text-xs text-custom-cyan">SOL/USDT</span>
+                    <span>{trade.amountBought.toFixed(3)}</span>
+                    <span className="text-xs text-custom-cyan">{trade.tradePair}</span>
                   </div>
                 </td>
                 <td className="p-2">
                   <div className="flex flex-col">
-                    <span>{trade.role}</span>
-                    <span className="text-xs text-gray-400">Long</span>
+                    <span>{trade.intialPrice}</span>
                   </div>
                 </td>
                 <td className="p-2">
                   <div className="flex flex-col">
-                    {trade.fees > 0 ? (
-                      <span className="text-custom-cyan">{trade.fees}</span>
-                    ) : (
-                      <span className="text-red-500">{trade.fees}</span>
-                    )}
-                    <span className="text-xs text-gray-400">USDT</span>
+                    <span className="text-custom-cyan">{trade.leverage}x</span>
                   </div>
                 </td>
               </tr>

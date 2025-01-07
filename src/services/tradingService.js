@@ -39,7 +39,7 @@ export const getAccount = async (accountId) => {
 export const getTrades = async (accountId) => {
   const token = getAuthToken();
   try {
-    const response = await apiClient.get(`/trades?accountId=${accountId}`,
+    const response = await apiClient.get(`/trades/${accountId}`,
       {
         headers: {
           Authorization: `Bearer ${token}`,

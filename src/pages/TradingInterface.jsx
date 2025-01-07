@@ -4,11 +4,12 @@ import Header from "@components/TradingView/Header";
 import OrderBook from "@components/TradingView/OrderBook";
 import TradingTable from "@components/TradingView/TradingTable";
 import setupApp from "@components/TradingView/KLineChartProComponent";
-import { getAccount, getTrades } from "@services/tradingService";
+import { getAccount, getTrades, getAccounts } from "@services/tradingService";
 import "@klinecharts/pro/dist/klinecharts-pro.css";
 
 const TradingInterface = () => {
   const myContainer = useRef(null);
+  const wsRef = useRef(null); // Ref to store WebSocket instance
   const [selectedSymbol, setSelectedSymbol] = useState("SOLUSDT");
   const [account, setAccount] = useState(null);
   const [trades, setTrades] = useState([]);
@@ -31,57 +32,104 @@ const TradingInterface = () => {
   }, [selectedSymbol]);
 
   useEffect(() => {
-    const fetchAccountData = async () => {
-      try {
-        const accountData = await getAccount(selectedAccount); 
-        setAccount(accountData.account);
-        setPortfolioBalance(accountData.account.balance);
-      } catch (error) {
-        console.error("Error fetching account data:", error.message);
-      }
-    };
-
-    const fetchTrades = async () => {
-      try {
-        const tradesData = await getTrades("yourAccountId"); // Replace with account ID
-        setTrades(tradesData);
-      } catch (error) {
-        console.error("Error fetching trades:", error.message);
-      }
-    };
-
-    fetchAccountData();
-    // fetchTrades();
+    fetchAccountsData();
   }, []);
 
-  // Connect WebSocket for real-time data
-  // useEffect(() => {
-  //   const ws = new WebSocket("ws://localhost:5000"); // Replace with your WebSocket URL
+  useEffect(() => {
+    if (selectedAccount) {
+      fetchAccountData();
+      fetchTrades();
+      setupWebSocket();
+    }
 
-  //   ws.onopen = () => {
-  //     ws.send(
-  //       JSON.stringify({
-  //         userId: "yourUserId", 
-  //         accountId: "yourAccountId", 
-  //       })
-  //     );
-  //   };
+    return () => {
+      // Cleanup WebSocket connection when the component unmounts or selectedAccount changes
+      if (wsRef.current) {
+        wsRef.current.close();
+        wsRef.current = null;
+      }
+    };
+  }, [selectedAccount]);
 
-  //   ws.onmessage = (event) => {
-  //     const data = JSON.parse(event.data);
-  //     setRealTimeData(data);
-  //   };
+  const fetchAccountsData = async () => {
+    try {
+      const accountResponse = await getAccounts();
+      setAccounts(accountResponse.accounts);
+      if (accountResponse.accounts.length > 0) {
+        setSelectedAccount(accountResponse.accounts[0]._id);
+      }
+    } catch (error) {
+      console.error("Error fetching accounts:", error);
+    }
+  };
 
-  //   ws.onerror = (error) => console.error("WebSocket error:", error.message);
+  const fetchAccountData = async () => {
+    try {
+      const accountData = await getAccount(selectedAccount);
+      setAccount(accountData.account);
+      setPortfolioBalance(accountData.account.balance);
+    } catch (error) {
+      console.error("Error fetching account data:", error);
+    }
+  };
 
-  //   return () => ws.close();
-  // }, []);
+  const fetchTrades = async () => {
+    try {
+      const tradesData = await getTrades(selectedAccount);
+      setTrades(tradesData.trades);
+    } catch (error) {
+      console.error("Error fetching trades:", error.message);
+    }
+  };
+
+  const setupWebSocket = () => {
+    // Close the existing WebSocket connection if it exists
+    if (wsRef.current) {
+      wsRef.current.close();
+      wsRef.current = null;
+    }
+
+    const authToken = localStorage.getItem('authToken');
+    if (!authToken) {
+      throw new Error('No auth token found');
+    }
+
+    const ws = new WebSocket(`${import.meta.env.VITE_API_BASE_URL_WS}?token=${authToken}`);
+    wsRef.current = ws; // Store the new WebSocket instance in the ref
+
+    ws.onopen = () => {
+      ws.send(JSON.stringify({ accountId: selectedAccount }));
+    };
+
+    ws.onmessage = (event) => {
+      const data = JSON.parse(event.data);
+      if (data.error) {
+        console.error('WebSocket error:', data.error);
+      } else {
+        setRealTimeData(data);
+      }
+    };
+
+    ws.onerror = (error) => console.error("WebSocket error:", error.message);
+
+    ws.onclose = () => {
+      console.log("WebSocket connection closed.");
+    };
+  };
+
+  const onTradeUpdate = async () => {
+    await Promise.all([
+      fetchAccountData(),
+      fetchTrades(),
+    ]);
+    // The real-time data will be updated automatically through the WebSocket connection
+  };
 
   return (
     <div className="flex bg-[#0F1827] text-white">
       <div className="flex flex-col w-full">
-        <Header 
-          selectedSymbol={selectedSymbol} 
+        <Header
+          selectedSymbol={selectedSymbol}
           setSelectedSymbol={setSelectedSymbol}
           portfolioBalance={portfolioBalance}
           setPortfolioBalance={setPortfolioBalance}
@@ -98,6 +146,8 @@ const TradingInterface = () => {
             account={account}
             trades={trades}
             realTimeData={realTimeData}
+            onTradeUpdate={onTradeUpdate}
+            selectedSymbol={selectedSymbol}
           />
         </div>
 
