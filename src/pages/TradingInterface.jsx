@@ -137,6 +137,7 @@ const TradingInterface = () => {
           setSelectedAccount={setSelectedAccount}
           accounts={accounts}
           setAccounts={setAccounts}
+          realTimeData={realTimeData}
         />
 
         <div className="flex flex-1 flex-wrap gap-y-8">

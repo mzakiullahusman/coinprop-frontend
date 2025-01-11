@@ -159,7 +159,7 @@ const TradingPanel = ({ account, trades, realTimeData, onTradeUpdate, selectedSy
           </div>
           <div className="flex justify-between text-sm text-gray-400 mt-2">
             <span>Max Open: {account?.balance?.toFixed(2) || "N/A"} USDT</span>
-            <span>Cost: {parseFloat(amount || 0).toFixed(2)} USDT</span>
+            {/* <span>Cost: {parseFloat(amount || 0).toFixed(2)} USDT</span> */}
           </div>
         </div>
 
@@ -207,7 +207,7 @@ const TradingPanel = ({ account, trades, realTimeData, onTradeUpdate, selectedSy
           {trades.filter(trade => trade.status === "Pending").map((trade) => (
             <div key={trade._id} className="bg-gray-800 p-3 rounded mb-2 flex justify-between items-center">
               <div>
-                <p>{trade.tradePair} - {trade.profitType}</p>
+                <p className="text-lg">{trade.tradePair} - {trade.profitType}</p>
                 <p className="text-sm text-gray-400">Amount: {trade.amount.toFixed(2)} USDT</p>
               </div>
               <button

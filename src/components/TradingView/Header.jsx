@@ -11,6 +11,7 @@ const Header = ({
   selectedAccount,
   setSelectedAccount,
   accounts,
+  realTimeData,
  }) => {
   const [symbols, setSymbols] = useState(symbolsArr);
   const [price, setPrice] = useState(null);
@@ -106,15 +107,15 @@ const Header = ({
       <div className="flex items-center space-x-8">
         <div className="text-sm">
           <span className="block text-gray-400">Mill:</span>
-          <span className="text-white">$49,887.09</span>
+          <span className="text-white">{realTimeData.totalBalance.toFixed(2)} USDT</span>
         </div>
         <div className="text-sm">
           <span className="block text-gray-400">RP&L:</span>
-          <span className="text-green-500">-$171.86</span>
+          <span className="text-green-500">{realTimeData.realizedPnL.toFixed(2)} USDT</span>
         </div>
         <div className="text-sm">
           <span className="block text-gray-400">Up&L:</span>
-          <span className="text-white">$0.085</span>
+          <span className="text-white">{realTimeData.unrealizedPnL.toFixed(2)} USDT</span>
         </div>
       </div>
 
