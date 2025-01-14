@@ -1,6 +1,6 @@
 import React from "react";
-import RMTVsTradeImgIcon from "@assets/icons/RMTVsTrade.svg";
-import RMTVsTradeImgMobileIcon from "@assets/icons/RMTVsTradeMobile.svg";
+import RMTVsTradeImgIcon from "@assets/icons/RMTVsTrade-1.svg";
+import RMTVsTradeImgMobileIcon from "@assets/icons/RMTVsTradeMobile-1.svg";
 const RMTVsTrade = () => {
   return (
     <div className="flex justify-center md:px-10 lg:px-14 xl:px-[0px] py-16 xl:py-24">

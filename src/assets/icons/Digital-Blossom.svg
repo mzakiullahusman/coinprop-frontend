@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="44" height="44">
+  <!-- Background Circle -->
+  <circle cx="50" cy="50" r="48" fill="url(#gradient-bg)" stroke="#1C7EF0" stroke-width="2" />
+
+  <!-- Flower Petals -->
+  <g fill="url(#gradient-petals)">
+    <path d="M50 15L54 35L50 55L46 35Z" />
+    <path d="M35 30L50 35L65 30L50 25Z" />
+    <path d="M35 70L50 65L65 70L50 75Z" />
+    <path d="M25 50L45 50L25 50L25 50Z" />
+    <path d="M75 50L55 50L75 50L75 50Z" />
+  </g>
+
+  <!-- Pixel-Like Leaves -->
+  <rect x="40" y="75" width="5" height="10" fill="#00FC9E" />
+  <rect x="55" y="75" width="5" height="10" fill="#00FC9E" />
+  
+  <!-- Center Circle -->
+  <circle cx="50" cy="50" r="10" fill="#1C7EF0" />
+
+  <!-- Gradients -->
+  <defs>
+    <linearGradient id="gradient-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1C7EF0" />
+      <stop offset="100%" stop-color="#00FC9E" />
+    </linearGradient>
+    <linearGradient id="gradient-petals" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#00FC9E" />
+      <stop offset="100%" stop-color="#1C7EF0" />
+    </linearGradient>
+  </defs>
+</svg>

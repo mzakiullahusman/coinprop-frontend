@@ -1,55 +1,81 @@
-import React from "react";
+import React from 'react';
+import Laptop from "@assets/images/Macbook.png"
+import Mobile1 from "@assets/images/AndroidGrey.png"
+import Mobile2 from "@assets/images/AndroidGrey-1.png"
 
-const AboutAceFunded = ({ text, data }) => {
+const AboutAceFunded = ({ as: Component = 'div', className, ...props }) => {
   return (
-    <>
-      {data.map((feature, index) => (
-        <div
-          key={index}
-          className="p-6 rounded-[12px] hover:shadow-xl transition-shadow duration-300"
-        >
-          <div
-            className={`flex flex-col ${
-              text === "Values" || text === "Process"
-                ? "items-center"
-                : " items-start"
-            } gap-4 mb-4`}
-          >
-            {text === "Values" || text === "Process" ? (
-              <div className="font-poppins bg-gradient-to-r from-[#00fc9e] to-[#1c7ef0] bg-clip-text text-transparent font-normal text-[32px] leading-[52px] lg:text-[64px]">
-                {feature?.text}
-              </div>
-            ) : (
-              <img
-                src={feature.icon}
-                alt={feature.title}
-                className="h-10 w-10"
-              />
-            )}
-
-            <h3
-              className={`${
-                text === "Values" || text === "Process"
-                  ? "font-poppins text-center"
-                  : "font-outfit"
-              } font-medium text-lg xl:text-2xl`}
-            >
-              {feature.title}
-            </h3>
+    <Component className={`bg-gray-900 text-white min-h-screen ${className}`} {...props}>
+      <div className="container mx-auto px-4 py-12">
+        <h1 className="text-4xl md:text-5xl font-bold mb-8 text-center bg-gradient-to-r from-[#00FC9E] to-[#1C7EF0] text-transparent bg-clip-text">
+          The Ultimate Crypto Prop Trading Terminal
+        </h1>
+        
+        <div className="grid md:grid-cols-2 gap-12 items-center mb-12">
+          <div>
+            <p className="text-lg mb-6">
+              CPX™ is a cutting-edge crypto prop trading platform designed specifically for crypto proprietary traders. Built with user-friendly tools and familiar features, CPX™ delivers an intuitive experience modeled after platforms used by top crypto exchanges.
+            </p>
+            <p className="text-lg mb-6">
+              Trusted by traders worldwide, it offers exclusive features tailored to meet the unique needs of prop firm traders. Whether you're looking for advanced crypto trading technology or seamless functionality, CPX™ has everything you need to trade efficiently and effectively.
+            </p>
           </div>
-          <p
-            className={`text-base  ${
-              text === "Values" || text === "Process"
-                ? "text-center font-poppins font-medium"
-                : "xl:text-[20px] font-outfit font-normal"
-            }  text-[#8e8e8e]`}
-          >
-            {feature.description}
+          <div className="relative">
+            <div className="absolute inset-0 bg-gradient-to-r from-[#00FC9E] to-[#1C7EF0] rounded-lg transform rotate-3"></div>
+            <img
+              src={Laptop}
+              alt="Trading view on laptop"
+              className="relative z-10 rounded-lg shadow-xl"
+            />
+          </div>
+        </div>
+        
+        <h2 className="text-3xl font-semibold mb-6 text-[#00FC9E]">Key Features of Our Trading Platform:</h2>
+        <ul className="list-none space-y-4 mb-12">
+          {[
+            "Advanced TradingView and K-line charts",
+            "Access to premium trading indicators",
+            "Get the latest crypto news and live market updates all in one place",
+            "Advanced trading analytics dashboard with real-time tracking and insight",
+            "Lowest Commission Rates for Crypto Futures Trading"
+          ].map((feature, index) => (
+            <li key={index} className="flex text-lg items-center">
+              <svg className="w-6 h-6 mr-2 text-[#1C7EF0]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+              </svg>
+              {feature}
+            </li>
+          ))}
+        </ul>
+        
+        <div className="flex flex-wrap justify-center gap-8 mb-12">
+          <div className="relative w-64 h-128">
+            <div className="absolute inset-0 bg-gradient-to-b from-[#00FC9E] to-[#1C7EF0] rounded-lg transform -rotate-3"></div>
+            <img
+              src={Mobile1}
+              alt="Trading view on mobile app 1"
+              className="relative z-10 rounded-lg shadow-xl"
+            />
+          </div>
+          <div className="relative w-64 h-128">
+            <div className="absolute inset-0 bg-gradient-to-b from-[#1C7EF0] to-[#00FC9E] rounded-lg transform rotate-3"></div>
+            <img
+              src={Mobile2}
+              alt="Trading view on mobile app 2"
+              className="relative z-10 rounded-lg shadow-xl"
+            />
+          </div>
+        </div>
+        
+        <div className="text-center">
+          <p className="text-xl mb-8">
+            Experience seamless and efficient trading with CPX™, the platform built to elevate your trading game.
           </p>
         </div>
-      ))}
-    </>
+      </div>
+    </Component>
   );
 };
 
 export default AboutAceFunded;
+

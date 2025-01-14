@@ -38,7 +38,7 @@ export const AuthProvider = ({ children }) => {
     }
     setIsAuthenticated(true);
     setUser(userInfo);
-    fetchAccounts(userInfo.id);
+    // fetchAccounts(userInfo.id);
   };
 
   const logout = () => {
@@ -85,7 +85,7 @@ export const AuthProvider = ({ children }) => {
           setSelectedAccount(parsedAccounts[0]);
         }
       } else {
-        fetchAccounts(parsedUser.id);
+        // fetchAccounts(parsedUser.id);
       }
 
       if (storedAccountDetails) {
@@ -94,89 +94,89 @@ export const AuthProvider = ({ children }) => {
     }
   }, []);
 
-  const fetchAccounts = async (userId) => {
-    try {
-      const accounts = await getUserTradingAccounts(userId);
-      const formattedAccounts = accounts.map((account) => ({
-        value: account.login,
-        label: "MT5 Account: " + account.login,
-      }));
-      setAccountOptions(formattedAccounts);
-      localStorage.setItem("accountOptions", JSON.stringify(formattedAccounts));
+  // const fetchAccounts = async (userId) => {
+  //   try {
+  //     const accounts = await getUserTradingAccounts(userId);
+  //     const formattedAccounts = accounts.map((account) => ({
+  //       value: account.login,
+  //       label: "MT5 Account: " + account.login,
+  //     }));
+  //     setAccountOptions(formattedAccounts);
+  //     localStorage.setItem("accountOptions", JSON.stringify(formattedAccounts));
 
-      if (formattedAccounts.length > 0) {
-        const defaultAccount = formattedAccounts[0];
-        setSelectedAccount(defaultAccount);
-        localStorage.setItem("selectedAccount", JSON.stringify(defaultAccount));
-      } else {
-        setSelectedAccount(null);
-        localStorage.removeItem("selectedAccount");
-      }
-    } catch (error) {
-      console.error("Error fetching accounts:", error);
-      // handleMt5ApiLogoutOnTimeout(error);
-      toast.error("Failed to fetch trading accounts.");
-    }
-  };
+  //     if (formattedAccounts.length > 0) {
+  //       const defaultAccount = formattedAccounts[0];
+  //       setSelectedAccount(defaultAccount);
+  //       localStorage.setItem("selectedAccount", JSON.stringify(defaultAccount));
+  //     } else {
+  //       setSelectedAccount(null);
+  //       localStorage.removeItem("selectedAccount");
+  //     }
+  //   } catch (error) {
+  //     console.error("Error fetching accounts:", error);
+  //     // handleMt5ApiLogoutOnTimeout(error);
+  //     toast.error("Failed to fetch trading accounts.");
+  //   }
+  // };
 
-  const fetchAccountDetailsAndDealHistory = async (login, userId) => {
-    if (!userId) {
-      console.error("User ID is not provided.");
-      return;
-    }
+  // const fetchAccountDetailsAndDealHistory = async (login, userId) => {
+  //   if (!userId) {
+  //     console.error("User ID is not provided.");
+  //     return;
+  //   }
 
-    setLoadingAccountDetails(true);
-    try {
-      // Fetch account details
-      const accountDetails = await getAccountStatusByLogin(login);
-      setCurrentAccountDetails(accountDetails);
-      localStorage.setItem(
-        "currentAccountDetails",
-        JSON.stringify(accountDetails)
-      );
+  //   setLoadingAccountDetails(true);
+  //   try {
+  //     // Fetch account details
+  //     const accountDetails = await getAccountStatusByLogin(login);
+  //     setCurrentAccountDetails(accountDetails);
+  //     localStorage.setItem(
+  //       "currentAccountDetails",
+  //       JSON.stringify(accountDetails)
+  //     );
 
-      // Fetch deal history
-      const dealHistoryData = await getDealHistory(userId, login);
+  //     // Fetch deal history
+  //     const dealHistoryData = await getDealHistory(userId, login);
 
-      // Extract profit from deal history
-      const profit = dealHistoryData.summary?.Profit || 0;
+  //     // Extract profit from deal history
+  //     const profit = dealHistoryData.summary?.Profit || 0;
 
-      const calculatedWithdrawableProfit = Math.max(
-        accountDetails.account_size - profit,
-        0
-      );
+  //     const calculatedWithdrawableProfit = Math.max(
+  //       accountDetails.account_size - profit,
+  //       0
+  //     );
 
-      // Calculate Total Account Growth: (Profit / Account Size) * 100
-      // TODO: (profit - accountDetails.account_size) is possibly temporary until the profit is corrected from the backend
-      const calculatedTotalAccountGrowth =
-        accountDetails.account_size > 0
-          ? (
-              ((profit - accountDetails.account_size) /
-                accountDetails.account_size) *
-              100
-            ).toFixed(2)
-          : "0.00";
+  //     // Calculate Total Account Growth: (Profit / Account Size) * 100
+  //     // TODO: (profit - accountDetails.account_size) is possibly temporary until the profit is corrected from the backend
+  //     const calculatedTotalAccountGrowth =
+  //       accountDetails.account_size > 0
+  //         ? (
+  //             ((profit - accountDetails.account_size) /
+  //               accountDetails.account_size) *
+  //             100
+  //           ).toFixed(2)
+  //         : "0.00";
 
-      setAccountProfit(calculatedWithdrawableProfit);
-      setWithdrawableProfit(calculatedWithdrawableProfit);
-      setTotalAccountGrowth(calculatedTotalAccountGrowth);
-    } catch (error) {
-      console.error("Error fetching account details or deal history:", error);
-      setCurrentAccountDetails(null);
-      setAccountProfit(0);
-      setWithdrawableProfit(0);
-      setTotalAccountGrowth(0);
-      handleMt5ApiLogoutOnTimeout(error);
-      // toast.error("Failed to fetch account details or deal history.");
-    } finally {
-      setLoadingAccountDetails(false);
-    }
-  };
+  //     setAccountProfit(calculatedWithdrawableProfit);
+  //     setWithdrawableProfit(calculatedWithdrawableProfit);
+  //     setTotalAccountGrowth(calculatedTotalAccountGrowth);
+  //   } catch (error) {
+  //     console.error("Error fetching account details or deal history:", error);
+  //     setCurrentAccountDetails(null);
+  //     setAccountProfit(0);
+  //     setWithdrawableProfit(0);
+  //     setTotalAccountGrowth(0);
+  //     handleMt5ApiLogoutOnTimeout(error);
+  //     // toast.error("Failed to fetch account details or deal history.");
+  //   } finally {
+  //     setLoadingAccountDetails(false);
+  //   }
+  // };
 
   // Effect to fetch account details and deal history whenever selectedAccount or user changes
   useEffect(() => {
     if (user && selectedAccount && selectedAccount.value) {
-      fetchAccountDetailsAndDealHistory(selectedAccount.value, user.id);
+      // fetchAccountDetailsAndDealHistory(selectedAccount.value, user.id);
     } else {
       setCurrentAccountDetails(null);
       localStorage.removeItem("currentAccountDetails");
@@ -191,7 +191,7 @@ export const AuthProvider = ({ children }) => {
       value={{
         isAuthenticated,
         user,
-        fetchAccounts,
+        // fetchAccounts,
         accountOptions,
         setAccountOptions,
         selectedAccount,

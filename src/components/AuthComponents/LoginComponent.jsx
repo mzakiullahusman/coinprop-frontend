@@ -11,7 +11,7 @@ const LoginComponent = () => {
         <h2>
           {fromRegistration
             ? "Registration Successful!"
-            : "Log in to your account."}
+            : "You can login securely below"}
         </h2>
       </div>
 

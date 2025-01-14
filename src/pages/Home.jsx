@@ -3,11 +3,15 @@ import AboutAceFunded from "../components/AboutAceFunded";
 import ChooseChallenges from "../components/ChooseChallenges";
 import HomeFirst from "../components/HomeFirst";
 import WithDrawalSection from "../components/WithDrawalSection";
+
 import Acc from "@assets/icons/Acc.svg";
 import ProveTrade from "@assets/icons/ProveTrade.svg";
 import EarnMoney from "@assets/icons/EarnMoney.svg";
 import Profit from "@assets/icons/WithDraw.svg";
 import Pro from "@assets/icons/Pro.svg";
+import Profit2 from "@assets/icons/Digital-Blossom.svg";
+
+
 import ChallengeBg from "@assets/images/ChallengeBg.png";
 import HowItWorks from "../components/HowItWorks";
 import TextMain from "../components/TextMain";
@@ -34,33 +38,39 @@ const Home = () => {
   const features = [
     {
       icon: Acc,
-      title: "Select Your Acc Size",
+      title: "Select Your Capital Size",
       description:
-        "Select Your Futures Account. Register And Define The Maximum Contract Size You'll Manage.",
+        "Select your CPS (CoinProp Simulated) account, ideally one that aligns with your expertise. Purchase your account, and take the next step forward.",
     },
     {
       icon: ProveTrade,
-      title: "Prove You Can Trade",
+      title: "Pass the Evaluation",
       description:
-        "Reach A Profit Target While Proving You Can Follow A Set Of Risk Rules. You Become A PRO Trader.",
+        "Reach the profit target while proving you can follow our straight forward risk rules. Once our system verifies your skills, you'll become a CPS Funded trader.",
     },
     {
       icon: EarnMoney,
-      title: "Start Earning Money",
+      title: "Pass The KYC Process",
       description:
-        "No Downtime. Once Approved, Get Your PRO Account And Start Trading For Day One Withdrawable Profits.",
+        "Complete the KYC process, including identity verification and compliance forms.",
+    },
+    {
+      icon: Profit2,
+      title: "Start Making Money",
+      description:
+        "Experience zero downtime. Once approved, unlock your CPS Funded account and start trading to earn profits from day one. Perfect for day traders seeking a quick start and hassle free stream of income.",
     },
     {
       icon: Profit,
-      title: "Withdraw Profit",
+      title: "Withdraw your Profits",
       description:
-        "Money Is Nothing Until It Is In Your Pocket. We Know How Important It Is. Withdraw.",
+        "Maximize your earnings with our automated withdrawal system. Enjoy fast, secure profit withdrawals, ensuring your money is in your pocket when you need it.",
     },
     {
       icon: Pro,
-      title: "Upgrade To PRO+",
+      title: "Upgrade to CPS+",
       description:
-        "Elevate Your Experience By Upgrading To PRO+. As A PRO+ Member, You'll Enjoy Unparalleled Benefits.",
+        "Consistently successful traders may receive an invitation from the CoinProp Trading Team to join the CPS+ Funded Traders program. This exclusive opportunity offers unparalleled benefits, increased capital, dedicated support, and even potential job offers.",
     },
   ];
 
@@ -110,16 +120,18 @@ const Home = () => {
       <div className=" px-4 md:px-12 py-5 md:py-10" data-aos="fade-up">
         <TextMain
           text="Benefits"
-          title="Risk Master Traders Benefits"
+          title="KEY BENEFITS"
           description="Our platform makes crypto investments simple and accessible for all users."
         />
         <Benefits />
       </div>
       <div className=" px-4 md:px-12 py-5 md:py-10" data-aos="fade-up">
         <TextMain
-          text="Steps"
-          title="How It Works"
-          description="Our platform makes crypto investments simple and accessible for all users."
+          text="How It Works"
+          title="You're just 1 step away from becoming a CPS funded trader!"
+          description="CoinProp is a seamless, hassle-free simulated crypto funding offering perpetual futures liquidity sourced from best centralized exchanges. Our Evaluations are designed to help you unlock your full potential as a trader. We don't have hidden rules, add-ons, or gimmicks, focusing solely on your success in crypto trading."
+          titleSize="2xl"
+          descriptionSize="base"
         />
         <HowItWorks mainData={features} />
       </div>
@@ -137,8 +149,8 @@ const Home = () => {
         <div className="flex flex-col lg:flex-row justify-between lg:items-center">
           <TextMain
             text="Steps"
-            title="Risk Master Challenges"
-            description="Prop trading brought to you by professional traders."
+            title="CHOOSE YOUR ACCOUNT SIZE"
+            description="CoinProp offers five CPS® account sizes to match your goals. Secure your account with a one-time fee—no recurring charges until you secure funding, and no deadlines to reach your objectives."
             index={false}
           />
           <ChallengeButtons />
@@ -148,19 +160,8 @@ const Home = () => {
       </div>
 
       <Money />
-      <div className="mt-4 bg-white bg-opacity-[2%] p-4 lg:p-10 xl:p-14">
-        <TextMain
-          text="Features"
-          title="Risk Master Trader Features"
-          description="Our platform makes crypto investments simple and accessible for all users."
-          index={true}
-        />
-        <div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 text-white"
-          data-aos="fade-up"
-        >
-          <AboutAceFunded data={aceFunded} />
-        </div>
+      <div className="mt-4 bg-white bg-opacity-[2%] p-4 lg:p-8">
+        <AboutAceFunded as="section" className="custom-class px-6" />
       </div>
 
       {/* </div> */}

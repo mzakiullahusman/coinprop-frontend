@@ -4,7 +4,7 @@ import { useAuth } from "../context/AuthContext";
 const PublicRoute = ({ children }) => {
   const { isAuthenticated } = useAuth();
   if (isAuthenticated) {
-    return <Navigate to="/app/dashboard" />;
+    return <Navigate to="/dashboard" />;
   }
 
   return children;

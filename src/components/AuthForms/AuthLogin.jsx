@@ -134,7 +134,7 @@ const AuthLogin = () => {
       ...(referralLink && { referralLink }),
     };
 
-    await getToken();
+    // await getToken();
     login(userDetailsWithToken);
     toast.success("Login successful!");
 
@@ -144,7 +144,7 @@ const AuthLogin = () => {
       localStorage.removeItem("rememberMe");
     }
 
-    navigate("/app/dashboard");
+    navigate("/dashboard");
   };
 
   const handleResendOtp = async () => {

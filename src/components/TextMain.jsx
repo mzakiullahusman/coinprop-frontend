@@ -1,6 +1,14 @@
 import React from "react";
 import ButtonIcon from "@assets/icons/ButtonIcon.svg";
-const TextMain = ({ text, title, description, index, textStyling }) => {
+const TextMain = ({
+  text,
+  title,
+  description,
+  index,
+  textStyling,
+  titleSize = "[44px]",
+  descriptionSize = "lg",
+}) => {
   return (
     <div
       className={`flex flex-col gap-y-1 ${
@@ -33,7 +41,7 @@ const TextMain = ({ text, title, description, index, textStyling }) => {
         </div>
       ) : (
         <div
-          className={`text-[28px] text-white lg:text-[44px] ${
+          className={`text-[28px] text-white lg:text-${titleSize} ${
             index === false ? "text-left" : "text-center"
           }  font-poppins font-semibold`}
         >
@@ -42,7 +50,7 @@ const TextMain = ({ text, title, description, index, textStyling }) => {
       )}
 
       {text === "Values" ? (
-        <div className="text-base  px-3 md:px-20 xl:px-32 lg:text-lg font-poppins font-light text-center">
+        <div className={`text-base px-3 md:px-20 xl:px-32 lg:text-${descriptionSize} font-poppins font-light text-center`}>
           {description}
         </div>
       ) : (
@@ -53,7 +61,7 @@ const TextMain = ({ text, title, description, index, textStyling }) => {
               : textStyling === "gradient"
               ? "text-[#bababa]"
               : "text-white"
-          } lg:text-lg font-poppins font-light ${
+          } lg:text-${descriptionSize} font-poppins font-light ${
             index === false ? "text-left" : "px-3 md:px-20 text-center"
           }`}
         >

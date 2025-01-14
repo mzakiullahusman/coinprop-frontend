@@ -5,12 +5,12 @@ import toast, { Toaster } from 'react-hot-toast';
 const TradingPanel = ({ account, trades, realTimeData, onTradeUpdate, selectedSymbol }) => {
   const [orderType, setOrderType] = useState("Market");
   const [marginMode, setMarginMode] = useState("Isolated");
-  const [leverage, setLeverage] = useState("100x");
+  const [leverage, setLeverage] = useState("1x");
   const [triggerPrice, setTriggerPrice] = useState("");
   const [amount, setAmount] = useState("");
   const [profitType, setProfitType] = useState("Long");
 
-  const handleOpenTrade = async (e) => {
+  const handleOpenTrade = async (e, type) => {
     e.preventDefault();
     if (!account) {
       toast.error("No account selected. Please select an account.");
@@ -20,7 +20,7 @@ const TradingPanel = ({ account, trades, realTimeData, onTradeUpdate, selectedSy
       const response = await apiClient.post("/trades", {
         accountId: account._id,
         tradePair: selectedSymbol, 
-        profitType,
+        profitType: type,
         orderType,
         marginMode,
         leverage: parseInt(leverage),
@@ -80,9 +80,11 @@ const TradingPanel = ({ account, trades, realTimeData, onTradeUpdate, selectedSy
             value={leverage}
             onChange={(e) => setLeverage(e.target.value)}
           >
-            <option value="100x">100x</option>
-            <option value="50x">50x</option>
-            <option value="10x">10x</option>
+            <option value="5x">5x</option>
+            <option value="4x">4x</option>
+            <option value="3x">3x</option>
+            <option value="2x">2x</option>
+            <option value="1x">1x</option>
           </select>
         </div>
 
@@ -170,7 +172,7 @@ const TradingPanel = ({ account, trades, realTimeData, onTradeUpdate, selectedSy
               className="bg-green-500 py-2 rounded text-sm font-medium"
               onClick={() => {
                 setProfitType("Long");
-                handleOpenTrade(event);
+                handleOpenTrade(event, "Long");
               }}
             >
               Open Long
@@ -179,7 +181,7 @@ const TradingPanel = ({ account, trades, realTimeData, onTradeUpdate, selectedSy
               className="bg-red-500 py-2 rounded text-sm font-medium"
               onClick={() => {
                 setProfitType("Short");
-                handleOpenTrade(event);
+                handleOpenTrade(event, "Short");
               }}
             >
               Open Short

@@ -43,46 +43,7 @@ const Dashboard = () => {
   const [profitLossToday, setProfitLossToday] = useState(0);
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const accountStatus = await getAccountStatusByLogin(
-          selectedAccount.value
-        );
-        setAccountStatusData(accountStatus);
-        const balanceEquity = await getBalanceEquity(
-          user.id,
-          selectedAccount.value,
-          timeframe
-        );
-        setProfitTarget(accountStatus.profit_target || 0);
-        setAccountStatusText(accountStatus.account_status || "N/A");
-        setNetProfitLoss(
-          accountStatus.balance - accountStatus.account_size || 0
-        );
-        setBalanceEquityData(balanceEquity);
-        const dealHistory = await getDealHistory(
-          user.id,
-          selectedAccount.value
-        );
-        setDealHistoryData(dealHistory);
-
-        // Assuming 'Profit' in 'summary' is the profit/loss for today
-        setProfitLossToday(dealHistory.summary.Profit || 0);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-        handleMt5ApiLogoutOnTimeout(error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    if (selectedAccount && user) {
-      setLoading(true);
-      fetchData();
-    } else {
-      // No selected account; stop loading and render the prompt message
-      setLoading(false);
-    }
+    setLoading(false);
   }, [selectedAccount, user, timeframe]);
 
   const handleSelectOne = (selectedOption) => {

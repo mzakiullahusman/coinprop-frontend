@@ -1,5 +1,5 @@
 import sideImage from "@assets/images/sign-up-side-image.png";
-import Logo from "@icons/logoMain.svg";
+import Logo from "@assets/images/coinprop-logo.png";
 const AuthHero = ({ type }) => {
   return (
     <section
@@ -13,12 +13,12 @@ const AuthHero = ({ type }) => {
         <div className="flex flex-col max-w-lg w-full">
           {/* Logo Row */}
           <div className="mb-4 w-full">
-            <img src={Logo} alt="coin-prop" width="120" />
+            <img src={Logo} className="h-[45px] w-auto sm:h-[55px] lg:h-[65px] xl:h-[70px] object-contain transition-all duration-300" alt="coin-prop" width="180" />
           </div>
 
           {/* Title Row */}
           <div className="w-full mb-4">
-            <h1 className="text-4xl">Sign Up with Coin Prop.</h1>
+            <h1 className="text-4xl">Become a Funded Crypto Trader.</h1>
           </div>
 
           {/* Subtitle Row */}
@@ -32,12 +32,12 @@ const AuthHero = ({ type }) => {
         <div className="flex flex-col justify-center max-w-lg text-left w-full">
           {/* Logo Row */}
           <div className="flex mb-3 w-full justify-center">
-            <img src={Logo} alt="coin-prop" width="100" />
+            <img src={Logo} className="h-[45px] w-auto sm:h-[55px] lg:h-[65px] xl:h-[70px] object-contain transition-all duration-300" alt="coin-prop" width="180" />
           </div>
 
           {/* Title Row */}
           <div className="w-full mb-4">
-            <h1 className="text-4xl">Start your 30-day free trial.</h1>
+            <h1 className="text-4xl text-center">Welcome back </h1>
           </div>
 
           {/* Subtitle Row */}

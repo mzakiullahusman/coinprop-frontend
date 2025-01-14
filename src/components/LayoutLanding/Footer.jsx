@@ -56,8 +56,8 @@ const Footer = () => {
         <div className="flex flex-col items-start gap-y-6 ">
           <img src={Logo} alt="Logo" className="w-32 h-32" />
           <div className="font-poppins 2xl:w-full text-base font-normal text-[#8d8d8d]">
-            It is a long established fact that a reader will be
-            <br /> distracted by the readable content
+          A Cryptocurrency-Specialized Prop <br />
+          Trading Firm | Trade More, Risk Less! 🚀
           </div>
           <div className="flex items-center gap-4">
             {footerIcons.map((icon, index) => (
@@ -93,9 +93,8 @@ const Footer = () => {
 
       <div className="flex flex-col md:flex-row items-center gap-y-4 justify-between">
         <div className="text-white font-normal font-poppins text-[20px]">
-          Copyright @Nexusfunding 2024
+          CoinProp 2025
         </div>
-
         <div className="flex flex-col sm:flex-row gap-5 text-white">
           <Link
             to="/landing/terms-&-conditions"
@@ -106,6 +105,9 @@ const Footer = () => {
           <Link to="/landing/privacy-policy" className="font-normal text-base ">
             Privacy Policy
           </Link>
+        </div>
+        <div className="flex flex-col sm:flex-row text-lg gap-5 text-white">
+          Built with Love for Crypto Trading
         </div>
       </div>
       <div className="leading-[44px] mt-9 text-sm font-poppins font-normal text-white capitalize ">

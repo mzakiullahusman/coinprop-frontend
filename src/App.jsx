@@ -5,8 +5,8 @@ import {
   Navigate,
 } from "react-router-dom";
 
-// import PrivateRoute from "./routes/PrivateRoutes";
-// import PublicRoute from "./routes/PublicRoutes";
+import PrivateRoute from "./routes/PrivateRoutes";
+import PublicRoute from "./routes/PublicRoutes";
 
 // auth pages
 import Login from "./pages/authentication/Login";
@@ -52,13 +52,13 @@ import Disclosure from "./pages/Disclosure";
 import LayoutLanding from "@components/LayoutLanding/LayoutLanding";
 
 const AuthRoutes = () => (
-  // <PublicRoute>
-  <Routes>
-    <Route path="/sign-up" element={<Register />} />
-    <Route path="/sign-in" element={<Login />} />
-    <Route path="/forgot-password" element={<Forgot />} />
-  </Routes>
-  // </PublicRoute>
+  <PublicRoute>
+    <Routes>
+      <Route path="/sign-up" element={<Register />} />
+      <Route path="/sign-in" element={<Login />} />
+      <Route path="/forgot-password" element={<Forgot />} />
+    </Routes>
+  </PublicRoute>
 );
 
 const LandingRoutes = () => (
@@ -84,53 +84,52 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/landing/*" element={<LandingRoutes />} />
-        <Route path="/" element={<Navigate to="/auth/sign-in" />} />
+        <Route path="/" element={<LandingRoutes />} />
         <Route path="/auth/*" element={<AuthRoutes />} />
         <Route path="/trading-view" element={<TradingInterface />} />
         <Route
           path="/*"
           element={
-            // <PrivateRoute>
-            <Layout>
-              <Routes>
-                <Route path="/dashboard" element={<Dashboard />} />
-                <Route path="/trading-account" element={<TradingAccount />} />
-                <Route path="/choose-funding" element={<ChooseFunding />} />
-                <Route
-                  path="/billing-info-checkout"
-                  element={<BillingInfoCheckout />}
-                />
-                <Route
-                  path="/new-challenge-checkout"
-                  element={<NewChallengeCheckout />}
-                />
-                <Route path="/news-calendar" element={<NewsCalendar />} />
-                <Route path="/accounts" element={<Account />} />
-                <Route path="/competitions" element={<Competitions />} />
+            <PrivateRoute>
+              <Layout>
+                <Routes>
+                  <Route path="/dashboard" element={<Dashboard />} />
+                  <Route path="/trading-account" element={<TradingAccount />} />
+                  <Route path="/choose-funding" element={<ChooseFunding />} />
+                  <Route
+                    path="/billing-info-checkout"
+                    element={<BillingInfoCheckout />}
+                  />
+                  <Route
+                    path="/new-challenge-checkout"
+                    element={<NewChallengeCheckout />}
+                  />
+                  <Route path="/news-calendar" element={<NewsCalendar />} />
+                  <Route path="/accounts" element={<Account />} />
+                  <Route path="/competitions" element={<Competitions />} />
 
-                <Route
-                  path="/competition-standings"
-                  element={<CompetitionStandings />}
-                />
-                <Route
-                  path="/affiliate-portal"
-                  element={<AffiliatesPortal />}
-                />
-                {/* <Route path="/certificates" element={<Certificates />} /> */}
-                <Route path="/profit-and-share" element={<ProfitAndShare />} />
-                <Route
-                  path="/billing-and-accounts"
-                  element={<BillingAndAccounts />}
-                />
-                <Route path="/news-feed" element={<LiveNews />} />
-                <Route path="/customer-support" element={<CustomerSupport />} />
-                <Route path="/faqs" element={<Faqs />} />
-                <Route path="/profile" element={<Profile />} />
-                <Route path="/account-security" element={<AccountSecurity />} />
-              </Routes>
-            </Layout>
-            // </PrivateRoute>
+                  <Route
+                    path="/competition-standings"
+                    element={<CompetitionStandings />}
+                  />
+                  <Route
+                    path="/affiliate-portal"
+                    element={<AffiliatesPortal />}
+                  />
+                  {/* <Route path="/certificates" element={<Certificates />} /> */}
+                  <Route path="/profit-and-share" element={<ProfitAndShare />} />
+                  <Route
+                    path="/billing-and-accounts"
+                    element={<BillingAndAccounts />}
+                  />
+                  <Route path="/news-feed" element={<LiveNews />} />
+                  <Route path="/customer-support" element={<CustomerSupport />} />
+                  <Route path="/faqs" element={<Faqs />} />
+                  <Route path="/profile" element={<Profile />} />
+                  <Route path="/account-security" element={<AccountSecurity />} />
+                </Routes>
+              </Layout>
+            </PrivateRoute>
           }
         />
       </Routes>

@@ -1,4 +1,12 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import {
+  ArrowUpRight,
+  ArrowDownRight,
+  Activity,
+  Wallet,
+  Clock,
+  AlertCircle,
+} from "lucide-react";
 import BrandIcon1 from "@assets/icons/BrandIcon1.svg";
 import BrandIcon2 from "@assets/icons/BrandIcon2.svg";
 import BrandIcon3 from "@assets/icons/BrandIcon3.svg";
@@ -16,11 +24,30 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Autoplay } from "swiper/modules";
-import TickIconLg from "@assets/icons/TickIconLg.svg";
-import Graph from "@assets/icons/Graph.svg";
 import TextMain from "./TextMain";
 import AboutUsComponent from "./AboutUsComponent";
 const WithDrawalSection = () => {
+  // Simulated price data
+  const [price, setPrice] = useState(95678);
+  const [priceChange, setPriceChange] = useState(-2.3);
+
+  // Simulate price updates
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const change = (Math.random() - 0.5) * 100;
+      setPrice((prev) => +(prev + change).toFixed(2));
+      setPriceChange(
+        +(Math.random() * 5 * (Math.random() > 0.5 ? 1 : -1)).toFixed(2)
+      );
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const tradingPairs = [
+    { name: "BTC/USDT", price: price, change: priceChange },
+    { name: "ETH/USDT", price: 2847.12, change: 1.2 },
+    { name: "SOL/USDT", price: 98.45, change: -0.8 },
+  ];
   const diveIcons = [
     { src: BrandIcon1, alt: "BrandIcon1" },
     { src: BrandIcon2, alt: "BrandIcon2" },
@@ -33,111 +60,129 @@ const WithDrawalSection = () => {
 
   return (
     <>
-      <div className="flex flex-col xl:flex-row gap-20 px-4 md:px-12 py-5  md:py-10">
-        <div className="w-full flex flex-col md:flex-row gap-3 items-start xl:w-1/2">
-          <div className="border w-full justify-between items-center md:w-[15%] md:px-5 flex flex-row sm:flex-col p-4 md:gap-7 lg:gap-[26px] 2xl:gap-[25px] sm:p-8 border-white bg-white bg-opacity-[4%] border-opacity-20 rounded-[23px]">
-            <div className="font-poppins font-light text-base text-white lg:text-[26px] text-center">
-              Tools
-            </div>
-            <button className="sm:mx-auto">
-              <img
-                src={ArrowIcon1}
-                className="w-8 h-8 md:w-[50px] md:h-[50px] lg:w-[54px] lg:h-[54px] xl:w-[55px]"
-                alt="ArrowIcon1"
-              />
-            </button>
-
-            <button className="sm:mx-auto">
-              <img
-                src={ArrowIcon2}
-                className="w-8 h-8 md:w-[50px] md:h-[50px] lg:w-[54px] lg:h-[54px] xl:w-[55px]"
-                alt="ArrowIcon2"
-              />
-            </button>
-
-            <button className="sm:mx-auto">
-              <img
-                src={ArrowIcon3}
-                className="w-8 h-8 md:w-[50px] md:h-[50px] lg:w-[54px] lg:h-[54px] xl:w-[55px]"
-                alt="ArrowIcon3"
-              />
-            </button>
-
-            <button className="sm:mx-auto">
-              <img
-                src={ArrowIcon4}
-                className="w-8 h-8 md:w-[50px] md:h-[50px] lg:w-[54px] lg:h-[54px] xl:w-[55px]"
-                alt="ArrowIcon4"
-              />
-            </button>
-
-            <button className="sm:mx-auto">
-              <img
-                src={ArrowPlusIcon}
-                className="w-8 h-8 md:w-[50px] md:h-[50px] lg:w-[54px] lg:h-[54px] xl:w-[55px]"
-                alt="ArrowPlusIcon"
-              />
-            </button>
-          </div>
-          <div className="w-full flex flex-col gap-y-4 lg:w-[85%]">
-            <div className="border px-5 flex flex-col items-center gap-y-4 p-8 border-white bg-white bg-opacity-[4%] border-opacity-20 rounded-[23px]">
-              <img src={TickIconLg} alt="TickIcon" className="w-24 h-24" />
-              <div className="text-lg text-white lg:text-[23px]  font-bold">
-                Withdrawal Request Submitted
-              </div>
-              <div className=" text-white text-[11px] font-normal">
-                Your withdrawal is being processed and should be expected to
-                arrive within 30 minutes.
-              </div>
-              <button className="bg-[#01ff9d] w-full font-semibold text-black font-poppins text-[17px] py-3 rounded-[11px] shadow-lg hover:opacity-90 transition">
-                Go Home
-              </button>
-            </div>
-            <div className="border px-5 flex flex-col gap-y-5 p-8 border-white bg-white  bg-opacity-[4%] border-opacity-20 rounded-[23px]">
-              <div className="flex items-center justify-between">
-                <div className="text-base text-white font-inter lg:text-lg  font-semibold">
-                  Market
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 px-4 md:px-12 py-5  md:py-10">
+        <div className="bg-gray-900 p-6">
+          <div className="grid grid-cols-1 gap-6">
+            {/* Left Panel */}
+            <div className="space-y-6">
+              {/* Trading Pairs */}
+              <div className="bg-gray-800 rounded-xl p-6 space-y-4">
+                <div className="flex justify-between items-center mb-6">
+                  <h2 className="text-xl font-bold text-white">
+                    Popular Pairs
+                  </h2>
+                  <Activity className="text-green-400" />
                 </div>
-                <div className="flex gap-x-1 items-center">
-                  <button className="font-medium text-xs font-inter bg-[#01ff9d] py-1 px-[9px] rounded-[20px] text-white">
-                    1M
-                  </button>
-                  <button className="font-medium text-xs font-inter bg-white bg-opacity-20 py-1 px-[9px] rounded-[20px] text-white">
-                    1Y
-                  </button>
-                  <button className="font-medium text-xs font-inter bg-white bg-opacity-20 py-1 px-[9px] rounded-[20px] text-white">
-                    All
-                  </button>
-                </div>
-              </div>
 
-              <div className="flex justify-between mt-2 items-center rounded-lg">
-                <div className="flex gap-4 items-center ">
-                  <div className="border-l rounded-r-lg border-2 border-[#f2f2f7] h-11 "></div>
-                  <div className="flex flex-col">
-                    <div className=" text-white font-inter text-lg  font-semibold">
-                      crypto
+                {tradingPairs.map((pair, index) => (
+                  <div
+                    key={index}
+                    className="flex justify-between items-center p-4 bg-gray-700/50 rounded-lg hover:bg-gray-700 transition-all"
+                  >
+                    <div className="flex items-center space-x-4">
+                      <div className="w-2 h-8 bg-green-400 rounded-r-full" />
+                      <div>
+                        <h3 className="text-white font-semibold">
+                          {pair.name}
+                        </h3>
+                        <p className="text-sm text-gray-400">Perpetual</p>
+                      </div>
                     </div>
-                    <div className="flex items-center gap-x-2 text-xs text-[#01ff9d] font-inter">
-                      <span className="font-semibold">$38,795</span>
-                      <div className="border border-[#f2f2f7] h-3"></div>
-                      <span className="font-light">-2.3%</span>
+                    <div className="text-right">
+                      <p className="text-white font-mono">
+                        ${pair.price.toLocaleString()}
+                      </p>
+                      <p
+                        className={`text-sm flex items-center ${
+                          pair.change >= 0 ? "text-green-400" : "text-red-400"
+                        }`}
+                      >
+                        {pair.change >= 0 ? (
+                          <ArrowUpRight className="w-4 h-4" />
+                        ) : (
+                          <ArrowDownRight className="w-4 h-4" />
+                        )}
+                        {Math.abs(pair.change)}%
+                      </p>
                     </div>
                   </div>
-                </div>
+                ))}
+              </div>
+            </div>
 
-                <div>
-                  <img src={Graph} alt="Graph" />
+            {/* Right Panel */}
+            <div className="space-y-6">
+              {/* Transaction Status */}
+              <div className="bg-gray-800 rounded-xl p-6 text-center">
+                <div className="flex justify-between items-center mb-6">
+                  <h2 className="text-xl font-bold text-white">
+                    Transaction Status
+                  </h2>
+                  <Clock className="text-green-400" />
+                </div>
+                <div className="space-y-4">
+                  <div className="w-20 h-20 bg-green-400/20 rounded-full mx-auto flex items-center justify-center">
+                    <Wallet className="w-10 h-10 text-green-400" />
+                  </div>
+                  <h3 className="text-lg font-bold text-white">
+                    Withdrawal Processing
+                  </h3>
+                  <p className="text-sm text-gray-400">
+                    Expected completion in 30 minutes
+                  </p>
+                  <div className="w-full bg-gray-700 h-2 rounded-full overflow-hidden">
+                    <div className="w-2/3 bg-green-400 h-full rounded-full" />
+                  </div>
+                  <button className="w-full bg-green-400 text-gray-900 font-semibold py-3 rounded-lg hover:bg-green-500 transition-colors">
+                    View Details
+                  </button>
+                </div>
+              </div>
+
+              {/* Market Info */}
+              <div className="bg-gray-800 rounded-xl p-6">
+                <div className="flex justify-between items-center mb-6">
+                  <h2 className="text-xl font-bold text-white">
+                    Market Analysis
+                  </h2>
+                  <AlertCircle className="text-green-400" />
+                </div>
+                <div className="space-y-4">
+                  <p className="text-gray-300 text-sm leading-relaxed">
+                    Crypto futures trading provides enhanced leverage
+                    opportunities and 24/7 market access. Trade with confidence
+                    using our advanced platform features.
+                  </p>
+                  <div className="grid grid-cols-2 gap-4">
+                    {[
+                      "Volume",
+                      "Open Interest",
+                      "Funding Rate",
+                      "Index Price",
+                    ].map((label, index) => (
+                      <div
+                        key={index}
+                        className="bg-gray-700/50 p-4 rounded-lg"
+                      >
+                        <p className="text-gray-400 text-sm">{label}</p>
+                        <p className="text-white font-mono mt-1">
+                          {label === "Funding Rate"
+                            ? "0.01%"
+                            : "$" + (Math.random() * 1000000).toFixed(2)}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div className="w-full items-start flex flex-col gap-y-2 xl:w-1/2">
+        <div className="w-full items-start flex flex-col gap-y-2">
           <TextMain
-            text="About Us"
-            title="Why Crypto with Risk Master Trader?"
-            description="Id eleifend quis urna tellus tempor facilisis at semper ac. Interdum tortor ut ac ullamcorper ac et facilisis."
+            text=""
+            title="WHY TRADE CRYPTO FUTURES "
+            description="Crypto futures trading has become increasingly popular in recent years, with more and more traders turning to this market as an alternative to traditional markets like Forex CFDs. But why exactly is crypto futures trading gaining so much traction? Here are a few reasons"
             index={false}
           />
 

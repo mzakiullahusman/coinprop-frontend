@@ -111,7 +111,7 @@ const Header = ({
         </div>
         <div className="text-sm">
           <span className="block text-gray-400">RP&L:</span>
-          <span className="text-green-500">{realTimeData.realizedPnL.toFixed(2)} USDT</span>
+          <span className={realTimeData.realizedPnL > 0 ? "text-green-500" : "text-red-500"}>{realTimeData.realizedPnL.toFixed(2)} USDT</span>
         </div>
         <div className="text-sm">
           <span className="block text-gray-400">Up&L:</span>

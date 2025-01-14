@@ -90,7 +90,7 @@ const ChooseChallenges = () => {
       </button> */}
 
       <button className=" flex flex-row mt-8 gap-x-3 mx-auto items-center bg-[#01ff9d] text-[#141414]  font-outfit text-[20px] px-8 py-3 rounded-full shadow-lg font-normal hover:opacity-90 transition">
-        Start Challenge
+        Get Funded
         <img src={BlackArrowRight} alt="Arrow" />
       </button>
     </>

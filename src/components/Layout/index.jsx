@@ -24,63 +24,63 @@ const Layout = ({ children }) => {
   const menuItem = [
     {
       id: 1,
-      path: "/app/dashboard",
+      path: "/dashboard",
       name: "Performance Stats",
       icon: <DashboardIcon />,
     },
     {
       id: 2,
-      path: "/app/trading-view",
+      path: "/trading-view",
       name: "Trading Terminal",
       icon: <TradingAccountIcon />,
     },
     {
       id: 3,
-      path: "/app/accounts",
+      path: "/accounts",
       name: "Account",
       icon: <AccountIcon />,
     },
     {
       id: 4,
-      path: "/app/competitions",
+      path: "/competitions",
       name: "Competitions",
       icon: <CompetitionIcon />,
     },
 
     // {
     //   id: 6,
-    //   path: "/app/certificates",
+    //   path: "/certificates",
     //   name: "Certificates",
     //   icon: <CertificateIcon />,
     // },
     // {
     //   id: 7,
-    //   path: "/app/profit-and-share",
+    //   path: "/profit-and-share",
     //   name: "Profit and Share",
     //   icon: <ProfitAndShareIcon />,
     // },
 
     {
       id: 5,
-      path: "/app/affiliate-portal",
+      path: "/affiliate-portal",
       name: "Affiliate Portal",
       icon: <AffiliateIcon />,
     },
     {
       id: 6,
-      path: "/app/billing-and-accounts",
+      path: "/billing-and-accounts",
       name: "Billing",
       icon: <BillingAndAccountsIcon />,
     },
     {
       id: 7,
-      path: "/app/profile",
+      path: "/profile",
       name: "Settings",
       icon: <SettingIcon />,
     },
     {
       id: 8.25,
-      path: "/app/news-feed",
+      path: "/news-feed",
       name: "News Feed",
       icon: <LiveNewsIcon />,
     },
@@ -98,7 +98,7 @@ const Layout = ({ children }) => {
     // },
     {
       id: 8,
-      path: "/app/faqs",
+      path: "/faqs",
       name: "Help",
       icon: <FaqIcon />,
     },

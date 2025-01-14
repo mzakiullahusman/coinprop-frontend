@@ -18,6 +18,7 @@ const TradingInterface = () => {
     usedMargin: 0,
     totalBalance: 0,
     unrealizedPnL: 0,
+    realizedPnL: 0,
   });
 
   const [portfolioBalance, setPortfolioBalance] = useState("Loading...");

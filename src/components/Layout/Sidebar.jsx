@@ -18,7 +18,7 @@ const Sidebar = ({ menuItem }) => {
 
   return (
     <>
-      <NavLink to="/app/dashboard">
+      <NavLink to="/dashboard">
         <div className="hidden lg:flex justify-center items-center h-[90px]">
           <img src={Logo} alt="CoinProp" className="w-[70px]" />
         </div>

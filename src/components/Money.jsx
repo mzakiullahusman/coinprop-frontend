@@ -12,14 +12,25 @@ const Money = () => {
   const takeHomeProfit = Math.round((profitRate / 100) * value);
 
   const handleIncrease = () => {
-    if (value < 150000) {
-      setValue((prevValue) => prevValue + 25000);
+    if (value < 100000) {
+      setValue((prevValue) => 
+        prevValue === 5000 ? 10000 : 
+        prevValue === 10000 ? 25000 :
+        prevValue === 25000 ? 50000 :
+        100000
+      );
     }
   };
 
   const handleDecrease = () => {
-    if (value > 25000) {
-      setValue((prevValue) => prevValue - 25000);
+    if (value > 5000) {
+      setValue((prevValue) => 
+        prevValue === 10000 ? 5000 : 
+        prevValue === 25000 ? 10000 :
+        prevValue === 50000 ? 25000 :
+        prevValue === 100000 ? 50000 :
+        5000
+      );
     }
   };
 
@@ -31,8 +42,7 @@ const Money = () => {
           <br /> can you make?
         </div>
         <div className="text-base text-white lg:text-lg font-poppins font-light">
-          Id eleifend quis urna tellus tempor facilisis at semper ac.
-          <br /> Interdum tortor ut ac ullamcorper ac et facilisis.
+          Start your journey as a crypto trader without risking your own money! Research shows that experienced traders can achieve consistent monthly profits, often ranging from 5-15% in returns. Use our calculator to estimate your potential earnings based on your trading skills and account size.
         </div>
         <div className="flex justify-between 2xl:justify-start 2xl:gap-32 items-center">
           <MoneyPrices />
