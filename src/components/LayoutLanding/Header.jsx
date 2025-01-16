@@ -8,12 +8,12 @@ const Header = () => {
   const router = useNavigate();
   
   const navLinks = [
-    { name: "How It Works", path: "/landing/how-it-works" },
-    { name: "About", path: "/landing/about-us" },
-    { name: "Tools", path: "/landing/trading-combine" },
-    { name: "Affiliate", path: "/landing/careers" },
-    { name: "Resources", path: "/landing/help-center" },
-    { name: "Earn Funding Button", path: "/landing/forex-vs-future" },
+    { name: "How It Works", path: "/how-it-works" },
+    { name: "About", path: "/about-us" },
+    { name: "Tools", path: "/trading-combine" },
+    { name: "Affiliate", path: "/careers" },
+    { name: "Resources", path: "/help-center" },
+    { name: "Earn Funding Button", path: "/forex-vs-future" },
   ];
 
   return (

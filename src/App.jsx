@@ -88,12 +88,12 @@ function App() {
         <Route path="/auth/*" element={<AuthRoutes />} />
         <Route path="/trading-view" element={<TradingInterface />} />
         <Route
-          path="/*"
+          path="/dashboard/*"
           element={
             <PrivateRoute>
               <Layout>
                 <Routes>
-                  <Route path="/dashboard" element={<Dashboard />} />
+                  <Route path="/" element={<Dashboard />} />
                   <Route path="/trading-account" element={<TradingAccount />} />
                   <Route path="/choose-funding" element={<ChooseFunding />} />
                   <Route

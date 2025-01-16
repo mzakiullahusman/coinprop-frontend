@@ -82,7 +82,9 @@ const FAQComponent = () => {
               openIndex === index ? "bg-gray-900" : "bg-white bg-opacity-[4%]"
             } rounded-[24px] p-4 w-full `}
           >
-            <div className="flex flex-col lg:flex-row gap-3 xl:gap-12 justify-between px-6 items-center">
+            <div 
+            onClick={() => toggleOpen(index)}
+            className="flex flex-col lg:flex-row gap-3 xl:gap-12 justify-between px-6 items-center cursor-pointer">
               <div className="flex flex-col lg:flex-row items-center gap-3 xl:gap-12">
                 <div className="bg-gradient-to-r from-[#00fc9e] to-[#1c7ef0] text-transparent bg-clip-text font-poppins font-normal text-[64px]">
                   {String(item.id).padStart(2, "0")}
@@ -101,12 +103,11 @@ const FAQComponent = () => {
               </div>
               {/* Button to toggle */}
               <div
-                onClick={() => toggleOpen(index)}
                 className={`rounded-full text-lg flex items-center bg-white bg-opacity-10 justify-center w-16 h-16 transition duration-300 ease-in-out hover:scale-105 ${
                   openIndex === index
                     ? " to-[#1c7ef0] p-7 border-white border"
                     : "  p-3"
-                } cursor-pointer`}
+                }`}
               >
                 {openIndex === index ? "x" : "+"}
               </div>
